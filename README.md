@@ -1,1 +1,1 @@
-# Projeto_Platarforma-de-Eventos
+# Projeto_Plataforma-de-Eventos
