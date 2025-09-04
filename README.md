@@ -1,1 +1,2 @@
-# Projeto_Plataforma-de-Eventos
+# Projeto_Eventix
+
