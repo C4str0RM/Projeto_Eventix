@@ -1,0 +1,97 @@
+/* Pré formatação de paleta de cores e fontes */
+
+@import url('https://fonts.googleapis.com/css2?family=Epunda+Sans:ital,wght@0,300..900;1,300..900&family=Epunda+Slab:ital,wght@0,300..900;1,300..900&family=Oswald:wght@200..700&display=swap');
+
+:root {
+  --cor-vermelha: #D62828;
+  --cor-laranja: #F77F00;
+  --cor-fundo: #ffffff;
+  --cor-texto: #2b2b2b;
+  --cor-clara: #f9f9f9;
+  --cor-botao: var(--cor-laranja);
+  --cor-botao-hover: #ff9f1c;
+  --cor-botao-texto: #ffffff;
+  --fonte-principal: "Epunda Slab", serif;
+  --fonte-secundaria: "Oswald", sans-serif;
+  --fonte-auxiliar:"Epunda Sans", sans-serif;
+
+    --cor-titulo: #333;
+    --cor-container: #fff;
+    --cor-carrinho: #f9f9f9;
+    
+    --espacamento-padrao: 2rem;
+    --largura-max-container: 600px;
+    --borda-radius: 8px;
+    --sombra-padrao: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--fonte-padrao);
+  background-color: var(--cor-fundo);
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: var(--largura-max-container);
+  margin: var(--espacamento-padrao) auto;
+  background-color: var(--cor-container);
+  padding: var(--espacamento-padrao);
+  border-radius: var(--borda-radius);
+  box-shadow: var(--sombra-padrao);
+}
+
+h1, h2 {
+  color: var(--cor-titulo);
+}
+
+.produtos {
+  list-style: none;
+  padding: 0;
+}
+
+.produtos li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  background-color: var(--cor-produto);
+  border-radius: 4px;
+}
+
+button {
+  background-color: var(--cor-botao);
+  color: var(--cor-texto-botao);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--cor-botao-hover);
+}
+
+.carrinho {
+  margin-top: var(--espacamento-padrao);
+  padding: 1rem;
+  background-color: var(--cor-carrinho);
+  border-radius: 4px;
+}
+
+footer {
+  background-color: var(--cor-clara);
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 40px;
+}
+
