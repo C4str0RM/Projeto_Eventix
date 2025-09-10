@@ -1,7 +1,5 @@
+import Login from './auth/login';
+
 export default function App() {
-  return (
-    <div>
-      <h1>Eventix</h1>
-    </div>
-  );
+  return <Login />;
 }
