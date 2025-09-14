@@ -4,7 +4,7 @@ import "./Login.css";
 
 function Cadastro() {
   useEffect(() => {
-    document.title = "Eventix | Cadastro";
+    document.title = "Cadastro | Eventix";
   }, []);
 
   return (

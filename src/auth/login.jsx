@@ -4,7 +4,7 @@ import "./Login.css";
 
 function Login() {
   useEffect(() => {
-    document.title = "Eventix | Login";
+    document.title = "Login | Eventix";
   }, []);
 
   return (
