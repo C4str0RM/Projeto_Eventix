@@ -5,40 +5,121 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ingressos | Eventix</title>
-    <link rel="shortcut icon" href="faviconEL.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="faviconEL.ico" type="image/x-icon" />
     <link rel="stylesheet" href="stylep.css" />
 </head>
 
 <body>
-    <div class="container">
-        <h1>Escolha seu ingresso:</h1>
+    <div class="compra-page">
 
-        <ul class="produtos">
-            <li>
-                <span>Ingresso VIP - R$150</span>
-                <button>Adicionar</button>
-            </li>
-            <li>
-                <span>Ingresso Pista - R$80</span>
-                <button>Adicionar</button>
-            </li>
-            <li>
-                <span>Ingresso Camarote - R$200</span>
-                <button>Adicionar</button>
-            </li>
-        </ul>
+        <!-- Ingressos -->
+        <div class="ingressos">
+            <h2>Escolha seu ingresso:</h2>
+            <ul>
 
-        <div class="carrinho">
-            <h2>Carrinho 🛒</h2>
-            <p>Seu carrinho está vazio.</p>
-            <p><strong>Total:</strong> R$0</p>
+                <li class="ingresso-card social">
+                    <div class="badge">Social 🤝</div>
+                    <div class="info">
+                        <span>Conexão Popular</span>
+                        <p>R$30,00</p>
+                        <button>Adicionar</button>
+                        <small class="observacao">*Ingresso social para ações inclusivas</small>
+                    </div>
+                </li>
+
+                <li class="ingresso-card estudante">
+                    <div class="badge">Estudante 🎓</div>
+                    <div class="info">
+                        <span>Mente Brilhante</span>
+                        <p>R$40,00</p>
+                        <button>Adicionar</button>
+                        <small class="observacao">*Desconto para estudantes com documento</small>
+                    </div>
+                </li>
+
+                <li class="ingresso-card pcd">
+                    <div class="badge">PCD ♿</div>
+                    <div class="info">
+                        <span>Acesso Livre</span>
+                        <p>R$50,00</p>
+                        <button>Adicionar</button>
+                        <small class="observacao">*Acesso adaptado para pessoas com deficiência</small>
+                    </div>
+                </li>
+
+                <li class="ingresso-card pista">
+                    <div class="badge">Pista ⚡</div>
+                    <div class="info">
+                        <span>Pulse Zone</span>
+                        <p>R$90,00</p>
+                        <button>Adicionar</button>
+                        <small class="observacao">*Área geral com energia e movimento</small>
+                    </div>
+                </li>
+
+                <li class="ingresso-card camarote">
+                    <div class="badge">Camarote 🪩</div>
+                    <div class="info">
+                        <span>Vista Lounge</span>
+                        <p>R$280,00</p>
+                        <button>Adicionar</button>
+                        <small class="observacao">*Visão privilegiada e espaço elevado</small>
+                    </div>
+                </li>
+
+                <li class="ingresso-card camarote-plus">
+                    <div class="badge">Camarote PLUS 🍾</div>
+                    <div class="info">
+                        <span>Imperial Lounge</span>
+                        <p>R$300,00</p>
+                        <button>Adicionar</button>
+                        <small class="observacao">*Inclui lounge exclusivo e serviços extras</small>
+                    </div>
+                </li>
+
+                <li class="ingresso-card premium">
+                    <div class="badge">Premium 🌕</div>
+                    <div class="info">
+                        <span>Eclipse Gold</span>
+                        <p>R$340,00</p>
+                        <button>Adicionar</button>
+                        <small class="observacao">*Benefícios premium e localização especial</small>
+                    </div>
+                </li>
+
+                <li class="ingresso-card vip">
+                    <div class="badge">VIP 👑</div>
+                    <div class="info">
+                        <span>Aurora Prime</span>
+                        <p>R$450,00</p>
+                        <button>Adicionar</button>
+                        <small class="observacao">*Acesso prioritário e área VIP exclusiva</small>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+
+        <!-- Carrinho -->
+        <div class="carrinho-fixo">
+            <h2>Carrinho</h2>
+            <ul>
+                <li>Ingresso VIP - R$450,00</li>
+                <li>Ingresso Pista - R$90,00</li>
+            </ul>
+            <p><strong>Total:</strong> R$540,00</p>
+
+            <div class="botoes-carrinho">
+                <button class="btn-finalizar">Finalizar Compra</button>
+                <button class="btn-limpar">Limpar Carrinho</button>
+            </div>
         </div>
     </div>
 
+    <!-- Rodapé -->
     <footer>
         <p>&copy; 2025 Eventix. Todos os direitos reservados.</p>
     </footer>
-
 </body>
 
 </html>
