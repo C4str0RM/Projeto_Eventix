@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Epunda+Sans&family=Epunda+Slab&family=Oswald:wght@300;500;700&display=swap');
+
+:root {
+  --cor-roxa: #6C63FF;
+  --cor-azul-escuro: #08165c;
+  --cor-clara: #2C2F4A;
+  --cor-texto: #F5F5F5;
+  --cor-fundo: #1B1F3B;
+
+  --fonte-principal: "Epunda Slab", serif;
+  --fonte-secundaria: "Oswald", sans-serif;
+  --fonte-auxiliar: "Epunda Sans", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  font-family: var(--fonte-principal);
+  line-height: 1.6;
+  font-size: 1.1em;
+}
+
+.banner-futuro {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: #000;
+  overflow: hidden;
+}
+
+.banner-futuro img {
+  width: 100%;
+  max-width: 1170px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+
+.evento-header {
+  background: linear-gradient(90deg, var(--cor-roxa), var(--cor-azul-escuro));
+  color: var(--cor-texto);
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.evento-header h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+  font-family: var(--fonte-auxiliar);
+}
+
+.evento-header p {
+  font-size: 1.1em;
+  font-style: italic;
+}
+
+.evento-destaque {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  background-color: var(--cor-clara);
+  padding: 30px 20px;
+  margin: 40px auto;
+  max-width: 960px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.info-principal {
+  flex: 1;
+}
+
+.info-principal h2 {
+  color: var(--cor-roxa);
+  font-size: 1.6em;
+  margin-bottom: 10px;
+  font-family: var(--fonte-secundaria);
+}
+
+.info-principal p {
+  margin-bottom: 6px;
+  font-family: var(--fonte-auxiliar);
+}
+
+.botao-compra {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(var(--cor-roxa), var(--cor-azul-escuro));
+  border-radius: 2em;
+  padding: 30px 20px;
+  max-width: 480px;
+  margin: 40px auto;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.btn-comprar {
+  background-color: var(--cor-clara);
+  color: var(--cor-texto-claro);
+  padding: 14px 32px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: var(--fonte-principal);
+  font-size: 1.1em;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  display: inline-block;
+  margin-bottom: 12px;
+}
+
+.btn-comprar:hover {
+  background-color: var(--cor-azul-escuro);
+  color: var(--cor-texto-claro);
+}
+
+.botao-compra p {
+  font-family: var(--fonte-auxiliar);
+  font-size: 1em;
+  color: var(--cor-texto-claro);
+  margin: 0;
+}
+
+section {
+  max-width: 960px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: var(--cor-clara);
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+section h2 {
+  font-family: var(--fonte-secundaria);
+  font-size: 1.4em;
+  color: var(--cor-roxa);
+  margin-bottom: 16px;
+}
+
+section ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+section ul li {
+  margin-bottom: 8px;
+  font-family: var(--fonte-auxiliar);
+}
+
+section p {
+  font-family: var(--fonte-auxiliar);
+  margin-bottom: 10px;
+}
+
+.evento-local p {
+  margin-bottom: 8px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9em;
+  color: #ccc;
+  font-family: var(--fonte-auxiliar);
+  margin-top: 40px;
+}

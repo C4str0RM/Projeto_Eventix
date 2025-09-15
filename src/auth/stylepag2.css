@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Epunda+Sans&family=Epunda+Slab&family=Oswald:wght@300;500;700&display=swap');
+
+
+:root {
+  --cor-lilás: #6C63FF;
+  --cor-azul-fosco: #08165c;
+  --cor-fundo-escuro: #1B1F3B;
+  --cor-destaque: #2C2F4A;
+  --cor-gradiente-inicio: #6C63FF;
+  --cor-gradiente-fim: #2e74ff;
+  --cor-texto-primário: #F5F5F5;
+  --cor-texto-secundario: #ccc;
+  --cor-hover: #4540d6;
+
+  --fonte-primária: "Epunda Slab", serif;
+  --fonte-sec: "Oswald", sans-serif;
+  --fonte-terciária: "Epunda Sans", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--fonte-terciária);
+  background-color: var(--cor-fundo-escuro);
+  color: var(--cor-texto-primário);
+  margin: 0;
+  padding: 0;
+}
+
+.banner-futurista {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: #000;
+  overflow: hidden;
+}
+
+.banner-futurista img {
+  width: 100%;
+  max-width: 1170px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.inscricaopag-header {
+  background: linear-gradient(90deg, var(--cor-lilás), var(--cor-azul-fosco));
+  color: var(--cor-texto-primário);
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.inscricaopag-header h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+  font-family: var(--fonte-terciária);
+}
+
+.inscricaopag-header p {
+  font-size: 1.2em;
+  font-style: italic;
+}
+
+.inscricaopag-destaque {
+  max-width: 600px;
+  margin: 40px auto;
+  background-color: var(--cor-destaque);
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.inscricaopag-destaque h2 {
+color: var(--cor-texto-primário);
+font-family: var(--fonte-terciária);
+}
+
+.btn-paga,
+.btn-finaliza:hover {
+  background-color: var(--cor-gradiente-fim);
+  color: white;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 8px;
+  font-family: var(--fonte-primária);
+  font-weight: bold;
+  font-size: 1em;
+  cursor: pointer;
+  margin-top: 20px;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.btn-finalizacao {
+  background-color: var(--cor-gradiente-fim);
+  color: white;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 8px;
+  font-family: var(--fonte-primária);
+  font-weight: bold;
+  font-size: 1em;
+  cursor: pointer;
+  margin-top: 20px;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.btn-paga:hover,
+.btn-finaliza:hover {
+  background-color: var(--cor-hover);
+}
+
+.btn-finalizacao:hover {
+  background-color: var(--cor-hover);
+}
+
+.inscricaopag-aprendizado {
+  max-width: 960px;
+  background-color: var(--cor-fundo-escuro);
+  margin: 60px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.inscricaopag-aprendizado h2 {
+  font-size: 1.8em;
+  margin-bottom: 30px;
+  color: var(--cor-texto-primário);
+  font-family: var(--fonte-terciária);
+}
+
+.cardc-aprendizado {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.cardc {
+  background-color: var(--cor-destaque);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cardc:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.cardc .icone {
+  font-size: 2.2em;
+  display: block;
+  margin-bottom: 12px;
+  color: var(--cor-gradiente-inicio);
+}
+
+.cardc h3 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  color: var(--cor-texto-primário);
+}
+
+.cardc p {
+  font-size: 0.95em;
+  color: var(--cor-texto-secundario);
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9em;
+  color: var(--cor-texto-secundario);
+}
+
+.beneficios-pagamento {
+  list-style: none;
+  padding-left: 0;
+  margin: 20px 0;
+  text-align: left;
+  color: var(--cor-texto-secundario);
+}
+
+.beneficios-pagamento li {
+  margin-bottom: 10px;
+  font-size: 1em;
+  position: relative;
+  padding-left: 24px;
+}
+
+.beneficios-pagamento li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: var(--cor-gradiente-inicio);
+  font-weight: bold;
+}
+
+.info-pagamento {
+  margin-top: 20px;
+  font-size: 0.95em;
+  color: var(--cor-texto-secundario);
+}
+
+.formas-pagamento {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.formas-pagamento h3 {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  color: var(--cor-gradiente-inicio);
+}
+
+.formas-pagamento ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.formas-pagamento li {
+  margin-bottom: 8px;
+  font-size: 0.95em;
+  padding-left: 24px;
+  position: relative;
+}
+
+.formas-pagamento li::before {
+  content: "💰";
+  position: absolute;
+  left: 0;
+}
