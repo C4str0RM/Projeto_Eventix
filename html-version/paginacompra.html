@@ -6,17 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ingressos | Eventix</title>
     <link rel="shortcut icon" href="faviconEL.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="stylep.css" />
+    <link rel="stylesheet" href="styles/stylep.css" />
 </head>
 
 <body>
-    <div class="compra-page">
 
-        <!-- Ingressos -->
+    <div class="banner-festival">
+        <img src="https://i.pinimg.com/1200x/07/29/08/0729082c4175cd7f4e367aa46a004006.jpg"
+            alt="Banner Festival Aurora-Boreal" />
+    </div>
+
+    <header class="festa-header">
+        <h1>Festival Aurora-Boreal</h1>
+        <p>Uma celebração vibrante da cultura brasileira com música, dança e experiências únicas</p>
+    </header>
+
+    <div class="compra-page">
         <div class="ingressos">
             <h2>Escolha seu ingresso:</h2>
             <ul>
-
                 <li class="ingresso-card social">
                     <div class="badge">Social 🤝</div>
                     <div class="info">
@@ -41,7 +49,7 @@
                     <div class="badge">PCD ♿</div>
                     <div class="info">
                         <span>Acesso Livre</span>
-                        <p>R$50,00</p>
+                        <p>R$0,00</p>
                         <button>Adicionar</button>
                         <small class="observacao">*Acesso adaptado para pessoas com deficiência</small>
                     </div>
@@ -96,30 +104,69 @@
                         <small class="observacao">*Acesso prioritário e área VIP exclusiva</small>
                     </div>
                 </li>
-
             </ul>
-        </div>
 
-        <!-- Carrinho -->
-        <div class="carrinho-fixo">
-            <h2>Carrinho</h2>
-            <ul>
-                <li>Ingresso VIP - R$450,00</li>
-                <li>Ingresso Pista - R$90,00</li>
-            </ul>
-            <p><strong>Total:</strong> R$540,00</p>
+            <div class="carrinho-fixo">
+                <h2>Carrinho</h2>
+                <ul>
+                    <li>Ingresso VIP - R$450,00</li>
+                    <li>Ingresso Pista - R$90,00</li>
+                </ul>
+                <p><strong>Total:</strong> R$540,00</p>
+                <div class="botoes-carrinho">
+                    <a href="paginapagamento.html" class="btn-finalizar">Finalizar Compra</a>
+                    <button class="btn-limpar">Limpar Carrinho</button>
 
-            <div class="botoes-carrinho">
-                <button class="btn-finalizar">Finalizar Compra</button>
-                <button class="btn-limpar">Limpar Carrinho</button>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- Rodapé -->
+    <section class="destaques-evento">
+        <h2>✨ Por que participar do Festival Aurora-Boreal?</h2>
+        <div class="cards-destaque">
+            <div class="card-destaque">
+                <h3>🎶 Música sem limites</h3>
+                <p>Line-up com artistas que misturam ritmos brasileiros, eletrônicos e experimentais. Prepare-se pra
+                    dançar até o amanhecer!</p>
+            </div>
+
+            <div class="card-destaque">
+                <h3>🌌 Atmosfera imersiva</h3>
+                <p>Projeções, luzes, arte interativa e espaços temáticos que transformam o ambiente em uma experiência
+                    sensorial.</p>
+            </div>
+
+            <div class="card-destaque">
+                <h3>🧘‍♀️ Espaços de bem-estar</h3>
+                <p>Área zen com redes, massagens gratuitas e oficinas de respiração para recarregar as energias durante
+                    o evento.</p>
+            </div>
+
+            <div class="card-destaque">
+                <h3>🍴 Gastronomia regional</h3>
+                <p>Food trucks e barracas com sabores típicos da Amazônia e do cerrado — do açaí raiz ao tacacá gourmet.
+                </p>
+            </div>
+
+            <div class="card-destaque">
+                <h3>🌈 Inclusão & Diversidade</h3>
+                <p>Ambiente acolhedor com acessibilidade, respeito às identidades e celebração da pluralidade cultural.
+                </p>
+            </div>
+
+            <div class="card-destaque">
+                <h3>🎭 Performances Surpreendentes</h3>
+                <p>Artistas visuais, dançarinos e intervenções espontâneas que transformam o público em parte do
+                    espetáculo.</p>
+            </div>
+        </div>
+    </section>
+
     <footer>
         <p>&copy; 2025 Eventix. Todos os direitos reservados.</p>
     </footer>
+
 </body>
 
 </html>

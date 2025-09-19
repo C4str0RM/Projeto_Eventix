@@ -1,0 +1,125 @@
+body.sucesso {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: linear-gradient(25deg, var(--cor-rosa), var(--cor-roxa), var(--cor-laranja));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.sucesso-container {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-family: var(--fonte-principal);
+  max-width: 600px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.sucesso-container h1 {
+  font-size: 2rem;
+  color: #2e7d32;
+  margin-bottom: 1rem;
+}
+
+.sucesso-container p {
+  font-size: 1.2rem;
+  color: #444;
+  margin-bottom: 2rem;
+}
+
+.btn-voltar-home {
+  background-color: var(--cor-laranja);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-voltar-home:hover {
+  background-color: var(--cor-dourado);
+  color: #000;
+}
+
+footer {
+  text-align: center;
+  padding: 16px;
+  font-size: 0.8rem;
+  color: #000;
+  font-family: var(--fonte-principal);
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 768px) {
+  .sucesso-container {
+    width: 90%;
+    padding: 1.5rem;
+  }
+
+  .sucesso-container h1 {
+    font-size: 1.6rem;
+  }
+
+  .sucesso-container p {
+    font-size: 1rem;
+  }
+
+  .btn-voltar-home {
+    font-size: 0.95rem;
+    padding: 0.6rem 1.2rem;
+  }
+
+  footer {
+    font-size: 0.75rem;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sucesso-container {
+    padding: 1rem;
+  }
+
+  .sucesso-container h1 {
+    font-size: 1.4rem;
+  }
+
+  .sucesso-container p {
+    font-size: 0.95rem;
+  }
+
+  .btn-voltar-home {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .sucesso-container {
+    width: 90%;
+    padding: 1.2rem;
+    margin: 0 auto;
+  }
+
+  .sucesso-container h1 {
+    font-size: 1.5rem;
+  }
+
+  .sucesso-container p {
+    font-size: 1rem;
+  }
+
+  .btn-voltar-home {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+  }
+}
