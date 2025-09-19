@@ -1,5 +1,5 @@
 import React from "react";
-import "./stylepag.css";
+import "../Styles/stylepag.css";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import ContadorEvento from "./contagemregressiva";

@@ -233,3 +233,82 @@ footer {
   font-family: var(--fonte-auxiliar);
   margin-top: 40px;
 }
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 768px) {
+  body {
+    font-size: 1em;
+    padding: 10px;
+  }
+
+  .evento-header h1 {
+    font-size: 1.6em;
+  }
+
+  .evento-header p {
+    font-size: 1em;
+  }
+
+  .evento-destaque {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .info-principal h2,
+  .info-principal p {
+    text-align: center;
+  }
+
+  .botao-compra {
+    padding: 20px;
+    margin: 20px auto;
+  }
+
+  .btn-comprar {
+    width: 100%;
+    font-size: 1em;
+    padding: 12px 24px;
+  }
+
+  section {
+    padding: 16px;
+    margin: 20px auto;
+  }
+
+  section h2 {
+    font-size: 1.2em;
+    text-align: center;
+  }
+
+  section ul li {
+    font-size: 0.95em;
+    text-align: center;
+  }
+
+  .contador-flutuante {
+    bottom: 20px;
+    right: 20px;
+    font-size: 1em;
+    padding: 12px 20px;
+    min-width: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .evento-header h1 {
+    font-size: 1.4em;
+  }
+
+  .btn-comprar {
+    font-size: 0.95em;
+    padding: 10px 20px;
+  }
+
+  .contador-flutuante {
+    font-size: 0.9em;
+    padding: 10px 16px;
+    min-width: 160px;
+  }
+}

@@ -1,73 +1,94 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Inscrição</title>
-    <link rel="stylesheet" href="stylepag1.css" />
+    <title>Inscrição | Eventix</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Epunda+Sans&family=Epunda+Slab&family=Oswald:wght@300;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="Styles/stylepag1.css" />
     <link rel="shortcut icon" href="faviconEL.ico" type="image/x-icon">
 </head>
 
 <body>
-
-    <div class="banner-futuro">
+    <div class="banner-futurista">
         <img src="https://i.pinimg.com/736x/26/84/f5/2684f59b1c7daf97ec94b3cc3037c97a.jpg"
             alt="Banner Futuristic Conference" />
     </div>
-    <header class="evento-header">
+
+    <header class="inscricaopag-header">
         <h1>Conferência Global de Inovação</h1>
         <p>Inscrição com certificado digital</p>
     </header>
 
-    <section class="evento-destaque">
-        <p>Participe e receba acesso ao conteúdo e o certificado.</p>
-        <a href="pagamento.html" class="btn-pagar">Quero pagar pela inscrição</a>
+    <section class="inscricaopag-destaque">
+        <p>Preencha seus dados para garantir sua inscrição e receber o certificado:</p>
+
+        <form class="form-inscricao" action="pagamento.html" method="GET">
+            <label for="nome">Nome completo:</label>
+            <input type="text" id="nome" name="nome" required />
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required />
+
+            <label for="area">Área de interesse:</label>
+            <select id="area" name="area" required>
+                <option value="ia">Inteligência Artificial</option>
+                <option value="sustentavel">Inovação Sustentável</option>
+                <option value="educacao">Educação & Cultura</option>
+                <option value="dados">Dados & Tendências</option>
+                <option value="front">Front-End Frameworks</option>
+                <option value="tech">Tecnologia na Educação Infantil</option>
+                <option value="design">UI/UX Design</option>
+            </select>
+
+            <button type="submit" class="btn-paga">
+                Continuar para pagamento
+            </button>
+        </form>
     </section>
 
-    <section class="evento-aprendizado">
+    <section class="inscricaopag-aprendizado">
         <h2>🧠 O que você vai aprender</h2>
-        <div class="cards-aprendizado">
-            <div class="card">
-                <span class="icon">🤖</span>
+        <div class="cardc-aprendizado">
+            <div class="cardc">
+                <span class="icone">🤖</span>
                 <h3>Inteligência Artificial</h3>
                 <p>Entenda como a IA está transformando o mercado e a sociedade.</p>
             </div>
-            <div class="card">
-                <span class="icon">💡</span>
+            <div class="cardc">
+                <span class="icone">💡</span>
                 <h3>Ferramentas Digitais</h3>
                 <p>Descubra plataformas que impulsionam negócios e criatividade.</p>
             </div>
-            <div class="card">
-                <span class="icon">🌱</span>
+            <div class="cardc">
+                <span class="icone">🌱</span>
                 <h3>Inovação Sustentável</h3>
                 <p>Explore soluções tecnológicas com impacto ambiental positivo.</p>
             </div>
-            <div class="card">
-                <span class="icon">🎓</span>
+            <div class="cardc">
+                <span class="icone">🎓</span>
                 <h3>Educação & Cultura</h3>
                 <p>Veja como aplicar tecnologia na aprendizagem e expressão cultural.</p>
             </div>
-            <div class="card">
-                <span class="icon">🤝</span>
+            <div class="cardc">
+                <span class="icone">🤝</span>
                 <h3>Networking Global</h3>
                 <p>Conecte-se com especialistas, empreendedores e líderes do setor.</p>
             </div>
-            <div class="card">
-                <span class="icon">📊</span>
+            <div class="cardc">
+                <span class="icone">📊</span>
                 <h3>Dados & Tendências</h3>
                 <p>Aprenda a interpretar dados e identificar tendências tecnológicas que moldam o futuro.</p>
             </div>
-
         </div>
-
     </section>
 
     <footer>
         <p>&copy; 2025 Eventix. Todos os direitos reservados.</p>
     </footer>
-
 </body>
-
 
 </html>

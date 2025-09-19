@@ -1,18 +1,44 @@
-import React, { useEffect } from "react";
-import "./stylepag2.css";
+import React, { useEffect, useState } from "react";
+import "../Styles/stylepag2.css";
+import { useNavigate, useSearchParams } from "react-router-dom";
 
 function Pagamento() {
+  const [searchParams] = useSearchParams();
+  const navigate = useNavigate();
+
+  const nome = searchParams.get("nome");
+  const email = searchParams.get("email");
+  const area = searchParams.get("area");
+
   useEffect(() => {
     document.title = "Pagamento | Eventix";
   }, []);
 
   const finalizarPagamento = (plano) => {
-    alert(`Você escolheu o plano: ${plano}`);
-    // Ainda será integrado com pagamento real e funcional.
+    navigate("/formapagamento", {
+      state: {
+        planoSelecionado: plano,
+        nome,
+        email,
+        area
+      }
+    });
   };
 
+  const areasMap = {
+  ia: "Inteligência Artificial",
+  sustentavel: "Inovação Sustentável",
+  educacao: "Educação & Cultura",
+  dados: "Dados & Tendências",
+  front: "Front-End Frameworks",
+  tech: "Tecnologia na EI",
+  design: "UI/UX Design",
+};
+
+const areaCompleta = areasMap[area] || area;
+
   return (
-    <div>
+    <div className="pagina-pagamento">
       <div className="banner-futurista">
         <img
           src="https://i.pinimg.com/736x/26/84/f5/2684f59b1c7daf97ec94b3cc3037c97a.jpg"
@@ -23,6 +49,12 @@ function Pagamento() {
       <header className="inscricaopag-header">
         <h1>Conferência Global de Inovação</h1>
         <p>Escolha sua modalidade de acesso:</p>
+        {nome && (
+          <p className="info-pagamento">
+            👤 <strong>{nome}</strong> | 🧠 Área: {areaCompleta}
+          </p>
+        )}
+
       </header>
 
       <section className="inscricaopag-destaque">
@@ -35,7 +67,9 @@ function Pagamento() {
           <li>Participação em sorteios de brindes tecnológicos</li>
         </ul>
 
-        <p className="info-pagamento">Pagamento único válido para esta edição do evento.</p>
+        <p className="info-pagamento">
+          Pagamento único válido para esta edição do evento.
+        </p>
 
         <div className="formas-pagamento">
           <h3>Formas de pagamento:</h3>
@@ -46,7 +80,10 @@ function Pagamento() {
           </ul>
         </div>
 
-        <button className="btn-finalizacao" onClick={() => finalizarPagamento("Padrão")}>
+        <button
+          className="btn-finalizacao"
+          onClick={() => finalizarPagamento("Padrão")}
+        >
           Finalizar pagamento
         </button>
       </section>
@@ -73,7 +110,10 @@ function Pagamento() {
           </ul>
         </div>
 
-        <button className="btn-finalizacao" onClick={() => finalizarPagamento("Vitalício")}>
+        <button
+          className="btn-finalizacao"
+          onClick={() => finalizarPagamento("Vitalício")}
+        >
           Adquirir acesso vitalício
         </button>
       </section>

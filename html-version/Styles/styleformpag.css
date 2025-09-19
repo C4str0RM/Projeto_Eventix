@@ -1,0 +1,123 @@
+.pagina-centralizada {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 40px 20px;
+  background-color: var(--cor-fundo-escuro);
+}
+
+.pagamento-container {
+  max-width: 600px;
+  width: 100%;
+  padding: 30px;
+  margin: 0 auto;
+  background-color: var(--cor-destaque);
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.3);
+  font-family: var(--fonte-primária);
+  color: var(--cor-texto-primário);
+  animation: fadeIn 0.6s ease-in;
+}
+
+.pagamento-container h1 {
+  font-size: 2rem;
+  color: #e100ff;
+  margin-bottom: 20px;
+  text-shadow: 0 0 6px rgba(225, 0, 255, 0.5);
+}
+
+.opcoes-pagamento {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+
+.opcoes-pagamento button {
+  width: 190px;
+  height: 60px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #7f00ff, #e100ff);
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 0 12px rgba(127, 0, 255, 0.6);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.opcoes-pagamento button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(225, 0, 255, 0.8);
+}
+
+.opcoes-pagamento button svg,
+.opcoes-pagamento button i {
+  margin-right: 8px;
+}
+
+.qrcode-fake {
+  margin: 20px 0;
+  width: 200px;
+  height: 200px;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 768px) {
+  .pagina-centralizada {
+    padding: 20px;
+    flex-direction: column;
+  }
+
+  .pagamento-container {
+    padding: 20px;
+  }
+
+  .pagamento-container h1 {
+    font-size: 1.6rem;
+    margin-bottom: 16px;
+  }
+
+  .opcoes-pagamento {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .opcoes-pagamento button {
+    width: 100%;
+    max-width: 300px;
+    height: 56px;
+    font-size: 1rem;
+  }
+
+  .qrcode-fake {
+    width: 160px;
+    height: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pagamento-container h1 {
+    font-size: 1.4rem;
+  }
+
+  .opcoes-pagamento button {
+    font-size: 0.95rem;
+    height: 52px;
+  }
+
+  .qrcode-fake {
+    width: 140px;
+    height: 140px;
+  }
+}
