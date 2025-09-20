@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=Epunda+Sans:ital,wght@0,300..900;1,300..900&family=Epunda+Slab:ital,wght@0,300..900;1,300..900&family=Oswald:wght@200..700&display=swap');
+
+:root {
+  --cor-vermelha: #D62828;
+  --cor-laranja: #F77F00;
+  --cor-fundo: #ffffff;
+  --cor-texto: #2b2b2b;
+  --cor-clara: #f9f9f9;
+  --cor-botao: var(--cor-laranja);
+  --cor-botao-hover: #ff9f1c;
+  --cor-botao-texto: #ffffff;
+  --fonte-principal: "Epunda Slab", serif;
+  --fonte-secundaria: "Oswald", sans-serif;
+  --fonte-auxiliar: "Epunda Sans", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--fonte-secundaria);
+  background-image: url("https://plus.unsplash.com/premium_photo-1667587244556-2bbc53d2f6e3?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--cor-texto);
+}
+
+.container {
+  background-color: var(--cor-clara);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.recuperar-form {
+    width: 100%;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    animation: fadeInUp 0.8s ease-out;
+    gap: 16px;
+}
+
+.recuperar-form h2 {
+    font-family: var(--fonte-principal);
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.recuperar-form .descricao {
+    font-size: 0.95em;
+    margin-bottom: 10px;
+    text-align: center;
+    color: var(--cor-texto);
+}
+
+.recuperar-form button {
+  width: 100%;
+  padding: 10px;
+  background-color: var(--cor-botao);
+  border: none;
+  border-radius: 6px;
+  color: var(--cor-botao-texto);
+  font-weight: bold;
+  cursor: pointer;
+  font-family: var(--fonte-principal);
+  transition: background-color 0.3s ease;
+}
+
+.recuperar-form button:hover {
+  background-color: var(--cor-botao-hover);
+}
+
+.recuperar-form input,
+.recuperar-form button {
+    width: 100%;
+}
+
+.recuperar-form h2 {
+    margin-bottom: 20px;
+}
+
+.recuperar-form .descricao {
+    margin-bottom: 15px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.recuperar-form button {
+    margin-top: 10px;
+}
+
+.input-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+.input-group input {
+    flex: 1;
+    padding: 0.6rem 2rem 0.6rem 2.5rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    font-family: var(--fonte-principal);
+}
+
+.icon {
+    position: absolute;
+    left: 10px;
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.confirmacao {
+    background-color: #eaf4ea;
+    padding: 15px;
+    border-radius: 8px;
+    color: #2b2b2b;
+    font-weight: bold;
+    text-align: center;
+    font-family: var(--fonte-principal);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.contador {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #555;
+    font-family: var(--fonte-principal);
+}
+
+.ampulheta {
+    display: inline-block;
+    animation: girar 1s linear infinite;
+    margin-right: 6px;
+}
+
+@keyframes girar {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.voltar-login {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.voltar-login button {
+    background-color: transparent;
+    border: 2px solid var(--cor-vermelha);
+    color: var(--cor-vermelha);
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: var(--fonte-principal);
+    transition: 0.3s ease;
+}
+
+.voltar-login button:hover {
+    background-color: var(--cor-vermelha);
+    color: white;
+}
+
+.confirmacao {
+    margin-bottom: 15px;
+}
+
+.contador {
+    margin-top: 10px;
+}
+
+.voltar-login {
+    margin-top: 30px;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    .recuperar-form {
+        max-width: 90%;
+        gap: 12px;
+    }
+
+    .recuperar-form h2 {
+        font-size: 1.4rem;
+    }
+
+    .recuperar-form .descricao {
+        font-size: 0.9rem;
+    }
+
+    .input-group input {
+        font-size: 0.95rem;
+        padding: 0.6rem 1.5rem 0.6rem 2rem;
+    }
+
+    .voltar-login button {
+        font-size: 0.9rem;
+        padding: 6px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+    }
+
+    .recuperar-form {
+        max-width: 100%;
+        gap: 10px;
+    }
+
+    .recuperar-form h2 {
+        font-size: 1.2rem;
+    }
+
+    .recuperar-form .descricao {
+        font-size: 0.85rem;
+    }
+
+    .input-group input {
+        font-size: 0.9rem;
+        padding: 0.5rem 1.2rem 0.5rem 1.8rem;
+    }
+
+    .icon {
+        font-size: 1rem;
+        left: 8px;
+    }
+
+    .voltar-login button {
+        font-size: 0.85rem;
+        padding: 5px 10px;
+    }
+
+    .confirmacao {
+        font-size: 0.85rem;
+        padding: 12px;
+    }
+
+    .contador {
+        font-size: 0.8rem;
+    }
+}
