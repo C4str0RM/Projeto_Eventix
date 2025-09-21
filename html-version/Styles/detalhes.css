@@ -1,0 +1,197 @@
+/* Pré formatação de paleta de cores e fontes */
+
+@import url('https://fonts.googleapis.com/css2?family=Epunda+Sans:ital,wght@0,300..900;1,300..900&family=Epunda+Slab:ital,wght@0,300..900;1,300..900&family=Oswald:wght@200..700&display=swap');
+
+:root {
+    --cor-vermelha: #D62828;
+    --cor-laranja: #F77F00;
+    --cor-fundo: #ffffff;
+    --cor-texto: #2b2b2b;
+    --cor-clara: #f9f9f9;
+
+    --cor-botao: var(--cor-laranja);
+    --cor-botao-hover: #ff9f1c;
+    --cor-botao-texto: #ffffff;
+
+    --fonte-principal: "Epunda Slab", serif;
+    --fonte-secundaria: "Oswald", sans-serif;
+    --fonte-auxiliar: "Epunda Sans", sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 20px;
+    background-color: var(--cor-fundo);
+    font-family: var(--fonte-principal);
+}
+
+.container-pagina {
+    width: 100%;
+    max-width: 600px;
+    background-color: var(--cor-clara);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.container-pagina h1 {
+    margin-bottom: 20px;
+}
+
+.container-pagina p {
+    margin-bottom: 20px;
+}
+
+.bloco-conta {
+    margin-bottom: 25px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.bloco-conta h3 {
+    margin-bottom: 10px;
+    font-family: var(--fonte-secundaria);
+    color: var(--cor-laranja);
+}
+
+.bloco-conta input,
+.bloco-conta select {
+    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-family: var(--fonte-auxiliar);
+    margin-bottom: 10px;
+}
+
+.botao-acao {
+    background-color: var(--cor-laranja);
+    color: var(--cor-botao-texto);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-family: var(--fonte-secundaria);
+    cursor: pointer;
+}
+
+.botao-acao.cancelar {
+    background-color: var(--cor-vermelha);
+}
+
+.botao-acao:hover {
+    background-color: var(--cor-vermelha);
+}
+
+.botao-voltar {
+    display: inline-block;
+    margin-top: 30px;
+    background-color: var(--cor-laranja);
+    color: var(--cor-botao-texto);
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-family: var(--fonte-secundaria);
+}
+
+.botao-voltar:hover {
+    background-color: var(--cor-botao-hover);
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .container-pagina {
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .container-pagina h1 {
+        font-size: 22px;
+        text-align: center;
+    }
+
+    .container-pagina p {
+        font-size: 15px;
+        text-align: center;
+    }
+
+    .bloco-conta {
+        padding: 16px;
+    }
+
+    .bloco-conta h3 {
+        font-size: 16px;
+    }
+
+    .bloco-conta input,
+    .bloco-conta select {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .botao-acao,
+    .botao-voltar {
+        width: 100%;
+        text-align: center;
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .campo-senha input {
+        padding-right: 36px;
+    }
+
+    .icone-senha {
+        font-size: 16px;
+        top: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container-pagina {
+        padding: 16px;
+    }
+
+    .bloco-conta {
+        padding: 14px;
+    }
+
+    .bloco-conta h3 {
+        font-size: 15px;
+    }
+
+    .bloco-conta input,
+    .bloco-conta select {
+        font-size: 13px;
+        padding: 7px;
+    }
+
+    .botao-acao,
+    .botao-voltar {
+        font-size: 13px;
+        padding: 8px;
+    }
+
+    .icone-senha {
+        font-size: 15px;
+        top: 7px;
+    }
+}

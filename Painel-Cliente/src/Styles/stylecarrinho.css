@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Epunda+Sans:ital,wght@0,300..900;1,300..900&family=Epunda+Slab:ital,wght@0,300..900;1,300..900&family=Oswald:wght@200..700&display=swap');
+
+:root {
+  --cor-vermelha: #D62828;
+  --cor-laranja: #F77F00;
+  --cor-fundo: #ffffff;
+  --cor-texto: #2b2b2b;
+  --cor-clara: #f9f9f9;
+  --cor-botao: var(--cor-laranja);
+  --cor-botao-hover: #ff9f1c;
+  --cor-botao-texto: #ffffff;
+  --fonte-principal: "Epunda Slab", serif;
+  --fonte-secundaria: "Oswald", sans-serif;
+  --fonte-auxiliar: "Epunda Sans", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background-color: var(--cor-fundo);
+  font-family: var(--fonte-principal);
+}
+
+.painel-eventos {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: var(--cor-clara);
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.painel-eventos h1 {
+  color: var(--cor-laranja);
+  font-family: var(--fonte-secundaria);
+  margin-bottom: 20px;
+}
+
+.grade-eventos {
+  display: flex;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.cartao-evento {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 24px 28px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.cartao-evento:hover {
+  transform: scale(1.03);
+}
+
+.cartao-evento h3 {
+  margin-bottom: 10px;
+  font-family: var(--fonte-secundaria);
+  color: var(--cor-laranja);
+}
+
+.cartao-evento p {
+  margin: 5px 0;
+  font-size: 15px;
+}
+
+.tempo-restante {
+  color: var(--cor-vermelha);
+  font-weight: bold;
+}
+
+.bloco-ingressos {
+  margin-top: 15px;
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.bloco-ingressos h4 {
+  margin-bottom: 8px;
+  font-family: var(--fonte-secundaria);
+  color: #fff;
+}
+
+.bloco-ingressos ul {
+  list-style: none;
+  padding: 0;
+}
+
+.bloco-ingressos li {
+  margin-bottom: 6px;
+  font-size: 15px;
+  color: #fff;
+}
+
+.etiqueta {
+  background-color: rgba(255,255,255,0.2);
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  margin-left: 8px;
+  color: #fff;
+}
+
+.acoes-evento {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.botao-cancelar {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #000000;
+  border: 1px solid #000000;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  display: inline-block;
+  margin-top: 10px;
+  font-family: var(--fonte-principal);
+}
+
+.botao-cancelar:hover {
+  background-color: var(--cor-fundo);
+}
+
+.botao-voltar {
+  display: inline-block;
+  margin-top: 30px;
+  background-color: var(--cor-laranja);
+  color: var(--cor-botao-texto);
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-family: var(--fonte-secundaria);
+}
+
+/* Cards com gradiente */
+.cartao-evento.aurora {
+  background: linear-gradient(135deg, #FF4D6D, #F77F00, #6A00F4);
+  color: #ffffff;
+  border: none;
+}
+
+.cartao-evento.aurora h3,
+.cartao-evento.aurora p {
+  color: #ffffff;
+}
+
+.cartao-evento.inovacao {
+  background: linear-gradient(135deg, #08165c, #6C63FF);
+  color: #F5F5F5;
+  border: none;
+}
+
+.cartao-evento.inovacao h3,
+.cartao-evento.inovacao p {
+  color: #F5F5F5;
+}
+
+.cartao-evento.ballet {
+  background: linear-gradient(135deg, #f8cdda, #f1a7f1);
+  color: #fff;
+  border: none;
+}
+
+.cartao-evento.ballet h3,
+.cartao-evento.ballet p {
+  color: #000000;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 768px) {
+  .grade-eventos {
+    flex-direction: column;
+    display: flex;
+  }
+
+  .cartao-evento {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .botao-voltar {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .grade-eventos {
+    grid-template-columns: 1fr;
+  }
+}

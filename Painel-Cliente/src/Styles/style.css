@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--cor-clara);
+    font-family: var(--fonte-principal);
+}
+
+.painel-conta {
+    max-width: 1000px;
+    background-color: var(--cor-fundo);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.painel-conta h1 {
+    font-family: var(--fonte-secundaria);
+    color: var(--cor-vermelha);
+    margin-bottom: 10px;
+}
+
+.painel-conta p {
+    font-family: var(--fonte-auxiliar);
+    margin-bottom: 30px;
+}
+
+.opcoes-conta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+}
+
+.card-opcao {
+    background-color: var(--cor-fundo);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    text-decoration: none;
+    color: var(--cor-texto);
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.card-opcao:hover {
+    background-color: var(--cor-botao-hover);
+    color: var(--cor-botao-texto);
+}
+
+.card-opcao span {
+    font-size: 24px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.card-opcao h2 {
+    font-family: var(--fonte-secundaria);
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.card-opcao p {
+    font-size: 14px;
+    font-family: var(--fonte-auxiliar);
+}
+
+.card-opcao.sair {
+    background-color: var(--cor-vermelha);
+    color: var(--cor-botao-texto);
+}
+
+.card-opcao.sair:hover {
+    background-color: #c91f1f;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 768px) {
+    .painel-conta {
+        padding: 20px;
+        border-radius: 8px;
+    }
+
+    .opcoes-conta {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .card-opcao {
+        padding: 16px;
+        font-size: 14px;
+    }
+
+    .card-opcao span {
+        font-size: 20px;
+    }
+
+    .card-opcao h2 {
+        font-size: 16px;
+    }
+
+    .card-opcao p {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .painel-conta {
+        padding: 16px;
+    }
+
+    .card-opcao {
+        padding: 14px;
+    }
+
+    .card-opcao span {
+        font-size: 18px;
+    }
+
+    .card-opcao h2 {
+        font-size: 15px;
+    }
+
+    .card-opcao p {
+        font-size: 12px;
+    }
+}
