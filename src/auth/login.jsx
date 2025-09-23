@@ -64,7 +64,7 @@ function Login() {
             required
           />
           <span className="eye-icon" onClick={togglePassword}>
-            {showPassword ? "🔒" : "👁️"}
+            {showPassword ? "👁️" : "🔒"}
           </span>
         </div>
 

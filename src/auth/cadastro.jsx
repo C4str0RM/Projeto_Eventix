@@ -100,7 +100,7 @@ function Cadastro() {
             required
           />
           <span className="eye-icon" onClick={() => setShowPassword(!showPassword)}>
-            {showPassword ? "🔒" : "👁️"}
+            {showPassword ? "👁️" : "🔒"}
           </span>
         </div>
 
@@ -118,7 +118,7 @@ function Cadastro() {
             required
           />
           <span className="eye-icon" onClick={() => setShowConfirm(!showConfirm)}>
-            {showConfirm ? "🔒" : "👁️"}
+            {showConfirm ? "👁️" : "🔒"}
           </span>
         </div>
 
