@@ -83,7 +83,7 @@ const DetalhesConta = () => {
             onChange={(e) => setSenha(e.target.value)}
           />
           <span className="icone-senha" onClick={() => setMostrarSenha(!mostrarSenha)}>
-            {mostrarSenha ? '🔒' : '👁️'}
+            {mostrarSenha ? '👁️' : '🔒'}
           </span>
         </div>
 
@@ -95,7 +95,7 @@ const DetalhesConta = () => {
             onChange={(e) => setConfirmacao(e.target.value)}
           />
           <span className="icone-senha" onClick={() => setMostrarConfirmacao(!mostrarConfirmacao)}>
-            {mostrarConfirmacao ? '🔒' : '👁️'}
+            {mostrarConfirmacao ? '👁️' : '🔒'}
           </span>
         </div>
 
