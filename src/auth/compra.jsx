@@ -11,8 +11,6 @@ function Compra() {
   const navigate = useNavigate()
   const [carrinho, setCarrinho] = useState([])
 
-
-
   const adicionarAoCarrinho = (ingresso) => {
     setCarrinho((prev) => [...prev, ingresso])
   }
