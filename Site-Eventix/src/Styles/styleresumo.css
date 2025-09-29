@@ -1,0 +1,199 @@
+.resumo-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  font-family: "Segoe UI", sans-serif;
+}
+
+.resumo-container h1 {
+  margin-bottom: 20px;
+ font-family: "Oswald", sans-serif;
+}
+
+.resumo-container p {
+  margin-bottom: 25px;
+    font-family: "Epunda Slab", serif;
+}
+
+.resumo-cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.resumo-card {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  flex: 1;
+  min-width: 200px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.resumo-card h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  font-family: "Epunda Slab", serif;
+}
+
+.resumo-card p {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ff7a00;
+}
+
+.resumo-card .resumo-ativo {
+  color: #e1002a;
+}
+
+.resumo-mensagem {
+  margin-top: 30px;
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 8px;
+  font-family: "Arial", sans-serif;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.resumo-voltar {
+  display: inline-block;
+  margin-top: 30px;
+  background-color: #ff7a00;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-family: "Oswald", sans-serif;
+}
+
+.resumo-voltar:hover {
+  background-color: #ff5722;
+}
+
+.resumo-evento {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  margin-top: 30px;
+  font-family: "Arial", sans-serif;
+  text-align: center;
+}
+
+.resumo-evento h3 {
+  color: #e1002a;
+  font-family: "Epunda Slab", serif;
+  margin-bottom: 10px;
+}
+
+.resumo-evento p {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 768px) {
+  .resumo-container {
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  .resumo-container h1 {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .resumo-container p {
+    font-size: 15px;
+    text-align: center;
+  }
+
+  .resumo-cards {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .resumo-card {
+    padding: 16px;
+    min-width: unset;
+  }
+
+  .resumo-card h3 {
+    font-size: 15px;
+  }
+
+  .resumo-card p {
+    font-size: 16px;
+  }
+
+  .resumo-mensagem {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .resumo-voltar {
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .resumo-evento {
+    padding: 16px;
+  }
+
+  .resumo-evento h3 {
+    font-size: 18px;
+  }
+
+  .resumo-evento p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .resumo-container {
+    padding: 16px;
+  }
+
+  .resumo-card {
+    padding: 14px;
+  }
+
+  .resumo-card h3 {
+    font-size: 14px;
+  }
+
+  .resumo-card p {
+    font-size: 15px;
+  }
+
+  .resumo-mensagem {
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  .resumo-voltar {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  .resumo-evento {
+    padding: 14px;
+  }
+
+  .resumo-evento h3 {
+    font-size: 16px;
+  }
+
+  .resumo-evento p {
+    font-size: 13px;
+  }
+}

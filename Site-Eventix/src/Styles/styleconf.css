@@ -1,0 +1,476 @@
+.conferencia-wrapper {
+  background-color: #1b1f3b;
+  color: #222;
+  font-family: "Epunda Slab", serif;
+  line-height: 1.6;
+  font-size: 1.1em;
+  padding: 20px;
+}
+
+.banner-conferencia {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: #000;
+  overflow: hidden;
+}
+
+.banner-conferencia img {
+  width: 100%;
+  max-width: 1170px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.cabecalho-conferencia {
+  background: linear-gradient(90deg, #7f00ff, #003366);
+  color: #fff;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.cabecalho-conferencia h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+  font-family: "Epunda Sans", sans-serif;
+}
+
+.cabecalho-conferencia p {
+  font-size: 1.1em;
+}
+
+.bloco-destaque {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  background-color: #2c2f4a;
+  padding: 30px 20px;
+  margin: 40px auto 20px;
+  max-width: 960px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.info-conferencia {
+  flex: 1;
+}
+
+.info-conferencia h2 {
+  color: #6c63ff;
+  font-size: 1.6em;
+  margin-bottom: 10px;
+  font-family: "Epunda Sans", sans-serif;
+  text-align: left;
+}
+
+.info-conferencia p {
+  margin-bottom: 6px;
+  font-family: "Epunda Sans", sans-serif;
+  text-align: left;
+  color: #fff;
+}
+
+.cta-inscricao {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(#7f00ff, #003366);
+  border-radius: 2em;
+  padding: 30px 20px;
+  max-width: 960px;
+  margin: 40px auto;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.btn-inscrever {
+  background-color: #2C2F4A;
+  color: #fff;
+  padding: 14px 32px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: "Epunda Slab", serif;
+  font-size: 1.1em;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  display: inline-block;
+  margin-bottom: 12px;
+}
+
+.btn-inscrever:hover {
+  background-color: #08165c;
+  color: #fff;
+}
+
+.cta-inscricao p {
+  font-family: "Epunda Sans", sans-serif;
+  font-size: 1em;
+  color: #fff;
+  margin: 0;
+}
+
+.secao-conteudo {
+  max-width: 960px;
+  margin: 30px auto 40px;
+  padding: 20px;
+  background-color: #2c2f4a;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.secao-conteudo h2 {
+  font-family: "Epunda Sans", sans-serif;
+  font-size: 1.4em;
+  color: #7f00ff;
+  margin-bottom: 16px;
+}
+
+.secao-conteudo ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.secao-conteudo ul li {
+  margin-bottom: 8px;
+  font-family: "Epunda Sans", sans-serif;
+   color: #fff;
+}
+
+.secao-conteudo p {
+  font-family: "Epunda Sans", sans-serif;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.contador-conferencia {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 1000;
+  background: linear-gradient(90deg, #7f00ff, #003366);
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 25px;
+  font-size: 1.3em;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+  font-family: "Epunda Sans", sans-serif;
+  letter-spacing: 1px;
+  width: fit-content;
+  min-width: 220px;
+  transition: transform 0.3s ease;
+  animation: pulse 2.5s infinite;
+  pointer-events: none;
+}
+
+.contador-conferencia .contador-evento:hover {
+  transform: scale(1.02);
+}
+
+.contador-conferencia .contador-evento h3 {
+  margin: 0;
+  font-size: 1em;
+  font-weight: 500;
+  color: #ffe6ff;
+}
+
+.contador-conferencia .contador-evento p {
+  margin: 4px 0 0;
+  font-size: 1.4em;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.beneficios-pagamento {
+  list-style: none;
+  padding-left: 0;
+  margin: 20px 0;
+  text-align: left;
+  color: #cccccc;
+}
+
+.beneficios-pagamento li {
+  margin-bottom: 10px;
+  font-size: 1em;
+  position: relative;
+  padding-left: 24px;
+}
+
+.beneficios-pagamento li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #7f00ff;
+  font-weight: bold;
+}
+
+.info-pag {
+  margin-top: 20px;
+  font-size: 0.95em;
+  color: #cccccc;
+}
+
+.info-pag{
+    font-size: 1.1rem;
+  color: #ffffff;
+  background-color: #2c2f4a;
+  padding: 10px 20px;
+  border-radius: 8px;
+  margin-top: 10px;
+  display: inline-block;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+.formas-pagamento {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.formas-pagamento h3 {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  color: #7f00ff;
+}
+
+.formas-pagamento ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.formas-pagamento li {
+  margin-bottom: 8px;
+  font-size: 0.95em;
+  padding-left: 24px;
+  position: relative;
+  color: #fff;
+}
+
+.formas-pagamento li::before {
+  content: "💰";
+  position: absolute;
+  left: 0;
+}
+
+.form-inscricao {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-inscricao label {
+  font-weight: bold;
+  font-family: "Oswald", sans-serif;
+}
+
+.form-inscricao input,
+.form-inscricao select {
+  padding: 0.6rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  font-family: "Epunda Sans", sans-serif;
+}
+
+.form-inscricao .btn-pagar {
+  background: linear-gradient(90deg, #7f00ff, #e100ff); 
+  color: #fff;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-inscricao .btn-pagar:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(90deg, #c77dff, #7f00ff);
+}
+
+.resumo-topo {
+  max-width: 600px;
+  margin: 20px auto;
+  background-color: #2c2f4a;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  color: #ffffff;
+  font-family: "Epunda Slab", serif;
+}
+
+.resumo-topo h2 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  color: #7f00ff;
+}
+
+.resumo-topo p {
+  font-size: 1rem;
+  margin: 0.3rem 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.finalizacao-container {
+  max-width: 600px;
+  padding: 30px;
+  background-color: #2c2f4a;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.3);
+  font-family: "Epunda Slab", serif;
+  color: #ffffff;
+  animation: fadeIn 0.6s ease-in;
+}
+
+.pagina-centralizada {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 40px 20px;
+  background-color: #1a1a2e;
+}
+
+.finalizacao-container h1 {
+  font-size: 2rem;
+  color: #7f00ff;
+  margin-bottom: 1rem;
+}
+
+.finalizacao-container p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.finalizacao-destaque {
+  font-size: 1.2rem;
+  color: #c77dff;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+.vitalicio-container {
+  max-width: 640px;
+  margin: 60px auto;
+  padding: 30px;
+  background-color: #2c2f4a;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.3);
+  font-family: "Epunda Slab", serif;
+  color: #ffffff;
+  animation: fadeIn 0.6s ease-in;
+}
+
+.vitalicio-container h1 {
+  font-size: 2rem;
+  color: #7f00ff;
+  margin-bottom: 1rem;
+}
+
+.vitalicio-container p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.vitalicio-beneficios {
+  list-style: none;
+  padding-left: 0;
+  margin: 20px 20px;
+  text-align: left;
+}
+
+.vitalicio-beneficios li {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  padding-left: 24px;
+  position: relative;
+  color: #cccccc;
+}
+
+.vitalicio-beneficios li::before {
+  content: "🌟";
+  position: absolute;
+  left: 0;
+  color: #7f00ff;
+  font-weight: bold;
+}
+
+.vitalicio-destaque {
+  font-size: 1.2rem;
+  color: #c77dff;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+.secao-conteudo-pag{
+    max-width: 600px;
+  margin: 40px auto;
+  background-color: #2c2f4a;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.secao-conteudo-pag h2{
+  color: #fff;
+  font-family: "Epunda Sans", sans-serif";
+}
+
+.secao-conteudo-pag p{
+  color: #fff;
+  font-family: "Epunda Sans", sans-serif";
+}
+.btn-final{
+   background-color: #2e74ff;
+  color: white;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 8px;
+  font-family: "Epunda Slab", serif;
+  font-weight: bold;
+  font-size: 1em;
+  cursor: pointer;
+  margin-top: 20px;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-final:hover{
+   background-color: #4540d6;
+  transform: scale(1.05);
+}

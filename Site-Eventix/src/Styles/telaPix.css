@@ -1,0 +1,91 @@
+.pix-page-wrapper {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: linear-gradient(25deg, #ff5e7d, #7f00ff, #f77f00);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Epunda Slab", serif;
+}
+
+.pix-page-wrapper .pix-container {
+  max-width: 600px;
+  width: 90%;
+  margin: 2rem auto;
+  text-align: center;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+.pix-page-wrapper .pix-box {
+  margin-top: 2rem;
+}
+
+.pix-page-wrapper .pix-qr {
+  width: 200px;
+  height: 200px;
+}
+
+.pix-page-wrapper .pix-valor {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+
+.pix-page-wrapper .pix-chave {
+  font-family: monospace;
+  color: #333;
+  margin-top: 0.5rem;
+}
+
+.pix-page-wrapper .btn-voltar {
+  margin-top: 2rem;
+  padding: 0.8rem 1.5rem;
+  background-color: #f77f00;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pix-page-wrapper .btn-voltar:hover {
+  background-color: #ffd700;
+  color: #000;
+}
+
+.pix-page-wrapper footer {
+  text-align: center;
+  padding: 16px;
+  font-size: 0.8rem;
+  color: #000;
+  margin-top: 30px;
+  font-family: "Epunda Slab", serif;
+}
+
+@media (max-width: 480px) {
+  .pix-page-wrapper .pix-container {
+    padding: 1.5rem;
+    margin: 1.5rem auto;
+  }
+
+  .pix-page-wrapper .pix-qr {
+    width: 160px;
+    height: 160px;
+  }
+
+  .pix-page-wrapper .btn-voltar {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+  }
+
+  .pix-page-wrapper footer {
+    padding: 12px;
+    font-size: 0.75rem;
+    margin-top: 20px;
+  }
+}

@@ -1,0 +1,119 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.contato-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+.contato-wrapper {
+  background-color: #ffffff;
+  padding: 40px 20px;
+  font-family: "Segoe UI", sans-serif;
+  color: #333333;
+  max-width: 800px;
+  margin: auto;
+}
+
+.contato-wrapper h2 {
+  color: #e1002a;
+  margin-bottom: 10px;
+  font-family: "Oswald", sans-serif;
+}
+
+.contato-wrapper p {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-family: "Epunda Slab", serif;
+}
+
+.contato-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-family: "Epunda Slab", serif;
+}
+
+.contato-form input,
+.contato-form textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: "Epunda Sans", sans-serif;
+}
+
+.contato-botao {
+  background-color: #ff7a00;
+  color: #ffffff;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contato-botao:hover {
+  background-color: #ff5722;
+}
+
+.contato-footer {
+  background-color: #ffffff;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 40px;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 768px) {
+  .contato-wrapper {
+    padding: 30px 15px;
+  }
+
+  .contato-form input,
+  .contato-form textarea {
+    font-size: 1rem;
+  }
+
+  .contato-botao {
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  .contato-footer {
+    font-size: 0.8rem;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contato-wrapper h2 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .contato-wrapper p {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .contato-form {
+    gap: 12px;
+  }
+
+  .contato-form input,
+  .contato-form textarea {
+    font-size: 0.95rem;
+  }
+
+  .contato-botao {
+    width: 100%;
+    font-size: 0.95rem;
+  }
+}

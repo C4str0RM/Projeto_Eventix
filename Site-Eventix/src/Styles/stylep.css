@@ -1,0 +1,325 @@
+.compra-page-wrapper {
+  font-family: "Epunda Sans", sans-serif;
+  background: linear-gradient(25deg, #ff5e7d, #b388eb, #f77f00);
+  color: black;
+  padding: 20px;
+}
+
+.compra-page-wrapper .banner-festival {
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+}
+
+.compra-page-wrapper .banner-festival img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.compra-page-wrapper .festa-header {
+  background: linear-gradient(90deg, #f77f00, #ff5e7d, #b388eb);
+  color: #2b2b2b;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.compra-page-wrapper .festa-header h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+  font-family: "Epunda Slab", serif;
+}
+
+.compra-page-wrapper .festa-header p {
+  font-size: 1.3em;
+  font-style: italic;
+}
+
+.compra-page-wrapper .compra-page {
+  display: block;
+  padding: 2rem 1.2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.compra-page-wrapper .ingressos h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-family: "Epunda Slab", serif;
+  color: #000;
+  margin-bottom: 2rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.compra-page-wrapper .ingressos h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: #ff5e7d;
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+}
+
+.compra-page-wrapper .ingressos ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.2rem;
+}
+
+.compra-page-wrapper .ingresso-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  padding: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #ffffff;
+}
+
+.compra-page-wrapper .ingresso-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
+}
+
+.compra-page-wrapper .badge {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.6rem;
+  background-color: rgba(0, 0, 0, 0.05);
+  padding: 0.2rem 0.5rem;
+  font-size: 0.75rem;
+  border-radius: 4px;
+  font-weight: bold;
+  font-family: "Epunda Sans", sans-serif;
+}
+
+/* Tipos de ingresso */
+.compra-page-wrapper .ingresso-card.vip {
+  background: linear-gradient(135deg, #d62828, #f77f00);
+}
+.compra-page-wrapper .ingresso-card.premium {
+  background: linear-gradient(135deg, #ffd700, #ffb347);
+}
+.compra-page-wrapper .ingresso-card.camarote {
+  background: linear-gradient(135deg, #eeeeee, #dddddd);
+}
+.compra-page-wrapper .ingresso-card.camarote-plus {
+  background: linear-gradient(135deg, #cfcfcf, #eaeaea);
+}
+.compra-page-wrapper .ingresso-card.pcd {
+  background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+}
+.compra-page-wrapper .ingresso-card.social {
+  background: linear-gradient(135deg, #d4fc79, #96e6a1);
+}
+.compra-page-wrapper .ingresso-card.estudante {
+  background: linear-gradient(135deg, #89f7fe, #66a6ff);
+}
+.compra-page-wrapper .ingresso-card.pista {
+  background: linear-gradient(135deg, #ed9639, #ff9f1c);
+}
+
+.compra-page-wrapper .ingresso-card .info span {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.compra-page-wrapper .ingresso-card .info p {
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+  font-family: "Epunda Slab", serif;
+}
+
+.compra-page-wrapper .ingresso-card button {
+  background-color: #f77f00;
+  color: #ffffff;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.compra-page-wrapper .ingresso-card button:hover {
+  background-color: #ff9f1c;
+}
+
+.compra-page-wrapper .observacao {
+  font-size: 0.7rem;
+  color: #555;
+  text-align: right;
+  margin-top: 0.5rem;
+  margin-left: 0.3rem;
+  font-style: italic;
+  font-family: "Epunda Slab", serif;
+}
+
+.compra-page-wrapper .carrinho-fixo {
+  background-color: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  font-family: "Epunda Sans", sans-serif;
+  margin-top: 3rem;
+}
+
+.compra-page-wrapper .carrinho-fixo h2 {
+  font-family: "Oswald", sans-serif;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.compra-page-wrapper .carrinho-fixo ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 1rem;
+}
+
+.compra-page-wrapper .carrinho-fixo li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 0.6rem 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 4px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  font-size: 0.95rem;
+}
+
+.compra-page-wrapper .carrinho-fixo p {
+  text-align: right;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+.compra-page-wrapper .carrinho-fixo p strong {
+  font-size: 1.2rem;
+  color: #d62828;
+}
+
+.compra-page-wrapper .botoes-carrinho {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.compra-page-wrapper .btn-finalizar {
+  background-color: #f77f00;
+  color: #ffffff;
+  border: none;
+  padding: 0.6rem 1rem;
+  font-size: 0.85rem;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.compra-page-wrapper .btn-finalizar:hover {
+  background-color: #ff9f1c;
+}
+
+.compra-page-wrapper .btn-limpar {
+  background-color: transparent;
+  color: #000;
+  border: 1.5px solid #d62828;
+  padding: 0.6rem 1rem;
+  font-size: 0.85rem;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.compra-page-wrapper .btn-limpar:hover {
+  background-color: #d62828;
+  color: white;
+}
+
+.compra-page-wrapper .btn-finalizar,
+.compra-page-wrapper .btn-limpar {
+  flex: 1;
+  text-align: center;
+}
+
+.compra-page-wrapper .destaques-eventos {
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 2rem;
+}
+
+.compra-page-wrapper .destaques-eventos h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  font-family: "Epunda Slab", serif;
+  color: #000;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.compra-page-wrapper .cards-destaques {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.compra-page-wrapper .card-destaque {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 1.2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-family: "Epunda Sans", sans-serif;
+}
+
+.compra-page-wrapper .card-destaque:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.compra-page-wrapper .card-destaque h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.6rem;
+  color: #f77f00;
+  font-family: "Epunda Slab", serif;
+}
+
+.compra-page-wrapper .card-destaque p {
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .compra-page-wrapper .destaques-eventos {
+    padding: 1rem;
+  }
+
+  .compra-page-wrapper .destaques-eventos h2 {
+    font-size: 1.5rem;
+  }
+
+  .compra-page-wrapper .card-destaque h3 {
+    font-size: 1.1rem;
+  }
+
+  .compra-page-wrapper .card-destaque p {
+    font-size: 0.9rem;
+  }
+}

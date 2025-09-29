@@ -1,0 +1,105 @@
+.sucesso-page-wrapper {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: linear-gradient(25deg, #ff5e7d, #7f00ff, #f77f00);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Epunda Slab", serif;
+}
+
+.sucesso-page-wrapper .sucesso-container {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 600px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.sucesso-page-wrapper .sucesso-container h1 {
+  font-size: 2rem;
+  color: #2e7d32;
+  margin-bottom: 1rem;
+}
+
+.sucesso-page-wrapper .sucesso-container p {
+  font-size: 1.2rem;
+  color: #444;
+  margin-bottom: 2rem;
+}
+
+.sucesso-page-wrapper .btn-voltar-home {
+  background-color: #f77f00;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.sucesso-page-wrapper .btn-voltar-home:hover {
+  background-color: #ffd700;
+  color: #000;
+}
+
+.sucesso-page-wrapper footer {
+  text-align: center;
+  padding: 16px;
+  font-size: 0.8rem;
+  color: #000;
+  font-family: "Epunda Slab", serif;
+  margin-top: 30px;
+}
+
+@media (max-width: 768px) {
+  .sucesso-page-wrapper .sucesso-container {
+    width: 90%;
+    padding: 1.5rem;
+  }
+
+  .sucesso-page-wrapper .sucesso-container h1 {
+    font-size: 1.6rem;
+  }
+
+  .sucesso-page-wrapper .sucesso-container p {
+    font-size: 1rem;
+  }
+
+  .sucesso-page-wrapper .btn-voltar-home {
+    font-size: 0.95rem;
+    padding: 0.6rem 1.2rem;
+  }
+
+  .sucesso-page-wrapper footer {
+    font-size: 0.75rem;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sucesso-page-wrapper .sucesso-container {
+    width: 90%;
+    padding: 1.2rem;
+    margin: 0 auto;
+  }
+
+  .sucesso-page-wrapper .sucesso-container h1 {
+    font-size: 1.5rem;
+  }
+
+  .sucesso-page-wrapper .sucesso-container p {
+    font-size: 1rem;
+  }
+
+  .sucesso-page-wrapper .btn-voltar-home {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+  }
+}

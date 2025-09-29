@@ -1,0 +1,303 @@
+.evento-page-wrapper {
+  background: linear-gradient(25deg, #ff5e7d, #7f00ff, #f77f00);
+  color: #2b2b2b;
+  font-family: "Epunda Slab", serif;
+  line-height: 1.6;
+  font-size: 1.1em;
+  padding: 20px;
+}
+
+.evento-page-wrapper .banner-festa {
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+}
+
+.evento-page-wrapper .banner-festa img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.evento-page-wrapper .evento-header {
+  background: linear-gradient(90deg, #f77f00, #ff5e7d);
+  color: #000000;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.evento-page-wrapper .evento-header h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+  font-family: "Epunda Slab", serif;
+}
+
+.evento-page-wrapper .evento-header p {
+  font-size: 1.3em;
+  font-style: italic;
+}
+
+.evento-page-wrapper .evento-destaque {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  background-color: #f9f9f9;
+  padding: 30px 20px;
+  margin: 40px auto;
+  max-width: 960px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.evento-page-wrapper .evento-destaque p {
+  font-family: "Oswald", sans-serif;
+}
+
+.evento-page-wrapper .classificacao {
+  margin-top: 2em;
+}
+
+.evento-page-wrapper .info-principal {
+  flex: 1;
+}
+
+.evento-page-wrapper .info-principal h2 {
+  color: #000;
+  font-size: 1.6em;
+  margin-bottom: 10px;
+  font-family: "Epunda Sans", sans-serif;
+}
+
+.evento-page-wrapper .info-principal p {
+  margin-bottom: 6px;
+  font-family: "Epunda Sans", sans-serif;
+  font-size: 1.2em;
+}
+
+.evento-page-wrapper .botao-compra {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(#f77f00, #ffd700);
+  border-radius: 25px;
+  padding: 30px 20px;
+  max-width: 600px;
+  margin: 40px auto;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.evento-page-wrapper .btn-comprar {
+  background-color: #ffffff;
+  color: #2b2b2b;
+  padding: 14px 32px;
+  border-radius: 40px;
+  border: 1px solid #f5f5f5;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: "Epunda Slab", serif;
+  font-size: 1.1em;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  display: inline-block;
+  margin-bottom: 12px;
+}
+
+.evento-page-wrapper .btn-comprar:hover {
+  background-color: #f77f00;
+  color: #000;
+  border-color: #f77f00;
+}
+
+.evento-page-wrapper .botao-compra p {
+  font-family: "Epunda Slab", serif;
+  font-size: 1em;
+  color: #2b2b2b;
+  margin: 0;
+}
+
+.evento-page-wrapper section {
+  max-width: 960px;
+  margin: 30px auto;
+  padding: 20px;
+  background: linear-gradient(to bottom, #ffd700, #f77f00);
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.evento-page-wrapper section h2 {
+  font-family: "Epunda Slab", serif;
+  font-size: 1.4em;
+  color: #000;
+  margin-bottom: 16px;
+}
+
+.evento-page-wrapper section ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.evento-page-wrapper section ul li {
+  margin-bottom: 8px;
+  font-family: "Epunda Slab", serif;
+}
+
+.evento-page-wrapper section p {
+  font-family: "Epunda Slab", serif;
+  margin-bottom: 10px;
+}
+
+.evento-page-wrapper .contador-flutuante {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 1000;
+  background: linear-gradient(90deg, #7f00ff, #1a1a40);
+  color: #fff;
+  padding: 24px 28px;
+  border-radius: 25px;
+  font-size: 1.3em;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+  font-family: "Oswald", sans-serif;
+  letter-spacing: 1px;
+  width: fit-content;
+  min-width: 220px;
+  transition: transform 0.3s ease;
+  animation: pulse 2.5s infinite;
+  pointer-events: none;
+}
+
+.evento-page-wrapper .contador-flutuante .contador-evento:hover {
+  transform: scale(1.02);
+}
+
+.evento-page-wrapper .contador-flutuante .contador-evento h3 {
+  margin: 0;
+  font-size: 1em;
+  font-weight: 500;
+  color: #ffe6ff;
+}
+
+.evento-page-wrapper .contador-flutuante .contador-evento p {
+  margin: 4px 0 0;
+  font-size: 1.4em;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.evento-page-wrapper footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9em;
+  color: #000;
+  font-family: "Epunda Slab", serif;
+  margin-top: 40px;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 768px) {
+  .evento-page-wrapper .banner-festa {
+    height: 300px;
+  }
+
+  .evento-page-wrapper .evento-header h1 {
+    font-size: 1.6em;
+  }
+
+  .evento-page-wrapper .evento-header p {
+    font-size: 1.1em;
+  }
+
+  .evento-page-wrapper .evento-destaque {
+    flex-direction: column;
+    padding: 20px;
+    gap: 16px;
+  }
+
+  .evento-page-wrapper .info-principal h2 {
+    font-size: 1.4em;
+  }
+
+  .evento-page-wrapper .info-principal p {
+    font-size: 1em;
+  }
+
+  .evento-page-wrapper .botao-compra {
+    padding: 20px;
+    margin: 30px auto;
+  }
+
+  .evento-page-wrapper .btn-comprar {
+    font-size: 1em;
+    padding: 12px 28px;
+  }
+
+  .evento-page-wrapper section {
+    padding: 16px;
+  }
+
+  .evento-page-wrapper section h2 {
+    font-size: 1.3em;
+  }
+
+  .evento-page-wrapper .contador-flutuante {
+    bottom: 20px;
+    right: 20px;
+    padding: 12px 24px;
+    font-size: 1.1em;
+    min-width: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .evento-page-wrapper .evento-header h1 {
+    font-size: 1.4em;
+  }
+
+  .evento-page-wrapper .evento-header p {
+    font-size: 1em;
+  }
+
+  .evento-page-wrapper .info-principal h2 {
+    font-size: 1.2em;
+  }
+
+  .evento-page-wrapper .info-principal p {
+    font-size: 0.95em;
+  }
+
+  .evento-page-wrapper .btn-comprar {
+    font-size: 0.95em;
+    padding: 10px 24px;
+  }
+
+   .evento-page-wrapper section h2 {
+    font-size: 1.2em;
+  }
+
+  .evento-page-wrapper .contador-flutuante {
+    font-size: 1em;
+    padding: 10px 20px;
+    min-width: 160px;
+  }
+}

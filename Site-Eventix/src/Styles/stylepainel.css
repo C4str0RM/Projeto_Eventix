@@ -1,0 +1,131 @@
+.painelusuario-global * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.painelusuario-global {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.painelusuario-wrapper {
+    background-color: var(--cor-fundo);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.painelusuario-wrapper h1 {
+  font-family: "Oswald", sans-serif;
+  color: #e1002a;
+  margin-bottom: 10px;
+}
+
+.painelusuario-wrapper p {
+  font-family: "Epunda Sans", sans-serif;
+  margin-bottom: 30px;
+}
+
+.painelusuario-opcoes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.painelusuario-card {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  text-decoration: none;
+  color: #333333;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.painelusuario-card:hover {
+  background-color: #ff9f1c;
+  color: #ffffff;
+}
+
+.painelusuario-card span {
+  font-size: 24px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.painelusuario-card h2 {
+  font-family: "Oswald", sans-serif;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.painelusuario-card p {
+  font-size: 14px;
+  font-family: "Epunda Sans", sans-serif;
+}
+
+.painelusuario-card.sair {
+  background-color: #e1002a;
+  color: #ffffff;
+}
+
+.painelusuario-card.sair:hover {
+  background-color: #c91f1f;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 768px) {
+  .painelusuario-wrapper {
+    padding: 20px;
+    border-radius: 8px;
+  }
+
+  .painelusuario-opcoes {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .painelusuario-card {
+    padding: 16px;
+    font-size: 14px;
+  }
+
+  .painelusuario-card span {
+    font-size: 20px;
+  }
+
+  .painelusuario-card h2 {
+    font-size: 16px;
+  }
+
+  .painelusuario-card p {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .painelusuario-wrapper {
+    padding: 16px;
+  }
+
+  .painelusuario-card {
+    padding: 14px;
+  }
+
+  .painelusuario-card span {
+    font-size: 18px;
+  }
+
+  .painelusuario-card h2 {
+    font-size: 15px;
+  }
+
+  .painelusuario-card p {
+    font-size: 12px;
+  }
+}

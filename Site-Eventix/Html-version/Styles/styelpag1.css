@@ -1,0 +1,715 @@
+@import url('https://fonts.googleapis.com/css2?family=Epunda+Sans&family=Epunda+Slab&family=Oswald:wght@300;500;700&display=swap');
+
+:root {
+  --cor-lilás: #6C63FF;
+  --cor-azul-fosco: #08165c;
+  --cor-fundo-escuro: #1B1F3B;
+  --cor-destaque: #2C2F4A;
+  --cor-gradiente-inicio: #6C63FF;
+  --cor-gradiente-fim: #2e74ff;
+  --cor-texto-primário: #F5F5F5;
+  --cor-texto-secundario: #ccc;
+  --cor-hover: #4540d6;
+    --cor-vermelha: #D62828;
+  --cor-laranja: #F77F00;
+  --cor-botao: var(--cor-laranja);
+  --cor-botao-hover: #ff9f1c;
+
+  --fonte-primária: "Epunda Slab", serif;
+  --fonte-sec: "Oswald", sans-serif;
+  --fonte-terciária: "Epunda Sans", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--fonte-terciária);
+  background-color: var(--cor-fundo-escuro);
+  color: var(--cor-texto-primário);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  overflow: visible; 
+}
+
+.logo-img {
+  max-height: 100%;
+  height: 100px;
+  width: auto;
+  object-fit: contain;
+  transform: scale(1.2);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.logo-img:hover {
+  transform: scale(1.3);
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 60px;
+  background: linear-gradient(
+    to right,
+    var(--cor-laranja),
+    var(--cor-vermelha)
+  );
+  color: var(--cor-botao-texto);
+  font-family: var(--fonte-secundaria);
+  position: relative;
+  z-index: 10;
+}
+
+.menu .logo {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: var(--cor-botao-texto);
+  letter-spacing: 1px;
+}
+
+.menu nav {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.menu nav a {
+  text-decoration: none;
+  color: var(--cor-botao-texto);
+  font-weight: 600;
+  font-size: 1em;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: transform 0.2s, color 0.3s;
+}
+
+.menu nav a:hover {
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 20px;
+}
+
+.search-bar input {
+  padding: 8px 12px;
+  border: 2px solid var(--cor-vermelha);
+  border-radius: 6px;
+  font-size: 0.95em;
+  width: 400px;
+  font-family: var(--fonte-auxiliar);
+}
+
+.search-btn {
+  background-color: var(--cor-vermelha);
+  color: var(--cor-botao-texto);
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.search-btn:hover {
+  background-color: #a82323;
+}
+
+.btn-cadastro {
+  padding: 8px 16px;
+  background-color: var(--cor-botao);
+  color: var(--cor-botao-texto);
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.btn-cadastro:hover {
+  background-color: var(--cor-botao-hover);
+}
+
+.cart-icon {
+  position: relative;
+  font-size: 1.4em;
+  cursor: pointer;
+}
+
+.cart-count {
+  position: absolute;
+  top: -6px;
+  right: -10px;
+  background-color: #28a745;
+  color: white;
+  font-size: 0.7em;
+  padding: 2px 6px;
+  border-radius: 50%;
+}
+
+.banner-futurista {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: #000;
+  overflow: hidden;
+}
+
+.banner-futurista img {
+  width: 100%;
+  max-width: 1170px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.inscricaopag-header {
+  background: linear-gradient(90deg, var(--cor-lilás), var(--cor-azul-fosco));
+  color: var(--cor-texto-primário);
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.inscricaopag-header h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+  font-family: var(--fonte-terciária);
+}
+
+.inscricaopag-header p {
+  font-size: 1.2em;
+}
+
+.inscricaopag-destaque {
+  max-width: 600px;
+  margin: 40px auto;
+  background-color: var(--cor-destaque);
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.inscricaopag-destaque h2 {
+  color: var(--cor-texto-primário);
+  font-family: var(--fonte-terciária);
+}
+
+.info-pagamento {
+  font-size: 1.1rem;
+  color: #ffffff;
+  background-color: #2c2f4a;
+  padding: 10px 20px;
+  border-radius: 8px;
+  margin-top: 10px;
+  display: inline-block;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+.btn-paga,
+.btn-finalizacao {
+  background-color: var(--cor-gradiente-fim);
+  color: white;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 8px;
+  font-family: var(--fonte-primária);
+  font-weight: bold;
+  font-size: 1em;
+  cursor: pointer;
+  margin-top: 20px;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-paga:hover,
+.btn-finalizacao:hover {
+  background-color: var(--cor-hover);
+  transform: scale(1.05);
+}
+
+.inscricaopag-aprendizado {
+  max-width: 960px;
+  background-color: var(--cor-fundo-escuro);
+  margin: 60px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.inscricaopag-aprendizado h2 {
+  font-size: 1.8em;
+  margin-bottom: 30px;
+  color: var(--cor-texto-primário);
+  font-family: var(--fonte-terciária);
+}
+
+.cardc-aprendizado {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.cardc {
+  background-color: var(--cor-destaque);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeIn 0.6s ease-in;
+}
+
+.cardc:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.cardc .icone {
+  font-size: 2.2em;
+  display: block;
+  margin-bottom: 12px;
+  color: var(--cor-gradiente-inicio);
+}
+
+.cardc h3 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  color: var(--cor-texto-primário);
+}
+
+.cardc p {
+  font-size: 0.95em;
+  color: var(--cor-texto-secundario);
+}
+
+.beneficios-pagamento {
+  list-style: none;
+  padding-left: 0;
+  margin: 20px 0;
+  text-align: left;
+  color: var(--cor-texto-secundario);
+}
+
+.beneficios-pagamento li {
+  margin-bottom: 10px;
+  font-size: 1em;
+  position: relative;
+  padding-left: 24px;
+}
+
+.beneficios-pagamento li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: var(--cor-gradiente-inicio);
+  font-weight: bold;
+}
+
+.info-pagamento {
+  margin-top: 20px;
+  font-size: 0.95em;
+  color: var(--cor-texto-secundario);
+}
+
+.formas-pagamento {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.formas-pagamento h3 {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  color: var(--cor-gradiente-inicio);
+}
+
+.formas-pagamento ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.formas-pagamento li {
+  margin-bottom: 8px;
+  font-size: 0.95em;
+  padding-left: 24px;
+  position: relative;
+}
+
+.formas-pagamento li::before {
+  content: "💰";
+  position: absolute;
+  left: 0;
+}
+
+.form-inscricao {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-inscricao label {
+  font-weight: bold;
+  font-family: var(--fonte-sec);
+}
+
+.form-inscricao input,
+.form-inscricao select {
+  padding: 0.6rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  font-family: var(--fonte-terciária);
+}
+
+.form-inscricao .btn-pagar {
+  background: linear-gradient(90deg, var(--cor-gradiente-inicio), var(--cor-gradiente-fim)); 
+  color: #fff;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-inscricao .btn-pagar:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(90deg, var(--cor-lilás), var(--cor-gradiente-inicio));
+}
+
+.resumo-topo {
+  max-width: 600px;
+  margin: 20px auto;
+  background-color: var(--cor-destaque);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  color: var(--cor-texto-primário);
+  font-family: var(--fonte-primária);
+}
+
+.resumo-topo h2 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  color: var(--cor-gradiente-inicio);
+}
+
+.resumo-topo p {
+  font-size: 1rem;
+  margin: 0.3rem 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.finalizacao-container {
+  max-width: 600px;
+  padding: 30px;
+  background-color: var(--cor-destaque);
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.3);
+  font-family: var(--fonte-primária);
+  color: var(--cor-texto-primário);
+  animation: fadeIn 0.6s ease-in;
+}
+
+.pagina-centralizada {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 40px 20px;
+  background-color: var(--cor-fundo-escuro);
+}
+
+.finalizacao-container h1 {
+  font-size: 2rem;
+  color: var(--cor-gradiente-inicio);
+  margin-bottom: 1rem;
+}
+
+.finalizacao-container p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.finalizacao-destaque {
+  font-size: 1.2rem;
+  color: var(--cor-lilás);
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+.vitalicio-container {
+  max-width: 640px;
+  margin: 60px auto;
+  padding: 30px;
+  background-color: var(--cor-destaque);
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.3);
+  font-family: var(--fonte-primária);
+  color: var(--cor-texto-primário);
+  animation: fadeIn 0.6s ease-in;
+}
+
+.vitalicio-container h1 {
+  font-size: 2rem;
+  color: var(--cor-gradiente-inicio);
+  margin-bottom: 1rem;
+}
+
+.vitalicio-container p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.vitalicio-beneficios {
+  list-style: none;
+  padding-left: 0;
+  margin: 20px 20px;
+  text-align: left;
+}
+
+.vitalicio-beneficios li {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  padding-left: 24px;
+  position: relative;
+  color: var(--cor-texto-secundario);
+}
+
+.vitalicio-beneficios li::before {
+  content: "🌟";
+  position: absolute;
+  left: 0;
+  color: var(--cor-gradiente-inicio);
+  font-weight: bold;
+}
+
+.vitalicio-destaque {
+  font-size: 1.2rem;
+  color: var(--cor-lilás);
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+.footer {
+  background-color: #fff;
+  padding: 40px 20px;
+  font-family: var(--fonte-sec);
+  color: #777;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: center;
+  gap: 70px;
+  padding: 40px 20px;
+  background-color: #fff;
+  font-family: var(--fonte-sec);
+  color: #555;
+}
+
+.footer-col h3 {
+  margin-bottom: 10px;
+  font-size: 1.1em;
+  color: var(--cor-vermelha);
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 6px;
+}
+
+.footer-col ul li a {
+  text-decoration: none;
+  color: #2b2b2b;
+  font-size: 0.95em;
+}
+
+.footer-col ul li a:hover {
+  color: var(--cor-vermelha);
+}
+
+.footer-col img {
+  width: 30px;
+  margin-right: 10px;
+  transition: transform 0.3s;
+}
+
+.footer-col a:hover img {
+  transform: scale(1.1);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9em;
+  color: #aaa;
+  background-color: #f9f9f9;
+}
+
+.btn-formulario {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 10px;
+  background-color: var(--cor-vermelha);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-family: var(--fonte-sec);
+  font-size: 0.95em;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s, transform 0.2s;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-formulario:hover {
+  background-color: #a82323;
+  transform: scale(1.05);
+}
+/* RESPOSIVIDADE */
+
+@media (max-width: 768px) {
+  .inscricaopag-header h1 {
+    font-size: 1.6em;
+  }
+
+  .inscricaopag-header p {
+    font-size: 1em;
+  }
+
+  .inscricaopag-destaque {
+    padding: 20px;
+    margin: 20px auto;
+  }
+
+  .beneficios-pagamento,
+  .formas-pagamento ul {
+    text-align: center;
+  }
+
+  .formas-pagamento {
+    text-align: center;
+  }
+
+  .btn-paga,
+  .btn-finalizacao {
+    width: 100%;
+    font-size: 1em;
+    padding: 12px;
+  }
+
+  .form-inscricao {
+    padding: 0 10px;
+  }
+
+  .form-inscricao input,
+  .form-inscricao select {
+    font-size: 0.95rem;
+  }
+
+  .form-inscricao .btn-pagar {
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
+
+  .resumo-topo {
+    padding: 16px;
+    margin: 20px auto;
+  }
+
+  .finalizacao-container,
+  .vitalicio-container {
+    padding: 20px;
+    margin: 30px auto;
+  }
+
+  .finalizacao-container h1,
+  .vitalicio-container h1 {
+    font-size: 1.6rem;
+  }
+
+  .finalizacao-container p,
+  .vitalicio-container p {
+    font-size: 1rem;
+  }
+
+  .vitalicio-beneficios {
+    text-align: center;
+  }
+
+  .vitalicio-beneficios li {
+    padding-left: 0;
+  }
+
+  .vitalicio-beneficios li::before {
+    display: none;
+  }
+
+    .search-bar {
+    flex-direction: column;
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .search-bar input,
+  .search-btn {
+    width: 100%;
+  }
+
+  .menu {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 20px;
+  }
+
+  .menu nav {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+    align-items: center;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+  }
+}
