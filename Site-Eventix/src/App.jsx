@@ -68,7 +68,7 @@ function App() {
         <Route path="/carrinho" element={<MeusIngressos usuario={usuario} />} />
         <Route path="/detalhes" element={<DetalhesConta usuario={usuario} />} />
         <Route path="/contato" element={<Contato usuario={usuario} />} />
-        <Route path="/sobre" element={<Sobre usuario={usuario} />} /> {/* ✅ nova rota */}
+        <Route path="/sobre" element={<Sobre />} />
       </Routes>
 
       {!hideLayout && <Footer />}
