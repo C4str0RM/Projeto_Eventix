@@ -137,7 +137,7 @@ function Cadastro() {
         </div>
 
         <p className="login-link">
-          Já possui uma conta? <Link to="/">Faça login.</Link>
+          Já possui uma conta? <Link to="/login">Faça login.</Link>
         </p>
       </div>
     </div>
