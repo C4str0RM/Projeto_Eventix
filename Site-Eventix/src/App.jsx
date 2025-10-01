@@ -29,7 +29,7 @@ import Menu from "./auth/menu";
 import Footer from "./auth/footer";
 import Home from "./auth/home";
 import Contato from "./auth/contato";
-import Sobre from "./auth/sobre"; // ✅ adicionando a página Sobre
+import Sobre from "./auth/sobre"; 
 
 function App() {
   const [usuario, setUsuario] = useState(null);
