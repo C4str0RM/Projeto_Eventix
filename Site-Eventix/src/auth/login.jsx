@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { supabase } from "../config/supabaseClient";
 import "../Styles/login.css";
 
 function Login({ setUsuario }) {
   const [showPassword, setShowPassword] = useState(false);
-  const [usuarioInput, setUsuarioInput] = useState("");
+  const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
   const [erro, setErro] = useState("");
   const navigate = useNavigate();
@@ -13,20 +14,43 @@ function Login({ setUsuario }) {
     document.title = "Login | Eventix";
   }, []);
 
+  useEffect(() => {
+    const verificarUsuario = async () => {
+      const {
+        data: { user },
+      } = await supabase.auth.getUser();
+      if (user) {
+        setUsuario(user);
+        navigate("/");
+      }
+    };
+    verificarUsuario();
+  }, []);
+
   const togglePassword = () => setShowPassword(!showPassword);
 
-  const handleGoogleLogin = () => {
-    alert("Login com Google ainda não está disponível.");
+  const handleGoogleLogin = async () => {
+    await supabase.auth.signInWithOAuth({
+      provider: "google",
+      options: {
+        redirectTo: "http://localhost:5173",
+      },
+    });
   };
 
-  const handleFacebookLogin = () => {
-    alert("Login com Facebook ainda não está disponível.");
+  const handleFacebookLogin = async () => {
+    await supabase.auth.signInWithOAuth({
+      provider: "facebook",
+      options: {
+        redirectTo: "-----------", 
+      },
+    });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!usuarioInput || !senha) {
+    if (!email || !senha) {
       setErro("Preencha todos os campos.");
       return;
     }
@@ -36,8 +60,19 @@ function Login({ setUsuario }) {
       return;
     }
 
-    setUsuario({ nome: usuarioInput, logado: true });
-    navigate("/");
+    const { data, error } = await supabase.auth.signInWithPassword({
+      email,
+      password: senha,
+    });
+
+    if (error) {
+      setErro("E-mail ou senha inválidos.");
+      return;
+    }
+
+    if (data.session) {
+      navigate("/");
+    }
   };
 
   return (
@@ -48,11 +83,18 @@ function Login({ setUsuario }) {
 
           <div className="inputgroup">
             <input
-              type="text"
-              placeholder="Usuário"
-              value={usuarioInput}
-              onChange={(e) => setUsuarioInput(e.target.value)}
+              type="email"
+              placeholder="E-mail"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               required
+              className={
+                email
+                  ? /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+                    ? "input-valid"
+                    : "input-error"
+                  : ""
+              }
             />
           </div>
 
@@ -63,6 +105,7 @@ function Login({ setUsuario }) {
               value={senha}
               onChange={(e) => setSenha(e.target.value)}
               required
+              className={senha.length >= 6 ? "input-valid" : "input-error"}
             />
             <span className="eye-icon" onClick={togglePassword}>
               {showPassword ? "👁️" : "🔒"}
@@ -87,10 +130,18 @@ function Login({ setUsuario }) {
         </div>
 
         <div className="social-login">
-          <button type="button" className="google-btn" onClick={handleGoogleLogin}>
+          <button
+            type="button"
+            className="google-btn"
+            onClick={handleGoogleLogin}
+          >
             Entrar com Google
           </button>
-          <button type="button" className="facebook-btn" onClick={handleFacebookLogin}>
+          <button
+            type="button"
+            className="facebook-btn"
+            onClick={handleFacebookLogin}
+          >
             Entrar com Facebook
           </button>
         </div>

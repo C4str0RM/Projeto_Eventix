@@ -1,39 +1,20 @@
-import React, { useState } from "react";
-import { Routes, Route, useLocation } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import { supabase } from "./config/supabaseClient";
+import AppRoutes from "./AppRoutes";
 
-import Login from "./auth/login";
-import Cadastro from "./auth/cadastro";
-import RecuperarSenha from "./auth/recuperarsenha";
+import Menu from "./components/menu";
+import Footer from "./components/footer";
 
-import Evento from "./auth/evento";
-import Compra from "./auth/compra";
-import Pagamento from "./auth/pagamento";
-
-import TelaPix from "./auth/telapix";
-import Sucesso from "./auth/sucesso";
-
-import PaginaEvento from "./auth/eventoc";
-import PagamentoC from "./auth/pagamentoc";
-import Inscricao from "./auth/inscricao";
-
-import FormasPagamento from "./auth/formapagamento";
-import Finalizacao from "./auth/finalizacao";
-import Vitalicio from "./auth/vitalicio";
-
-import PainelConta from "./auth/painel";
-import ResumoConta from "./auth/resumo";
-import MeusIngressos from "./auth/carrinho";
-import DetalhesConta from "./auth/detalhes";
-
-import Menu from "./auth/menu";
-import Footer from "./auth/footer";
-import Home from "./auth/home";
-import Contato from "./auth/contato";
-import Sobre from "./auth/sobre"; 
+import { CarrinhoProvider } from "./context/CarrinhoContext";
 
 function App() {
   const [usuario, setUsuario] = useState(null);
+  const [carregandoUsuario, setCarregandoUsuario] = useState(true);
+  const [quantidadeCarrinho, setQuantidadeCarrinho] = useState(0);
+
   const location = useLocation();
+  const navigate = useNavigate();
 
   const hideLayout = [
     "/login",
@@ -43,36 +24,98 @@ function App() {
     "/sucesso",
   ].includes(location.pathname);
 
-  return (
-    <>
-      {!hideLayout && <Menu usuario={usuario} />}
+  const buscarQuantidadeCarrinho = async (usuarioId) => {
+    const { data, error } = await supabase
+      .from("carrinho")
+      .select("quantidade")
+      .eq("usuario_id", usuarioId);
 
-      <Routes>
-        <Route path="/" element={<Home usuario={usuario} />} />
-        <Route path="/login" element={<Login setUsuario={setUsuario} />} />
-        <Route path="/cadastro" element={<Cadastro />} />
-        <Route path="/recuperarsenha" element={<RecuperarSenha />} />
-        <Route path="/evento" element={<Evento />} />
-        <Route path="/compra" element={<Compra />} />
-        <Route path="/pagamento" element={<Pagamento />} />
-        <Route path="/telapix" element={<TelaPix />} />
-        <Route path="/sucesso" element={<Sucesso />} />
-        <Route path="/eventoc" element={<PaginaEvento />} />
-        <Route path="/pagamentoc" element={<PagamentoC />} />
-        <Route path="/inscricao" element={<Inscricao />} />
-        <Route path="/formapagamento" element={<FormasPagamento />} />
-        <Route path="/finalizacao" element={<Finalizacao />} />
-        <Route path="/vitalicio" element={<Vitalicio />} />
-        <Route path="/painel" element={<PainelConta usuario={usuario} />} />
-        <Route path="/resumo" element={<ResumoConta usuario={usuario} />} />
-        <Route path="/carrinho" element={<MeusIngressos usuario={usuario} />} />
-        <Route path="/detalhes" element={<DetalhesConta usuario={usuario} />} />
-        <Route path="/contato" element={<Contato usuario={usuario} />} />
-        <Route path="/sobre" element={<Sobre />} />
-      </Routes>
+    if (data) {
+      const total = data.reduce((acc, item) => acc + item.quantidade, 0);
+      setQuantidadeCarrinho(total);
+    }
+  };
+
+  const carregarPerfil = async (user) => {
+    const { data: perfil } = await supabase
+      .from("profiles")
+      .select("*")
+      .eq("id", user.id)
+      .single();
+
+    setUsuario({
+      id: user.id,
+      email: user.email,
+      logado: true,
+      usuario: perfil?.usuario,
+      nome: perfil?.nome,
+    });
+
+    await buscarQuantidadeCarrinho(user.id);
+    setCarregandoUsuario(false);
+  };
+
+  useEffect(() => {
+    const verificarSessao = async () => {
+      const {
+        data: { session },
+        error,
+      } = await supabase.auth.getSession();
+
+      if (error) {
+        console.error("Erro ao verificar sessão:", error.message);
+        setCarregandoUsuario(false);
+        return;
+      }
+
+      const user = session?.user;
+
+      if (user) {
+        await carregarPerfil(user);
+      } else {
+        setCarregandoUsuario(false);
+      }
+    };
+
+    verificarSessao();
+
+    const { data: listener } = supabase.auth.onAuthStateChange(
+      (event, session) => {
+        if (event === "SIGNED_OUT") {
+          setUsuario(null);
+          setQuantidadeCarrinho(0);
+          setCarregandoUsuario(false);
+          navigate("/");
+        } else if (session?.user) {
+          carregarPerfil(session.user);
+        }
+      }
+    );
+
+    return () => {
+      listener.subscription.unsubscribe();
+    };
+  }, []);
+
+  if (carregandoUsuario) {
+    return <p>Carregando sessão...</p>;
+  }
+
+  return (
+    <CarrinhoProvider usuario={usuario}>
+      {!hideLayout && (
+        <Menu usuario={usuario} quantidadeCarrinho={quantidadeCarrinho} />
+      )}
+
+      <AppRoutes
+        usuario={usuario}
+        setUsuario={setUsuario}
+        carregandoUsuario={carregandoUsuario}
+        setQuantidadeCarrinho={setQuantidadeCarrinho}
+      />
 
       {!hideLayout && <Footer />}
-    </>
+    </CarrinhoProvider>
   );
 }
 

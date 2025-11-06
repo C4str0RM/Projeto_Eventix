@@ -27,7 +27,6 @@ body {
   color: var(--cor-texto);
 }
 
-
 .home-container {
   padding: 20px;
 }
@@ -165,11 +164,10 @@ body {
   scroll-snap-align: start;
 }
 
-
 .banner.novos {
   flex: 0 0 auto;
-  width: 400px;     /* largura menor */
-  height: 600px;    /* altura maior */
+  width: 400px;     
+  height: 600px;   
   border-radius: 10px;
   overflow: hidden;
   scroll-snap-align: start;

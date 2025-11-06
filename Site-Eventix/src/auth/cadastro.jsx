@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { supabase } from "../config/supabaseClient";
 import "../Styles/login.css";
 
 function Cadastro() {
+  const navigate = useNavigate();
+
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
 
@@ -17,7 +20,100 @@ function Cadastro() {
     document.title = "Cadastro | Eventix";
   }, []);
 
-  const handleSubmit = (e) => {
+  useEffect(() => {
+  const verificarUsuario = async () => {
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+
+    if (user) {
+      const { data: perfilExistente } = await supabase
+        .from("profiles")
+        .select("id")
+        .eq("id", user.id);
+
+      if (!perfilExistente || perfilExistente.length === 0) {
+        const { error: insertError } = await supabase.from("profiles").insert([
+          {
+            id: user.id,
+            name: user.user_metadata?.name || "",
+            email: user.email,
+            usuario: user.user_metadata?.email?.split("@")[0] || "",
+            created_at: new Date(),
+            updated_at: new Date(),
+          },
+        ]);
+
+        if (!insertError) {
+          navigate("/");
+        }
+      } else {
+        navigate("/");
+      }
+    }
+  };
+
+  verificarUsuario();
+}, []);
+
+
+  const handleGoogleSignup = async () => {
+    await supabase.auth.signInWithOAuth({
+      provider: "google",
+      options: {
+        redirectTo: "http://localhost:5173",
+      },
+    });
+  };
+
+  const handleFacebookLogin = async () => {
+    await supabase.auth.signInWithOAuth({
+      provider: "facebook",
+      options: {
+        redirectTo: "http://localhost:5173",
+      },
+    });
+  };
+
+  const handleCadastro = async () => {
+    const { data, error } = await supabase.auth.signUp({
+      email,
+      password: senha,
+    });
+
+    if (error?.message.includes("User already registered")) {
+      setErro("Este e-mail já está cadastrado.");
+      return;
+    }
+
+    const { data: userData, error: userError } = await supabase.auth.getUser();
+
+    if (userError || !userData?.user) {
+      setErro("Erro ao obter usuário autenticado.");
+      return;
+    }
+
+    const { error: insertError } = await supabase.from("profiles").insert([
+      {
+        id: userData.user.id,
+        name: nome,
+        email: email,
+        usuario: usuario,
+        created_at: new Date(),
+        updated_at: new Date(),
+      },
+    ]);
+
+    if (insertError) {
+      setErro("Erro ao salvar perfil: " + insertError.message);
+      return;
+    }
+
+    alert("Cadastro realizado com sucesso!");
+    navigate("/login");
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!nome || !email || !usuario || !senha || !confirmarSenha) {
@@ -42,7 +138,7 @@ function Cadastro() {
     }
 
     setErro("");
-    alert("Cadastro validado com sucesso!");
+    await handleCadastro();
   };
 
   return (
@@ -99,7 +195,10 @@ function Cadastro() {
               className={senha.length >= 6 ? "input-valid" : "input-error"}
               required
             />
-            <span className="eye-icon" onClick={() => setShowPassword(!showPassword)}>
+            <span
+              className="eye-icon"
+              onClick={() => setShowPassword(!showPassword)}
+            >
               {showPassword ? "👁️" : "🔒"}
             </span>
           </div>
@@ -117,7 +216,10 @@ function Cadastro() {
               }
               required
             />
-            <span className="eye-icon" onClick={() => setShowConfirm(!showConfirm)}>
+            <span
+              className="eye-icon"
+              onClick={() => setShowConfirm(!showConfirm)}
+            >
               {showConfirm ? "👁️" : "🔒"}
             </span>
           </div>
@@ -132,8 +234,21 @@ function Cadastro() {
         </div>
 
         <div className="social-login">
-          <button type="button" className="google-btn">Cadastrar com Google</button>
-          <button type="button" className="facebook-btn">Cadastrar com Facebook</button>
+          <button
+            type="button"
+            className="google-btn"
+            onClick={handleGoogleSignup}
+          >
+            Cadastrar com Google
+          </button>
+
+          <button
+            type="button"
+            className="facebook-btn"
+            onClick={handleFacebookLogin}
+          >
+            Cadastrar com Facebook
+          </button>
         </div>
 
         <p className="login-link">

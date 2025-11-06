@@ -34,6 +34,7 @@ function RecuperarSenha() {
     };
 
     return (
+        <div className="recuper-bg">
         <div className="container">
            <form className="recuperar-form" onSubmit={handleSubmit}>
                 <h2>Recuperação de Senha</h2>
@@ -74,11 +75,12 @@ function RecuperarSenha() {
                 )}
             </form>
             <div className="voltar-login">
-                <button type="button" onClick={() => navigate("/")}>
+                <button type="button" onClick={() => navigate("/login")}>
                     ← Voltar para o login
                 </button>
             </div>
 
+        </div>
         </div>
     );
 }
