@@ -3,93 +3,85 @@ import { Link, useNavigate } from "react-router-dom";
 import { supabase } from "../config/supabaseClient";
 import "../Styles/login.css";
 
+import { InputGroup } from "../components/InputGroup";
+import { Separador } from "../components/Separador";
+import { SocialLoginButtons } from "../components/SocialLoginButtons";
+
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { ClipLoader } from "react-spinners";
+
 function Cadastro() {
   const navigate = useNavigate();
-
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
-
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
   const [usuario, setUsuario] = useState("");
   const [senha, setSenha] = useState("");
   const [confirmarSenha, setConfirmarSenha] = useState("");
-  const [erro, setErro] = useState("");
+  const [carregando, setCarregando] = useState(false);
 
   useEffect(() => {
     document.title = "Cadastro | Eventix";
   }, []);
 
   useEffect(() => {
-  const verificarUsuario = async () => {
-    const {
-      data: { user },
-    } = await supabase.auth.getUser();
-
-    if (user) {
-      const { data: perfilExistente } = await supabase
-        .from("profiles")
-        .select("id")
-        .eq("id", user.id);
-
-      if (!perfilExistente || perfilExistente.length === 0) {
-        const { error: insertError } = await supabase.from("profiles").insert([
-          {
-            id: user.id,
-            name: user.user_metadata?.name || "",
-            email: user.email,
-            usuario: user.user_metadata?.email?.split("@")[0] || "",
-            created_at: new Date(),
-            updated_at: new Date(),
-          },
-        ]);
-
-        if (!insertError) {
+    const verificarUsuario = async () => {
+      const {
+        data: { user },
+      } = await supabase.auth.getUser();
+      if (user) {
+        const { data: perfilExistente } = await supabase
+          .from("profiles")
+          .select("id")
+          .eq("id", user.id);
+        if (!perfilExistente || perfilExistente.length === 0) {
+          const { error } = await supabase.from("profiles").insert([
+            {
+              id: user.id,
+              name: user.user_metadata?.name || "",
+              email: user.email,
+              usuario: user.user_metadata?.email?.split("@")[0] || "",
+              created_at: new Date(),
+              updated_at: new Date(),
+            },
+          ]);
+          if (!error) navigate("/");
+        } else {
           navigate("/");
         }
-      } else {
-        navigate("/");
       }
-    }
-  };
-
-  verificarUsuario();
-}, []);
-
+    };
+    verificarUsuario();
+  }, []);
 
   const handleGoogleSignup = async () => {
     await supabase.auth.signInWithOAuth({
       provider: "google",
-      options: {
-        redirectTo: "http://localhost:5173",
-      },
+      options: { redirectTo: "http://localhost:5173" },
     });
   };
 
   const handleFacebookLogin = async () => {
     await supabase.auth.signInWithOAuth({
       provider: "facebook",
-      options: {
-        redirectTo: "http://localhost:5173",
-      },
+      options: { redirectTo: "http://localhost:5173" },
     });
   };
 
   const handleCadastro = async () => {
-    const { data, error } = await supabase.auth.signUp({
-      email,
-      password: senha,
-    });
-
+    const { error } = await supabase.auth.signUp({ email, password: senha });
     if (error?.message.includes("User already registered")) {
-      setErro("Este e-mail já está cadastrado.");
+      toast.error("Este e-mail já está cadastrado.");
+      setCarregando(false);
       return;
     }
 
     const { data: userData, error: userError } = await supabase.auth.getUser();
-
     if (userError || !userData?.user) {
-      setErro("Erro ao obter usuário autenticado.");
+      toast.error("Erro ao obter usuário autenticado.");
+      setCarregando(false);
       return;
     }
 
@@ -97,47 +89,53 @@ function Cadastro() {
       {
         id: userData.user.id,
         name: nome,
-        email: email,
-        usuario: usuario,
+        email,
+        usuario,
         created_at: new Date(),
         updated_at: new Date(),
       },
     ]);
 
     if (insertError) {
-      setErro("Erro ao salvar perfil: " + insertError.message);
+      toast.error("Erro ao salvar perfil: " + insertError.message);
+      setCarregando(false);
       return;
     }
 
-    alert("Cadastro realizado com sucesso!");
+    toast.success("Cadastro realizado com sucesso!");
     navigate("/login");
+    setCarregando(false);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setCarregando(true);
 
     if (!nome || !email || !usuario || !senha || !confirmarSenha) {
-      setErro("Preencha todos os campos.");
+      toast.warn("Preencha todos os campos.");
+      setCarregando(false);
       return;
     }
 
     const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     if (!emailValido) {
-      setErro("Digite um e-mail válido.");
+      toast.warn("Digite um e-mail válido.");
+      setCarregando(false);
       return;
     }
 
     if (senha.length < 6) {
-      setErro("A senha deve ter pelo menos 6 caracteres.");
+      toast.warn("A senha deve ter pelo menos 6 caracteres.");
+      setCarregando(false);
       return;
     }
 
     if (senha !== confirmarSenha) {
-      setErro("As senhas não coincidem.");
+      toast.warn("As senhas não coincidem.");
+      setCarregando(false);
       return;
     }
 
-    setErro("");
     await handleCadastro();
   };
 
@@ -147,114 +145,74 @@ function Cadastro() {
         <form className="register-form" onSubmit={handleSubmit}>
           <h2>Cadastre-se</h2>
 
-          <div className="inputgroup">
-            <input
-              type="text"
-              placeholder="Nome completo"
-              value={nome}
-              onChange={(e) => setNome(e.target.value)}
-              className={nome ? "input-valid" : ""}
-              required
-            />
-          </div>
+          <InputGroup
+            label="Nome completo"
+            placeholder="Nome Completo"
+            type="text"
+            value={nome}
+            onChange={(e) => setNome(e.target.value)}
+            isValid={nome.length > 0}
+          />
 
-          <div className="inputgroup">
-            <input
-              type="email"
-              placeholder="E-mail"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className={
-                email
-                  ? /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
-                    ? "input-valid"
-                    : "input-error"
-                  : ""
-              }
-              required
-            />
-          </div>
+          <InputGroup
+            label="E-mail"
+            placeholder="E-mail"
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            isValid={/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)}
+          />
 
-          <div className="inputgroup">
-            <input
-              type="text"
-              placeholder="Usuário"
-              value={usuario}
-              onChange={(e) => setUsuario(e.target.value)}
-              className={usuario ? "input-valid" : ""}
-              required
-            />
-          </div>
+          <InputGroup
+            label="Usuário"
+            placeholder="Usuário"
+            type="text"
+            value={usuario}
+            onChange={(e) => setUsuario(e.target.value)}
+            isValid={usuario.length > 0}
+          />
 
-          <div className="inputgroup">
-            <input
-              type={showPassword ? "text" : "password"}
-              placeholder="Senha"
-              value={senha}
-              onChange={(e) => setSenha(e.target.value)}
-              className={senha.length >= 6 ? "input-valid" : "input-error"}
-              required
-            />
-            <span
-              className="eye-icon"
-              onClick={() => setShowPassword(!showPassword)}
-            >
-              {showPassword ? "👁️" : "🔒"}
-            </span>
-          </div>
+          <InputGroup
+            label="Senha"
+            placeholder="Senha"
+            type={showPassword ? "text" : "password"}
+            value={senha}
+            onChange={(e) => setSenha(e.target.value)}
+            showToggle
+            show={showPassword}
+            toggle={() => setShowPassword(!showPassword)}
+            isValid={senha.length >= 6}
+          />
 
-          <div className="inputgroup">
-            <input
-              type={showConfirm ? "text" : "password"}
-              placeholder="Confirmar senha"
-              value={confirmarSenha}
-              onChange={(e) => setConfirmarSenha(e.target.value)}
-              className={
-                confirmarSenha === senha && confirmarSenha.length >= 6
-                  ? "input-valid"
-                  : "input-error"
-              }
-              required
-            />
-            <span
-              className="eye-icon"
-              onClick={() => setShowConfirm(!showConfirm)}
-            >
-              {showConfirm ? "👁️" : "🔒"}
-            </span>
-          </div>
+          <InputGroup
+            label="Confirmar senha"
+            placeholder="Confirmar senha"
+            type={showConfirm ? "text" : "password"}
+            value={confirmarSenha}
+            onChange={(e) => setConfirmarSenha(e.target.value)}
+            showToggle
+            show={showConfirm}
+            toggle={() => setShowConfirm(!showConfirm)}
+            isValid={confirmarSenha === senha && confirmarSenha.length >= 6}
+          />
 
-          {erro && <p className="erro">{erro}</p>}
+          <button type="submit" disabled={carregando}>
+            {carregando ? <ClipLoader color="#fff" size={20} /> : "Cadastrar"}
+          </button>
 
-          <button type="submit">Cadastrar</button>
+          <Separador texto="ou cadastre-se com" />
+          <SocialLoginButtons
+            onGoogleClick={handleGoogleSignup}
+            onFacebookClick={handleFacebookLogin}
+          />
         </form>
-
-        <div className="separator">
-          <span>ou</span>
-        </div>
-
-        <div className="social-login">
-          <button
-            type="button"
-            className="google-btn"
-            onClick={handleGoogleSignup}
-          >
-            Cadastrar com Google
-          </button>
-
-          <button
-            type="button"
-            className="facebook-btn"
-            onClick={handleFacebookLogin}
-          >
-            Cadastrar com Facebook
-          </button>
-        </div>
 
         <p className="login-link">
           Já possui uma conta? <Link to="/login">Faça login.</Link>
         </p>
       </div>
+
+      <ToastContainer position="top-right" autoClose={3000} />
     </div>
   );
 }

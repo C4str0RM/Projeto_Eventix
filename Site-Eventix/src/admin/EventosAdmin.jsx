@@ -3,6 +3,15 @@ import { Link } from "react-router-dom";
 import { supabase } from "../config/supabaseClient";
 import "./Style/Adminpages.css";
 
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import Swal from "sweetalert2";
+
+import TabelaEventos from "../components/TabelaEventos";
+import ModalEdicao from "../components/ModalEdicao";
+import ModalNovoEvento from "../components/ModalNovoEvento";
+import CarregandoSpinner from "../components/CarregandoSpinner";
+
 const EventosAdmin = () => {
   const [eventos, setEventos] = useState([]);
   const [carregando, setCarregando] = useState(true);
@@ -18,10 +27,11 @@ const EventosAdmin = () => {
     const { data, error } = await supabase
       .from("eventos")
       .select("*")
+      .eq("deletado", false)
       .order("data", { ascending: true });
 
     if (error) {
-      console.error("Erro ao buscar eventos:", error);
+      toast.error("Erro ao buscar eventos.");
     } else {
       setEventos(data);
     }
@@ -30,15 +40,26 @@ const EventosAdmin = () => {
   };
 
   const excluirEvento = async (id) => {
-    const confirmar = window.confirm("Tem certeza que deseja excluir este evento?");
-    if (!confirmar) return;
+    const confirmar = await Swal.fire({
+      title: "Tem certeza?",
+      text: "Essa ação não poderá ser desfeita.",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonText: "Sim, excluir",
+      cancelButtonText: "Cancelar",
+    });
 
-    const { error } = await supabase.from("eventos").delete().eq("id", id);
+    if (!confirmar.isConfirmed) return;
+
+    const { error } = await supabase
+      .from("eventos")
+      .update({ deletado: true })
+      .eq("id", id);
 
     if (error) {
-      console.error("Erro ao excluir evento:", error);
-      alert("Não foi possível excluir o evento.");
+      toast.error("Não foi possível excluir o evento.");
     } else {
+      toast.success("Evento excluído com sucesso!");
       setEventos((prev) => prev.filter((evento) => evento.id !== id));
     }
   };
@@ -48,102 +69,43 @@ const EventosAdmin = () => {
     setMostrarModal(true);
   };
 
-  const ModalEdicao = () => {
-    const [titulo, setTitulo] = useState(eventoSelecionado?.titulo || "");
-    const [data, setData] = useState(eventoSelecionado?.data || "");
-    const [local, setLocal] = useState(eventoSelecionado?.local || "");
+  const salvarEdicao = async (eventoAtualizado) => {
+    const { error } = await supabase
+      .from("eventos")
+      .update({
+        titulo: eventoAtualizado.titulo,
+        data: eventoAtualizado.data,
+        local: eventoAtualizado.local,
+      })
+      .eq("id", eventoAtualizado.id);
 
-    const salvarEdicao = async () => {
-      const { error } = await supabase
-        .from("eventos")
-        .update({ titulo, data, local })
-        .eq("id", eventoSelecionado.id);
-
-      if (error) {
-        alert("Erro ao salvar edição.");
-        console.error(error);
-      } else {
-        alert("Evento atualizado com sucesso!");
-        setMostrarModal(false);
-        setEventos((prev) =>
-          prev.map((ev) =>
-            ev.id === eventoSelecionado.id ? { ...ev, titulo, data, local } : ev
-          )
-        );
-      }
-    };
-
-    return (
-      <div className="modal-admin-overlay">
-        <div className="modal-admin">
-          <h3>Editar Evento</h3>
-
-          <label>Título:</label>
-          <input value={titulo} onChange={(e) => setTitulo(e.target.value)} />
-
-          <label>Data:</label>
-          <input type="date" value={data} onChange={(e) => setData(e.target.value)} />
-
-          <label>Local:</label>
-          <input value={local} onChange={(e) => setLocal(e.target.value)} />
-
-          <div className="modal-admin-buttons">
-            <button onClick={salvarEdicao}>💾 Salvar</button>
-            <button onClick={() => setMostrarModal(false)}>❌ Cancelar</button>
-          </div>
-        </div>
-      </div>
-    );
+    if (error) {
+      toast.error("Erro ao salvar edição.");
+    } else {
+      toast.success("Evento atualizado com sucesso!");
+      setMostrarModal(false);
+      setEventos((prev) =>
+        prev.map((ev) =>
+          ev.id === eventoAtualizado.id ? eventoAtualizado : ev
+        )
+      );
+    }
   };
 
-  const ModalNovoEvento = () => {
-    const [titulo, setTitulo] = useState("");
-    const [data, setData] = useState("");
-    const [local, setLocal] = useState("");
+  const criarEvento = async (novo) => {
+    const { data: criado, error } = await supabase
+      .from("eventos")
+      .insert([novo])
+      .select()
+      .single();
 
-    const criarEvento = async () => {
-      if (!titulo || !data || !local) {
-        alert("Preencha todos os campos.");
-        return;
-      }
-
-      const { data: novoEvento, error } = await supabase
-        .from("eventos")
-        .insert([{ titulo, data, local }])
-        .select()
-        .single();
-
-      if (error) {
-        alert("Erro ao criar evento.");
-        console.error(error);
-      } else {
-        alert("Evento criado com sucesso!");
-        setEventos((prev) => [...prev, novoEvento]);
-        setMostrarNovoModal(false);
-      }
-    };
-
-    return (
-      <div className="modal-admin-overlay">
-        <div className="modal-admin">
-          <h3>Novo Evento</h3>
-
-          <label>Título:</label>
-          <input value={titulo} onChange={(e) => setTitulo(e.target.value)} />
-
-          <label>Data:</label>
-          <input type="date" value={data} onChange={(e) => setData(e.target.value)} />
-
-          <label>Local:</label>
-          <input value={local} onChange={(e) => setLocal(e.target.value)} />
-
-          <div className="modal-admin-buttons">
-            <button onClick={criarEvento}>💾 Criar</button>
-            <button onClick={() => setMostrarNovoModal(false)}>❌ Cancelar</button>
-          </div>
-        </div>
-      </div>
-    );
+    if (error) {
+      toast.error("Erro ao criar evento.");
+    } else {
+      toast.success("Evento criado com sucesso!");
+      setEventos((prev) => [...prev, criado]);
+      setMostrarNovoModal(false);
+    }
   };
 
   return (
@@ -151,50 +113,43 @@ const EventosAdmin = () => {
       <h2>📋 Gerenciar Eventos</h2>
       <p>Aqui você pode visualizar os eventos cadastrados.</p>
 
-      <button className="btn-novo-evento" onClick={() => setMostrarNovoModal(true)}>
+      <button
+        className="btn-novo-evento"
+        onClick={() => setMostrarNovoModal(true)}
+      >
         ➕ Novo Evento
       </button>
 
       {carregando ? (
-        <p>Carregando eventos...</p>
-      ) : eventos.length === 0 ? (
-        <p>Nenhum evento encontrado.</p>
+        <CarregandoSpinner texto="Carregando eventos..." />
       ) : (
-        <table className="table-eventos">
-          <thead>
-            <tr>
-              <th>Título</th>
-              <th>Data</th>
-              <th>Local</th>
-              <th>Ações</th>
-            </tr>
-          </thead>
-          <tbody>
-            {eventos.map((evento) => (
-              <tr key={evento.id}>
-                <td>{evento.titulo}</td>
-                <td>{evento.data}</td>
-                <td>{evento.local}</td>
-                <td>
-                  <button className="btn-editar" onClick={() => abrirModal(evento)}>
-                    ✏️ Editar
-                  </button>
-                  <button className="btn-excluir" onClick={() => excluirEvento(evento.id)}>
-                    🗑️ Excluir
-                  </button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+        <TabelaEventos
+          eventos={eventos}
+          onEditar={abrirModal}
+          onExcluir={excluirEvento}
+        />
       )}
 
-      {mostrarModal && <ModalEdicao />}
-      {mostrarNovoModal && <ModalNovoEvento />}
+      {mostrarModal && (
+        <ModalEdicao
+          evento={eventoSelecionado}
+          onFechar={() => setMostrarModal(false)}
+          onSalvar={salvarEdicao}
+        />
+      )}
+
+      {mostrarNovoModal && (
+        <ModalNovoEvento
+          onFechar={() => setMostrarNovoModal(false)}
+          onCriar={criarEvento}
+        />
+      )}
 
       <Link to="/admin" className="resumo-voltar">
         ⬅ Voltar ao painel
       </Link>
+
+      <ToastContainer position="top-right" autoClose={3000} />
     </div>
   );
 };

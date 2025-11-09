@@ -7,7 +7,7 @@
   padding: 20px;
 }
 
-.evento-page-wrapper .banner-festa {
+.banner-festa {
   width: 100%;
   height: 500px;
   overflow: hidden;
@@ -17,7 +17,7 @@
   background-color: #000;
 }
 
-.evento-page-wrapper .banner-festa img {
+ .banner-festa img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -25,20 +25,20 @@
   display: block;
 }
 
-.evento-page-wrapper .evento-header {
+.evento-header {
   background: linear-gradient(90deg, #f77f00, #ff5e7d);
   color: #000000;
   text-align: center;
   padding: 30px 20px;
 }
 
-.evento-page-wrapper .evento-header h1 {
+.evento-header h1 {
   font-size: 2em;
   margin-bottom: 10px;
   font-family: "Epunda Slab", serif;
 }
 
-.evento-page-wrapper .evento-header p {
+.evento-header p {
   font-size: 1.3em;
   font-style: italic;
 }

@@ -3,11 +3,15 @@ import { Link, useNavigate } from "react-router-dom";
 import { supabase } from "../config/supabaseClient";
 import "../Styles/login.css";
 
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { ClipLoader } from "react-spinners";
+
 function Login({ setUsuario }) {
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
-  const [erro, setErro] = useState("");
+  const [carregando, setCarregando] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -42,21 +46,24 @@ function Login({ setUsuario }) {
     await supabase.auth.signInWithOAuth({
       provider: "facebook",
       options: {
-        redirectTo: "-----------", 
+        redirectTo: "http://localhost:5173",
       },
     });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setCarregando(true);
 
     if (!email || !senha) {
-      setErro("Preencha todos os campos.");
+      toast.warn("Preencha todos os campos.");
+      setCarregando(false);
       return;
     }
 
     if (senha.length < 6) {
-      setErro("A senha deve ter pelo menos 6 caracteres.");
+      toast.warn("A senha deve ter pelo menos 6 caracteres.");
+      setCarregando(false);
       return;
     }
 
@@ -66,13 +73,18 @@ function Login({ setUsuario }) {
     });
 
     if (error) {
-      setErro("E-mail ou senha inválidos.");
+      toast.error("E-mail ou senha inválidos.");
+      setCarregando(false);
       return;
     }
 
     if (data.session) {
+      toast.success("Login realizado com sucesso!");
+      setUsuario(data.user);
       navigate("/");
     }
+
+    setCarregando(false);
   };
 
   return (
@@ -120,9 +132,9 @@ function Login({ setUsuario }) {
             <Link to="/recuperarsenha">Esqueci a senha</Link>
           </div>
 
-          {erro && <p className="erro">{erro}</p>}
-
-          <button type="submit">Entrar</button>
+          <button type="submit" disabled={carregando}>
+            {carregando ? <ClipLoader color="#fff" size={20} /> : "Entrar"}
+          </button>
         </form>
 
         <div className="separator">
@@ -150,6 +162,8 @@ function Login({ setUsuario }) {
           Ainda não possui uma conta? <Link to="/cadastro">Cadastre-se.</Link>
         </p>
       </div>
+
+      <ToastContainer position="top-right" autoClose={3000} />
     </div>
   );
 }

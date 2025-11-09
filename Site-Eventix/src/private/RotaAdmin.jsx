@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
 import { supabase } from "../config/supabaseClient";
 
+import CarregandoSpinner from "../components/CarregandoSpinner";
+import { toast } from "react-toastify";
+
 const RotaAdmin = ({ usuario, carregandoUsuario, children }) => {
   const [isAdmin, setIsAdmin] = useState(false);
   const [verificando, setVerificando] = useState(true);
@@ -17,7 +20,7 @@ const RotaAdmin = ({ usuario, carregandoUsuario, children }) => {
         .single();
 
       if (error || !data) {
-        console.error("Erro ao verificar admin:", error?.message);
+        toast.error("Erro ao verificar permissão de administrador.");
         setIsAdmin(false);
       } else {
         setIsAdmin(data.isAdmin === true);
@@ -32,10 +35,11 @@ const RotaAdmin = ({ usuario, carregandoUsuario, children }) => {
   }, [carregandoUsuario, usuario]);
 
   if (carregandoUsuario || verificando) {
-    return <p>Verificando acesso...</p>;
+    return <CarregandoSpinner texto="Verificando acesso..." />;
   }
 
   if (!usuario || !isAdmin) {
+    toast.error("Acesso restrito a administradores.");
     return <Navigate to="/" replace />;
   }
 

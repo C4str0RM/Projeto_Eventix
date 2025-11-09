@@ -304,15 +304,12 @@ section p {
   margin-bottom: 8px;
 }
 
-.contador-flutuante {
+.contador-conferencia {
   position: fixed;
   bottom: 30px;
   right: 30px;
   z-index: 1000;
-}
-
-.contador-flutuante {
-  background: linear-gradient(90deg, var(--cor-roxa), var(--cor-azul-escuro));
+  background: linear-gradient(90deg, #7f00ff, #003366);
   color: #fff;
   padding: 14px 28px;
   border-radius: 25px;
@@ -320,7 +317,7 @@ section p {
   font-weight: bold;
   text-align: center;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
-  font-family: var(--fonte-secundaria);
+  font-family: "Epunda Sans", sans-serif;
   letter-spacing: 1px;
   width: fit-content;
   min-width: 220px;
@@ -329,18 +326,18 @@ section p {
   pointer-events: none;
 }
 
-.contador-flutuante .contador-evento:hover {
+.contador-conferencia .contador-evento:hover {
   transform: scale(1.02);
 }
 
-.contador-flutuante .contador-evento h3 {
+.contador-conferencia .contador-evento h3 {
   margin: 0;
   font-size: 1em;
   font-weight: 500;
   color: #ffe6ff;
 }
 
-.contador-flutuante .contador-evento p {
+.contador-conferencia .contador-evento p {
   margin: 4px 0 0;
   font-size: 1.4em;
 }
@@ -349,11 +346,9 @@ section p {
   0% {
     transform: scale(1);
   }
-
   50% {
     transform: scale(1.03);
   }
-
   100% {
     transform: scale(1);
   }

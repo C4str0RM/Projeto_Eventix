@@ -5,8 +5,12 @@ import AppRoutes from "./AppRoutes";
 
 import Menu from "./components/menu";
 import Footer from "./components/footer";
+import CarregandoSpinner from "./components/CarregandoSpinner";
 
 import { CarrinhoProvider } from "./context/CarrinhoContext";
+
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   const [usuario, setUsuario] = useState(null);
@@ -30,18 +34,26 @@ function App() {
       .select("quantidade")
       .eq("usuario_id", usuarioId);
 
-    if (data) {
-      const total = data.reduce((acc, item) => acc + item.quantidade, 0);
-      setQuantidadeCarrinho(total);
+    if (error) {
+      toast.error("Erro ao buscar carrinho.");
+      return;
     }
+
+    const total = data.reduce((acc, item) => acc + item.quantidade, 0);
+    setQuantidadeCarrinho(total);
   };
 
   const carregarPerfil = async (user) => {
-    const { data: perfil } = await supabase
+    const { data: perfil, error } = await supabase
       .from("profiles")
       .select("*")
       .eq("id", user.id)
       .single();
+
+    if (error) {
+      toast.error("Erro ao carregar perfil.");
+      return;
+    }
 
     setUsuario({
       id: user.id,
@@ -63,7 +75,7 @@ function App() {
       } = await supabase.auth.getSession();
 
       if (error) {
-        console.error("Erro ao verificar sessão:", error.message);
+        toast.error("Erro ao verificar sessão.");
         setCarregandoUsuario(false);
         return;
       }
@@ -98,7 +110,7 @@ function App() {
   }, []);
 
   if (carregandoUsuario) {
-    return <p>Carregando sessão...</p>;
+    return <CarregandoSpinner texto="Carregando sessão..." />;
   }
 
   return (
@@ -115,6 +127,7 @@ function App() {
       />
 
       {!hideLayout && <Footer />}
+      <ToastContainer position="top-right" autoClose={3000} />
     </CarrinhoProvider>
   );
 }
