@@ -138,14 +138,15 @@ const Carrinho = ({ usuario }) => {
 
   return (
     <div className="carrinho-body">
-    <section className="carrinho-painel">
-      <h1>🎟️ Meus Ingressos</h1>
-      <p>
-        Olá, {usuario?.usuario || usuario?.nome || usuario?.email || "Usuário"}!{" "}
-        Aqui estão seus ingressos dos eventos que você garantiu 🎉
-      </p>
-    </section>
-    
+      <section className="carrinho-painel">
+        <h1>🎟️ Meus Ingressos</h1>
+        <p>
+          Olá,{" "}
+          {usuario?.usuario || usuario?.nome || usuario?.email || "Usuário"}!{" "}
+          Aqui estão seus ingressos dos eventos que você garantiu 🎉
+        </p>
+      </section>
+
       <div className="carrinho-grade">
         {eventos.map((evento) => (
           <div key={evento.carrinho_id} className="carrinho-card">
@@ -163,10 +164,19 @@ const Carrinho = ({ usuario }) => {
 
             <div className="carrinho-ingressos">
               <h4>🎫 Ingressos:</h4>
-              <p><strong>Tipo: </strong> {evento.tipo_ingresso}</p>
-              <p><strong>Quantidade: </strong> {evento.quantidade}</p>
-              <p><strong>Preço unitário: </strong> R$ {evento.valor_unitario.toFixed(2)}</p>
-              <p><strong>Total: R$</strong> {evento.total.toFixed(2)}</p>
+              <p>
+                <strong>Tipo: </strong> {evento.tipo_ingresso}
+              </p>
+              <p>
+                <strong>Quantidade: </strong> {evento.quantidade}
+              </p>
+              <p>
+                <strong>Preço unitário: </strong> R${" "}
+                {evento.valor_unitario.toFixed(2)}
+              </p>
+              <p>
+                <strong>Total: R$</strong> {evento.total.toFixed(2)}
+              </p>
             </div>
 
             <div className="carrinho-acoes">

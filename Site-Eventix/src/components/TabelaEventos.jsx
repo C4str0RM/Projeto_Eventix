@@ -22,10 +22,7 @@ export const TabelaEventos = ({ eventos, onEditar, onExcluir }) => {
             <td>{evento.data}</td>
             <td>{evento.local}</td>
             <td>
-              <button
-                className="btn-editar"
-                onClick={() => onEditar(evento)}
-              >
+              <button className="btn-editar" onClick={() => onEditar(evento)}>
                 ✏️ Editar
               </button>
               <button

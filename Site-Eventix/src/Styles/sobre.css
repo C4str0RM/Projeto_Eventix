@@ -27,7 +27,7 @@
 }
 
 .sobre-box h2 {
-  color: #F77F00;
+  color: #f77f00;
   margin-bottom: 15px;
   font-family: "Oswald", sans-serif;
 }
@@ -46,4 +46,35 @@
 .sobre-lista li {
   margin-bottom: 8px;
   font-family: "Epunda Sans", sans-serif;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 768px) {
+  .sobre-main {
+    padding: 0 20px;
+    gap: 20px;
+  }
+
+  .sobre-box {
+    padding: 20px;
+  }
+
+  .sobre-box h2 {
+    font-size: 1.4em;
+    text-align: center;
+  }
+
+  .sobre-box p {
+    font-size: 1em;
+    text-align: justify;
+  }
+
+  .sobre-lista {
+    margin-left: 15px;
+  }
+
+  .sobre-lista li {
+    font-size: 0.95em;
+  }
 }

@@ -26,11 +26,10 @@
   margin-top: 60px;
 }
 
-
 .filtro-horizontal {
   width: 1200px;
   height: 100px;
-  margin: 0 auto 50px auto; 
+  margin: 0 auto 50px auto;
   background-color: var(--cor-fundo);
   padding: 20px;
   border-radius: 8px;
@@ -40,7 +39,6 @@
   justify-content: center;
   animation: aparecer 0.6s ease forwards;
 }
-
 
 @keyframes aparecer {
   from {
@@ -110,4 +108,46 @@
   color: var(--cor-botao-texto);
   font-weight: bold;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 768px) {
+  .titulo-eventos-todos {
+    font-size: 1.6em;
+    margin: 30px 0 15px;
+  }
+
+  .grade-eventos-todos {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 0 20px;
+  }
+
+  .filtro-horizontal {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .filtro-horizontal h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+  }
+
+  .filtro-horizontal ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+    border-top: none;
+    padding-top: 0;
+  }
+
+  .filtro-horizontal button {
+    font-size: 0.85em;
+    padding: 6px 10px;
+  }
 }

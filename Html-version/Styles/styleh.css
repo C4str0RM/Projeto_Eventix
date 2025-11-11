@@ -31,7 +31,7 @@ body {
   align-items: center;
   justify-content: center;
   height: 100%;
-  overflow: visible; 
+  overflow: visible;
 }
 
 .logo-img {
@@ -228,7 +228,7 @@ body {
 }
 
 .carrossel-vertical {
- display: flex;
+  display: flex;
   overflow-x: auto;
   gap: 10px;
   padding: 10px;
@@ -292,8 +292,8 @@ body {
 
 .banner.novos {
   flex: 0 0 auto;
-  width: 400px;     
-  height: 600px;   
+  width: 400px;
+  height: 600px;
   border-radius: 10px;
   overflow: hidden;
   scroll-snap-align: start;
@@ -310,7 +310,6 @@ body {
 .banner.novos:hover img {
   transform: scale(1.05);
 }
-
 
 .todos-eventos {
   margin-top: 60px;
@@ -524,7 +523,6 @@ body {
 /* RESPONSIVIDADE */
 
 @media (max-width: 768px) {
-
   .carrossel-horizontal {
     flex-direction: column;
     overflow-x: visible;

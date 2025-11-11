@@ -1,17 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Epunda+Sans&family=Epunda+Slab&family=Oswald:wght@300;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Epunda+Sans&family=Epunda+Slab&family=Oswald:wght@300;500;700&display=swap");
 
 :root {
-  --cor-lilás: #6C63FF;
+  --cor-lilás: #6c63ff;
   --cor-azul-fosco: #08165c;
-  --cor-fundo-escuro: #1B1F3B;
-  --cor-destaque: #2C2F4A;
-  --cor-gradiente-inicio: #6C63FF;
+  --cor-fundo-escuro: #1b1f3b;
+  --cor-destaque: #2c2f4a;
+  --cor-gradiente-inicio: #6c63ff;
   --cor-gradiente-fim: #2e74ff;
-  --cor-texto-primário: #F5F5F5;
+  --cor-texto-primário: #f5f5f5;
   --cor-texto-secundario: #ccc;
   --cor-hover: #4540d6;
-    --cor-vermelha: #D62828;
-  --cor-laranja: #F77F00;
+  --cor-vermelha: #d62828;
+  --cor-laranja: #f77f00;
   --cor-botao: var(--cor-laranja);
   --cor-botao-hover: #ff9f1c;
 
@@ -37,7 +37,7 @@ body {
   align-items: center;
   justify-content: center;
   height: 100%;
-  overflow: visible; 
+  overflow: visible;
 }
 
 .logo-img {
@@ -377,7 +377,11 @@ body {
 }
 
 .form-inscricao .btn-pagar {
-  background: linear-gradient(90deg, var(--cor-gradiente-inicio), var(--cor-gradiente-fim)); 
+  background: linear-gradient(
+    90deg,
+    var(--cor-gradiente-inicio),
+    var(--cor-gradiente-fim)
+  );
   color: #fff;
   border: none;
   padding: 1rem 2rem;
@@ -392,7 +396,11 @@ body {
 .form-inscricao .btn-pagar:hover {
   transform: scale(1.05);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
-  background: linear-gradient(90deg, var(--cor-lilás), var(--cor-gradiente-inicio));
+  background: linear-gradient(
+    90deg,
+    var(--cor-lilás),
+    var(--cor-gradiente-inicio)
+  );
 }
 
 .resumo-topo {
@@ -682,7 +690,7 @@ body {
     display: none;
   }
 
-    .search-bar {
+  .search-bar {
     flex-direction: column;
     width: 100%;
     margin: 10px 0;

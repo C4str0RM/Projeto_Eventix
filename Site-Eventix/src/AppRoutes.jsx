@@ -39,11 +39,7 @@ import EventosAdmin from "./admin/EventosAdmin";
 import UsuariosAdmin from "./admin/UsuariosAdmin";
 import RelatoriosAdmin from "./admin/RelatoriosAdmin";
 
-function AppRoutes({
-  usuario,
-  setUsuario,
-  carregandoUsuario,
-}) {
+function AppRoutes({ usuario, setUsuario, carregandoUsuario }) {
   return (
     <Routes>
       <Route path="/" element={<Home usuario={usuario} />} />

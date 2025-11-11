@@ -13,16 +13,21 @@ function EventoCard({ evento, usuario }) {
   const { atualizarCarrinho } = useCarrinho();
 
   const buscarIngressos = async () => {
-    const valido = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
-    if (!evento?.id || !valido.test(evento.id)) return setErroIngressos("ID inválido.");
-    if (evento.titulo === "Infância Encantada") return setIngressos(ingressosInfantis);
+    const valido =
+      /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
+    if (!evento?.id || !valido.test(evento.id))
+      return setErroIngressos("ID inválido.");
+    if (evento.titulo === "Infância Encantada")
+      return setIngressos(ingressosInfantis);
 
     const { data, error } = await supabase
       .from("ingressos_novo")
       .select("*")
       .eq("event_id", evento.id);
 
-    error ? setErroIngressos("Erro ao carregar ingressos.") : setIngressos(data || []);
+    error
+      ? setErroIngressos("Erro ao carregar ingressos.")
+      : setIngressos(data || []);
   };
 
   const abrirModal = () => {

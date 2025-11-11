@@ -13,7 +13,10 @@ function Vitalicio() {
     <div className="pagina-centralizada">
       <div className="vitalicio-container">
         <h1>🔓 Acesso Vitalício Confirmado!</h1>
-        <p>Parabéns por garantir acesso ilimitado à Conferência Global de Inovação.</p>
+        <p>
+          Parabéns por garantir acesso ilimitado à Conferência Global de
+          Inovação.
+        </p>
 
         <ul className="vitalicio-beneficios">
           <li> Participação em todas as edições futuras</li>
@@ -29,8 +32,6 @@ function Vitalicio() {
         <button className="btn-final" onClick={() => navigate("/")}>
           Voltar para o início
         </button>
-
-  
       </div>
     </div>
   );

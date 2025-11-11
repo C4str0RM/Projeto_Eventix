@@ -30,7 +30,8 @@ function ContagemRegressiva() {
     <div className="contador">
       <h3>⏳Faltam:</h3>
       <p>
-        {tempoRestante.dias}d {tempoRestante.horas}h {tempoRestante.minutos}m {tempoRestante.segundos}s
+        {tempoRestante.dias}d {tempoRestante.horas}h {tempoRestante.minutos}m{" "}
+        {tempoRestante.segundos}s
       </p>
     </div>
   );

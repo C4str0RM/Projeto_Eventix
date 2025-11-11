@@ -69,7 +69,7 @@ const ResumoConta = ({ usuario }) => {
           return {
             nome: evento.titulo,
             data: evento.data,
-            local: evento.local
+            local: evento.local,
           };
         })
         .filter(Boolean);
@@ -102,7 +102,9 @@ const ResumoConta = ({ usuario }) => {
       <section className="resumo-container">
         <h1>Resumo da sua conta</h1>
         <p>
-          Olá, {usuario?.usuario || usuario?.nome || usuario?.email || "usuário"}! Aqui está um resumo rápido da sua atividade.
+          Olá,{" "}
+          {usuario?.usuario || usuario?.nome || usuario?.email || "usuário"}!
+          Aqui está um resumo rápido da sua atividade.
         </p>
 
         <div className="resumo-cards">
@@ -127,13 +129,21 @@ const ResumoConta = ({ usuario }) => {
         {ingressoMaisProximo && (
           <div className="resumo-evento">
             <h3>🎟️ Ingresso mais próximo</h3>
-            <p><strong>Evento:</strong> {ingressoMaisProximo.nome}</p>
-            <p><strong>Data:</strong> {ingressoMaisProximo.data}</p>
-            <p><strong>Local:</strong> {ingressoMaisProximo.local}</p>
+            <p>
+              <strong>Evento:</strong> {ingressoMaisProximo.nome}
+            </p>
+            <p>
+              <strong>Data:</strong> {ingressoMaisProximo.data}
+            </p>
+            <p>
+              <strong>Local:</strong> {ingressoMaisProximo.local}
+            </p>
           </div>
         )}
 
-        <a href="/painel" className="resumo-voltar">⬅ Voltar ao painel</a>
+        <a href="/painel" className="resumo-voltar">
+          ⬅ Voltar ao painel
+        </a>
       </section>
     </div>
   );

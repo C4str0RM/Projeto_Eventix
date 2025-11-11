@@ -10,7 +10,13 @@ document.addEventListener("DOMContentLoaded", () => {
   form.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    if (!nome.value || !email.value || !usuario.value || !senha.value || !confirmarSenha.value) {
+    if (
+      !nome.value ||
+      !email.value ||
+      !usuario.value ||
+      !senha.value ||
+      !confirmarSenha.value
+    ) {
       alert("Preencha todos os campos!");
       return;
     }

@@ -1,4 +1,3 @@
-
 function scrollCarrossel(selector, amount) {
   const el = document.querySelector(selector);
   if (el) {

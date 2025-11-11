@@ -87,7 +87,7 @@
 }
 
 .btn-inscrever {
-  background-color: #2C2F4A;
+  background-color: #2c2f4a;
   color: #fff;
   padding: 14px 32px;
   border-radius: 8px;
@@ -136,7 +136,7 @@
 .secao-conteudo ul li {
   margin-bottom: 8px;
   font-family: "Epunda Sans", sans-serif;
-   color: #fff;
+  color: #fff;
 }
 
 .secao-conteudo p {
@@ -224,8 +224,8 @@
   color: #cccccc;
 }
 
-.info-pag{
-    font-size: 1.1rem;
+.info-pag {
+  font-size: 1.1rem;
   color: #ffffff;
   background-color: #2c2f4a;
   padding: 10px 20px;
@@ -290,7 +290,7 @@
 }
 
 .form-inscricao .btn-pagar {
-  background: linear-gradient(90deg, #7f00ff, #e100ff); 
+  background: linear-gradient(90deg, #7f00ff, #e100ff);
   color: #fff;
   border: none;
   padding: 1rem 2rem;
@@ -435,8 +435,8 @@
   font-weight: bold;
 }
 
-.secao-conteudo-pag{
-    max-width: 600px;
+.secao-conteudo-pag {
+  max-width: 600px;
   margin: 40px auto;
   background-color: #2c2f4a;
   padding: 30px;
@@ -445,18 +445,20 @@
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
 }
 
-.secao-conteudo-pag h2{
+.secao-conteudo-pag h2 {
   color: #fff;
-  font-family: "Epunda Sans", sans-serif";
+  font-family: "Epunda Sans",
+    sans-serif ";
 }
 
 .secao-conteudo-pag p{
   color: #fff;
-  font-family: "Epunda Sans", sans-serif";
+  font-family: " Epunda
+      Sans ", sans-serif";
 }
 
-.btn-final{
-   background-color: #2e74ff;
+.btn-final {
+  background-color: #2e74ff;
   color: white;
   padding: 12px 28px;
   border: none;
@@ -471,7 +473,57 @@
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.btn-final:hover{
-   background-color: #4540d6;
+.btn-final:hover {
+  background-color: #4540d6;
   transform: scale(1.05);
+}
+
+/* RESPOSIVIDADE */
+
+@media (max-width: 768px) {
+  .cabecalho-conferencia h1 {
+    font-size: 1.6em;
+  }
+
+  .cabecalho-conferencia p,
+  .info-conferencia p,
+  .cta-inscricao p,
+  .secao-conteudo p,
+  .formas-pagamento li,
+  .resumo-topo p,
+  .finalizacao-container p,
+  .vitalicio-container p {
+    font-size: 1em;
+  }
+
+  .bloco-destaque,
+  .cta-inscricao,
+  .secao-conteudo,
+  .resumo-topo,
+  .finalizacao-container,
+  .vitalicio-container,
+  .secao-conteudo-pag {
+    padding: 20px;
+    margin: 20px auto;
+  }
+
+  .btn-inscrever,
+  .btn-pagar,
+  .btn-final {
+    font-size: 1em;
+    padding: 12px 24px;
+  }
+
+  .contador-conferencia {
+    font-size: 1.1em;
+    padding: 12px 20px;
+    bottom: 20px;
+    right: 20px;
+    min-width: 180px;
+  }
+
+  .form-inscricao {
+    max-width: 100%;
+    padding: 0 10px;
+  }
 }

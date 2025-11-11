@@ -82,12 +82,12 @@
   cursor: pointer;
 }
 
-.modal-conteudo h2{
+.modal-conteudo h2 {
   font-size: 1.5em;
   margin-bottom: 4px;
 }
 
-.modal-conteudo p{
+.modal-conteudo p {
   font-size: 1.2em;
   padding: 3px 2px 3px 2px;
   font-weight: bold;
@@ -97,7 +97,7 @@
   background-color: #d4d4d4;
 }
 
-.modal-conteudo h4{
+.modal-conteudo h4 {
   font-size: 1.4em;
 }
 
@@ -186,11 +186,55 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .btn-adicionar {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   padding: 6px 12px;
   font-weight: bold;
 }
 
 .btn-adicionar:hover {
   background-color: #3e8e41;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 768px) {
+  .imagem-evento-todos {
+    height: 250px;
+  }
+
+  .modal-conteudo {
+    padding: 20px;
+    max-width: 90%;
+  }
+
+  .modal-conteudo h2 {
+    font-size: 1.3em;
+  }
+
+  .modal-conteudo p {
+    font-size: 1em;
+  }
+
+  .modal-conteudo h4 {
+    font-size: 1.2em;
+  }
+
+  .modal-conteudo li {
+    padding: 0.8rem;
+  }
+
+  .modal-conteudo li button {
+    font-size: 0.85em;
+    padding: 0.5rem 1rem;
+  }
+
+  .quantidade-wrapper input {
+    width: 40px;
+    font-size: 14px;
+  }
+
+  .quantidade-wrapper button {
+    font-size: 14px;
+    padding: 5px 8px;
+  }
 }

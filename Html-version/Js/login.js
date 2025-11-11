@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     alert(`Bem-vindo, ${usuario}!`);
-    window.location.href = "home.html"; 
+    window.location.href = "home.html";
   });
 
   document.querySelector(".google-btn").addEventListener("click", () => {

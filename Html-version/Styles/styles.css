@@ -1,10 +1,10 @@
 /* Pré formatação de paleta de cores e fontes */
 
-@import url('https://fonts.googleapis.com/css2?family=Epunda+Sans:ital,wght@0,300..900;1,300..900&family=Epunda+Slab:ital,wght@0,300..900;1,300..900&family=Oswald:wght@200..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Epunda+Sans:ital,wght@0,300..900;1,300..900&family=Epunda+Slab:ital,wght@0,300..900;1,300..900&family=Oswald:wght@200..700&display=swap");
 
 :root {
-  --cor-vermelha: #D62828;
-  --cor-laranja: #F77F00;
+  --cor-vermelha: #d62828;
+  --cor-laranja: #f77f00;
   --cor-fundo: #ffffff;
   --cor-texto: #2b2b2b;
   --cor-clara: #f9f9f9;
@@ -13,7 +13,7 @@
   --cor-botao-texto: #ffffff;
   --fonte-principal: "Epunda Slab", serif;
   --fonte-secundaria: "Oswald", sans-serif;
-  --fonte-auxiliar:"Epunda Sans", sans-serif;
+  --fonte-auxiliar: "Epunda Sans", sans-serif;
 }
 
 * {
@@ -27,7 +27,7 @@
   align-items: center;
   justify-content: center;
   height: 100%;
-  overflow: visible; 
+  overflow: visible;
 }
 
 .logo-img {
@@ -227,7 +227,7 @@ footer {
     padding: 15px;
   }
 
-    .search-bar {
+  .search-bar {
     flex-direction: column;
     width: 100%;
     margin: 10px 0;
@@ -258,4 +258,3 @@ footer {
     gap: 30px;
   }
 }
-

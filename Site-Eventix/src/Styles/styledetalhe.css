@@ -8,11 +8,10 @@
   font-family: "Segoe UI", sans-serif;
 }
 
-
 .perfil-container {
   width: 100%;
-    margin: 0 auto;
- max-width: 1200px;
+  margin: 0 auto;
+  max-width: 1200px;
   background-color: #ffffff;
   padding: 40px 20px;
   border-radius: 12px;
@@ -25,8 +24,8 @@
 }
 
 .perfil-container p {
-    margin-bottom: 20px;
-    font-family: "Epunda Slab", serif;
+  margin-bottom: 20px;
+  font-family: "Epunda Slab", serif;
 }
 
 .perfil-bloco {

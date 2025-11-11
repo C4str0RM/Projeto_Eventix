@@ -30,7 +30,11 @@ export const ModalEdicao = ({ evento, onFechar, onSalvar }) => {
         <input value={titulo} onChange={(e) => setTitulo(e.target.value)} />
 
         <label>Data:</label>
-        <input type="date" value={data} onChange={(e) => setData(e.target.value)} />
+        <input
+          type="date"
+          value={data}
+          onChange={(e) => setData(e.target.value)}
+        />
 
         <label>Local:</label>
         <input value={local} onChange={(e) => setLocal(e.target.value)} />

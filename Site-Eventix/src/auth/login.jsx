@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { supabase } from "../config/supabaseClient";
+
+import google from "../assets/google.png";
+import facebook from "../assets/facebook.png";
+
 import "../Styles/login.css";
 
 import { toast, ToastContainer } from "react-toastify";
@@ -138,15 +142,16 @@ function Login({ setUsuario }) {
         </form>
 
         <div className="separator">
-          <span>OU</span>
+          <span>ou faça login com</span>
         </div>
 
-        <div className="social-login">
+        <div className="social-buttons">
           <button
             type="button"
             className="google-btn"
             onClick={handleGoogleLogin}
           >
+            <img src={google} alt="Google" className="social-icon" />
             Entrar com Google
           </button>
           <button
@@ -154,6 +159,7 @@ function Login({ setUsuario }) {
             className="facebook-btn"
             onClick={handleFacebookLogin}
           >
+            <img src={facebook} alt="Facebook" className="social-icon" />
             Entrar com Facebook
           </button>
         </div>

@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: center;
   height: 100%;
-  overflow: visible; 
+  overflow: visible;
 }
 
 .logo-img {
@@ -125,7 +125,6 @@
   border-radius: 50%;
 }
 
-
 .pagina-centralizada {
   display: flex;
   justify-content: center;
@@ -163,7 +162,6 @@
   flex-wrap: wrap;
   margin-top: 30px;
 }
-
 
 .opcoes-pagamento button {
   width: 190px;
@@ -232,7 +230,7 @@
     height: 160px;
   }
 
-    .search-bar {
+  .search-bar {
     flex-direction: column;
     width: 100%;
     margin: 10px 0;

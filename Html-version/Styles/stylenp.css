@@ -1,17 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Epunda+Sans&family=Epunda+Slab&family=Oswald:wght@300;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Epunda+Sans&family=Epunda+Slab&family=Oswald:wght@300;500;700&display=swap");
 
 :root {
   --cor-vermelha: #d62828;
   --cor-laranja: #f77f00;
-  --cor-rosa: #FF4D6D;
-  --cor-roxa: #6A00F4;
-  --cor-azul-escuro: #1B1F3B;
-  --cor-dourado: #FFD166;
-  --cor-fundo: #6A00F4;
-    --cor-fundo2: #ffffff;
+  --cor-rosa: #ff4d6d;
+  --cor-roxa: #6a00f4;
+  --cor-azul-escuro: #1b1f3b;
+  --cor-dourado: #ffd166;
+  --cor-fundo: #6a00f4;
+  --cor-fundo2: #ffffff;
   --cor-clara: #f9f9f9;
-  --cor-branco: #F5F5F5;
-  --cor-clara: #2C2F4A;
+  --cor-branco: #f5f5f5;
+  --cor-clara: #2c2f4a;
   --cor-botao: var(--cor-laranja);
   --cor-botao-hover: #ff9f1c;
   --cor-botao-texto: #ffffff;
@@ -28,7 +28,12 @@
 }
 
 body {
-  background: linear-gradient(25deg, var(--cor-rosa), var(--cor-roxa), var(--cor-laranja));
+  background: linear-gradient(
+    25deg,
+    var(--cor-rosa),
+    var(--cor-roxa),
+    var(--cor-laranja)
+  );
   color: var(--cor-texto);
   font-family: var(--fonte-principal);
   line-height: 1.6;
@@ -40,7 +45,7 @@ body {
   align-items: center;
   justify-content: center;
   height: 100%;
-  overflow: visible; 
+  overflow: visible;
 }
 
 .logo-img {
@@ -231,7 +236,12 @@ body {
 }
 
 .evento-header {
-  background: linear-gradient(90deg, var(--cor-laranja), var(--cor-rosa), var(--cor-fundo));
+  background: linear-gradient(
+    90deg,
+    var(--cor-laranja),
+    var(--cor-rosa),
+    var(--cor-fundo)
+  );
   color: var(--cor-texto);
   text-align: center;
   padding: 30px 20px;
@@ -267,7 +277,6 @@ body {
 
 .classificacao {
   margin-top: 2em;
-
 }
 
 .info-principal {
@@ -331,7 +340,11 @@ section {
   max-width: 960px;
   margin: 30px auto;
   padding: 20px;
-  background: linear-gradient(to bottom, var(--cor-dourado), var(--cor-laranja));
+  background: linear-gradient(
+    to bottom,
+    var(--cor-dourado),
+    var(--cor-laranja)
+  );
   border-radius: 12px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
 }
@@ -439,7 +452,6 @@ section p {
   transform: scale(1.05);
 }
 
-
 /* RESPONSIVIDADE */
 
 @media (max-width: 768px) {
@@ -495,7 +507,7 @@ section p {
     min-width: 180px;
   }
 
-    .search-bar {
+  .search-bar {
     flex-direction: column;
     width: 100%;
     margin: 10px 0;

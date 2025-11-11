@@ -1,7 +1,7 @@
 import React from "react";
 import { ClipLoader } from "react-spinners";
 
- export const TabelaUsuarios = ({
+export const TabelaUsuarios = ({
   usuarios,
   onEditar,
   onExcluir,
@@ -31,10 +31,7 @@ import { ClipLoader } from "react-spinners";
             <td>{usuario.email}</td>
             <td>{usuario.isAdmin ? "✅" : "❌"}</td>
             <td>
-              <button
-                className="btn-editar"
-                onClick={() => onEditar(usuario)}
-              >
+              <button className="btn-editar" onClick={() => onEditar(usuario)}>
                 ✏️ Editar
               </button>
               <button

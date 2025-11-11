@@ -1,6 +1,5 @@
 import React from "react";
 
-
 export const ResumoRelatorio = ({ resumo }) => {
   return (
     <div className="relatorio-resumo">

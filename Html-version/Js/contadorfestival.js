@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const dataEvento = new Date("2026-05-11T16:00:00");
   const tempoRef = document.getElementById("tempo-restante");
 
-  if (!tempoRef) return; 
+  if (!tempoRef) return;
 
   function atualizarContagem() {
     const agora = new Date();
@@ -27,7 +27,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (dias < 0) {
       meses -= 1;
-      const ultimoDiaDoMesAnterior = new Date(anoEvento, mesEvento, 0).getDate();
+      const ultimoDiaDoMesAnterior = new Date(
+        anoEvento,
+        mesEvento,
+        0
+      ).getDate();
       dias += ultimoDiaDoMesAnterior;
     }
 

@@ -1,22 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Epunda+Sans&family=Epunda+Slab&family=Oswald:wght@300;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Epunda+Sans&family=Epunda+Slab&family=Oswald:wght@300;500;700&display=swap");
 
 :root {
-  --cor-roxa: #6C63FF;
+  --cor-roxa: #6c63ff;
   --cor-azul-escuro: #08165c;
-  --cor-clara: #2C2F4A;
-  --cor-texto: #F5F5F5;
-  --cor-fundo: #1B1F3B;
-    --cor-fundo2: #ffffff;
+  --cor-clara: #2c2f4a;
+  --cor-texto: #f5f5f5;
+  --cor-fundo: #1b1f3b;
+  --cor-fundo2: #ffffff;
   --cor-texto-claro: #ffffff;
-  --cor-vermelha: #D62828;
-  --cor-laranja: #F77F00;
+  --cor-vermelha: #d62828;
+  --cor-laranja: #f77f00;
   --cor-botao: var(--cor-laranja);
   --cor-botao-hover: #ff9f1c;
-  
+
   --fonte-principal: "Epunda Slab", serif;
   --fonte-secundaria: "Oswald", sans-serif;
   --fonte-auxiliar: "Epunda Sans", sans-serif;
-
 }
 
 * {
@@ -31,7 +30,6 @@ body {
   font-family: var(--fonte-principal);
   line-height: 1.6;
   font-size: 1.1em;
-
 }
 
 .logo {
@@ -39,7 +37,7 @@ body {
   align-items: center;
   justify-content: center;
   height: 100%;
-  overflow: visible; 
+  overflow: visible;
 }
 
 .logo-img {
@@ -176,7 +174,6 @@ body {
   display: block;
   object-fit: contain;
 }
-
 
 .evento-header {
   background: linear-gradient(90deg, var(--cor-roxa), var(--cor-azul-escuro));
@@ -435,13 +432,11 @@ section p {
   transform: scale(1.05);
 }
 
-
 /* RESPONSIVIDADE */
 
 @media (max-width: 768px) {
   body {
     font-size: 1em;
-
   }
 
   .evento-header h1 {
@@ -497,7 +492,7 @@ section p {
     min-width: 180px;
   }
 
-    .search-bar {
+  .search-bar {
     flex-direction: column;
     width: 100%;
     margin: 10px 0;

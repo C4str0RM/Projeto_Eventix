@@ -1,32 +1,32 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import { supabase } from "../../config/supabaseClient";
-import '../../Styles/styledetalhe.css';
+import "../../Styles/styledetalhe.css";
 
 const DetalhesConta = ({ usuario }) => {
-  const [nome, setNome] = useState('');
-  const [email, setEmail] = useState('');
-  const [senha, setSenha] = useState('');
-  const [confirmacao, setConfirmacao] = useState('');
+  const [nome, setNome] = useState("");
+  const [email, setEmail] = useState("");
+  const [senha, setSenha] = useState("");
+  const [confirmacao, setConfirmacao] = useState("");
   const [mostrarSenha, setMostrarSenha] = useState(false);
   const [mostrarConfirmacao, setMostrarConfirmacao] = useState(false);
 
-  const [erroNome, setErroNome] = useState('');
-  const [erroEmail, setErroEmail] = useState('');
-  const [mensagem, setMensagem] = useState('');
+  const [erroNome, setErroNome] = useState("");
+  const [erroEmail, setErroEmail] = useState("");
+  const [mensagem, setMensagem] = useState("");
 
   useEffect(() => {
-    document.title = 'Detalhes da Conta | Eventix';
+    document.title = "Detalhes da Conta | Eventix";
   }, []);
 
   const validarNome = (valor) => {
     setNome(valor);
-    setErroNome(valor.length < 3 ? 'Nome muito curto' : '');
+    setErroNome(valor.length < 3 ? "Nome muito curto" : "");
   };
 
   const validarEmail = (valor) => {
     setEmail(valor);
     const regex = /\S+@\S+\.\S+/;
-    setErroEmail(!regex.test(valor) ? 'E-mail inválido' : '');
+    setErroEmail(!regex.test(valor) ? "E-mail inválido" : "");
   };
 
   const salvarDados = async () => {
@@ -66,7 +66,9 @@ const DetalhesConta = ({ usuario }) => {
   };
 
   const excluirConta = async () => {
-    const confirmacao = window.confirm("Tem certeza que deseja excluir sua conta? Essa ação é irreversível.");
+    const confirmacao = window.confirm(
+      "Tem certeza que deseja excluir sua conta? Essa ação é irreversível."
+    );
     if (!confirmacao) return;
 
     const { error } = await supabase.auth.signOut();
@@ -75,10 +77,7 @@ const DetalhesConta = ({ usuario }) => {
       return;
     }
 
-    await supabase
-      .from("profiles")
-      .delete()
-      .eq("id", usuario.id);
+    await supabase.from("profiles").delete().eq("id", usuario.id);
 
     alert("Conta excluída com sucesso.");
     window.location.href = "/login";
@@ -110,48 +109,58 @@ const DetalhesConta = ({ usuario }) => {
             onChange={(e) => validarEmail(e.target.value)}
           />
           {erroEmail && <span className="perfil-erro">{erroEmail}</span>}
-
         </div>
-
 
         <div className="perfil-bloco">
           <h3>🔒 Alterar senha</h3>
 
           <div className="perfil-senha">
             <input
-              type={mostrarSenha ? 'text' : 'password'}
+              type={mostrarSenha ? "text" : "password"}
               placeholder="Nova senha"
               value={senha}
               onChange={(e) => setSenha(e.target.value)}
             />
-            <span className="perfil-icone" onClick={() => setMostrarSenha(!mostrarSenha)}>
-              {mostrarSenha ? '👁️' : '🔒'}
+            <span
+              className="perfil-icone"
+              onClick={() => setMostrarSenha(!mostrarSenha)}
+            >
+              {mostrarSenha ? "👁️" : "🔒"}
             </span>
           </div>
 
           <div className="perfil-senha">
             <input
-              type={mostrarConfirmacao ? 'text' : 'password'}
+              type={mostrarConfirmacao ? "text" : "password"}
               placeholder="Confirmar nova senha"
               value={confirmacao}
               onChange={(e) => setConfirmacao(e.target.value)}
             />
-            <span className="perfil-icone" onClick={() => setMostrarConfirmacao(!mostrarConfirmacao)}>
-              {mostrarConfirmacao ? '👁️' : '🔒'}
+            <span
+              className="perfil-icone"
+              onClick={() => setMostrarConfirmacao(!mostrarConfirmacao)}
+            >
+              {mostrarConfirmacao ? "👁️" : "🔒"}
             </span>
           </div>
 
-          <button className="perfil-botao" onClick={salvarSenha}>Salvar senha</button>
+          <button className="perfil-botao" onClick={salvarSenha}>
+            Salvar senha
+          </button>
         </div>
 
         {mensagem && <span className="perfil-sucesso">{mensagem}</span>}
 
         <div className="perfil-bloco">
           <h3>🗑️ Encerrar conta</h3>
-          <button className="perfil-botao cancelar" onClick={excluirConta}>Excluir minha conta</button>
+          <button className="perfil-botao cancelar" onClick={excluirConta}>
+            Excluir minha conta
+          </button>
         </div>
 
-        <a href="/painel" className="perfil-voltar">⬅ Voltar ao painel</a>
+        <a href="/painel" className="perfil-voltar">
+          ⬅ Voltar ao painel
+        </a>
       </section>
     </div>
   );

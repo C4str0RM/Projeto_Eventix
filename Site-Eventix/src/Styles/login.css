@@ -112,15 +112,20 @@
   z-index: 1;
 }
 
-.auth-page .social-login button {
-  width: 100%;
-  padding: 10px;
-  margin: 5px 0;
+.social-buttons button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  font-size: 15px;
   border: none;
   border-radius: 5px;
-  font-weight: bold;
   cursor: pointer;
-  font-family: "Epunda Slab", serif;
+}
+
+.social-icon {
+  height: 22px;
 }
 
 .auth-page .google-btn {
@@ -192,7 +197,7 @@
 }
 
 .auth-page .input-valid {
-  border: 2px solid #4CAF50;
+  border: 2px solid #4caf50;
 }
 
 .auth-page .input-error {

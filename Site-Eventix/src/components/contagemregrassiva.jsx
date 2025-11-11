@@ -34,8 +34,7 @@ function ContagemRegressiva() {
         const mesEvento = dataEvento.getMonth();
         const diaEvento = dataEvento.getDate();
 
-        let meses =
-          (anoEvento - anoAtual) * 12 + (mesEvento - mesAtual);
+        let meses = (anoEvento - anoAtual) * 12 + (mesEvento - mesAtual);
         let dias = diaEvento - diaAtual;
 
         if (dias < 0) {
@@ -65,9 +64,8 @@ function ContagemRegressiva() {
     <div className="contador">
       <h3>⏳ Faltam:</h3>
       <p>
-        {tempoRestante.meses}m {tempoRestante.dias}d{" "}
-        {tempoRestante.horas}h {tempoRestante.minutos}m{" "}
-        {tempoRestante.segundos}s
+        {tempoRestante.meses}m {tempoRestante.dias}d {tempoRestante.horas}h{" "}
+        {tempoRestante.minutos}m {tempoRestante.segundos}s
       </p>
     </div>
   );
