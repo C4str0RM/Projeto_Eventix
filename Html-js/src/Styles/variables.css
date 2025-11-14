@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Epunda+Sans:ital,wght@0,300..900;1,300..900&family=Epunda+Slab:ital,wght@0,300..900;1,300..900&family=Oswald:wght@200..700&display=swap");
+
+:root {
+  --cor-vermelha: #d62828;
+  --cor-laranja: #f77f00;
+  --cor-fundo: #ffffff;
+  --cor-texto: #2b2b2b;
+  --cor-clara: #f9f9f9;
+
+  --cor-lilás: #6c63ff;
+  --cor-azul-fosco: #08165c;
+  --cor-fundo-escuro: #1b1f3b;
+  --cor-destaque: #2c2f4a;
+  --cor-gradiente-inicio: #6c63ff;
+  --cor-gradiente-fim: #2e74ff;
+  --cor-texto-primário: #f5f5f5;
+  --cor-texto-secundario: #ccc;
+  --cor-hover: #4540d6;
+  
+  --cor-botao: var(--cor-laranja);
+  --cor-botao-hover: #ff9f1c;
+  --cor-botao-texto: #ffffff;
+
+  --fonte-principal: "Epunda Slab", serif;
+  --fonte-secundaria: "Oswald", sans-serif;
+  --fonte-auxiliar: "Epunda Sans", sans-serif;
+}

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro | Eventix</title>
+    <link rel="stylesheet" href="../Styles/styleglobal.css" />
+    <link
+      rel="shortcut icon"
+      href="../assets/faviconEL.ico"
+      type="image/x-icon"
+    />
+  </head>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const senhaInput = document.getElementById("senha");
+      const confirmarInput = document.getElementById("confirmar");
+      const toggleSenha = document.getElementById("toggle-senha");
+      const toggleConfirmar = document.getElementById("toggle-confirmar");
+
+      toggleSenha.addEventListener("click", () => {
+        const isVisible = senhaInput.type === "text";
+        senhaInput.type = isVisible ? "password" : "text";
+        toggleSenha.textContent = isVisible ? "🔒" : "👁️";
+      });
+
+      toggleConfirmar.addEventListener("click", () => {
+        const isVisible = confirmarInput.type === "text";
+        confirmarInput.type = isVisible ? "password" : "text";
+        toggleConfirmar.textContent = isVisible ? "🔒" : "👁️";
+      });
+    });
+  </script>
+
+  <body>
+    <div class="auth-page">
+      <div class="container">
+        <form class="register-form">
+          <h2>Cadastro</h2>
+
+          <div class="inputgroup">
+            <input
+              type="text"
+              id="nome"
+              placeholder="Nome completo"
+              required
+            />
+          </div>
+
+          <div class="inputgroup">
+            <input
+              type="email"
+              id="email"
+              placeholder="E-mail"
+              required
+            />
+          </div>
+
+          <div class="inputgroup">
+            <input
+              type="text"
+              id="usuario"
+              placeholder="Usuário"
+              required
+            />
+          </div>
+
+          <div class="inputgroup">
+            <input
+              type="password"
+              id="senha"
+              placeholder="Senha"
+              required
+            />
+            <span class="eye-icon" id="toggle-senha">🔒</span>
+          </div>
+
+          <div class="inputgroup">
+            <input
+              type="password"
+              id="confirmar"
+              placeholder="Confirmar senha"
+              required
+            />
+            <span class="eye-icon" id="toggle-confirmar">🔒</span>
+          </div>
+
+          <button type="submit" id="btn-cadastrar">Cadastrar</button>
+        </form>
+
+        <div class="separator"><span>ou cadastre-se com</span></div>
+
+        <div class="social-buttons">
+          <button type="button" class="google-btn">
+            <img src="../assets/google.png" alt="Google" class="social-icon" />
+            Cadastrar com Google
+          </button>
+          <button type="button" class="facebook-btn">
+            <img
+              src="../assets/facebook.png"
+              alt="Facebook"
+              class="social-icon"
+            />
+            Cadastrar com Facebook
+          </button>
+        </div>
+
+        <p class="login-link">
+          Já possui uma conta? <a href="login.html">Faça login.</a>
+        </p>
+      </div>
+    </div>
+
+    <script type="module" src="../Js/cadastro.js"></script>
+  </body>
+</html>
