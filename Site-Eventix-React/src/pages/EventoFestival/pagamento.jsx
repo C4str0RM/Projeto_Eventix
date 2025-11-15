@@ -13,8 +13,6 @@ function Pagamento() {
     document.title = "Finalizar Pagamento | Eventix";
   }, []);
 
-  const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
-
   const calcularTotal = () => {
     return carrinho.reduce((total, item) => {
       const valor = parseFloat(item.preco.replace("R$", "").replace(",", "."));

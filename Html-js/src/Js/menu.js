@@ -1,18 +1,57 @@
 import { supabase } from "../config/supabaseClient.js";
-import { verificarAdmin } from "../Js/verificarAdmin.js";
 import iconePerfil from "../assets/icone-perfil.png";
 import logoEventix from "../assets/logo.png";
 
 const quantidade = 2;
 
+async function atualizarPerfil(usuario, nome) {
+  const { data, error } = await supabase.auth.updateUser({
+    data: {
+      usuario,
+      nome,
+    },
+  });
+
+  if (error) {
+    console.error("Erro ao atualizar perfil:", error.message);
+    return null;
+  }
+
+  console.log("Perfil atualizado:", data);
+  return data;
+}
+
 document.addEventListener("DOMContentLoaded", async () => {
   const menu = document.getElementById("menu");
+
   const {
     data: { user },
   } = await supabase.auth.getUser();
-  const usuario = user || null;
 
-  const isAdmin = usuario ? await verificarAdmin(usuario) : false;
+  let usuario = null;
+
+  if (user) {
+    const { data: perfil, error } = await supabase
+      .from("profiles")
+      .select("*")
+      .eq("id", user.id)
+      .single();
+
+    if (error) {
+      console.error("Erro ao buscar perfil:", error.message);
+    } else {
+      usuario = {
+        logado: true,
+        usuario: perfil.usuario,
+        nome: perfil.name,
+        email: perfil.email,
+        isAdmin: perfil.isAdmin,
+      };
+    }
+  }
+
+
+const isAdmin = usuario?.isAdmin || false;
 
   menu.classList.toggle("menu-adm", isAdmin);
 
@@ -37,7 +76,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         isAdmin
           ? `
       <span class="selo-adm">👑 Administrador</span>
-
+      <a href="/src/pages/admin.html" class="btn-adm">Painel ADM 🛠️</a>
       `
           : `
         <a href="/src/pages/eventos.html"><i>🎫</i> Eventos</a>
@@ -57,11 +96,9 @@ document.addEventListener("DOMContentLoaded", async () => {
           ? `
         <div class="usuario-logado">
           <span class="ola">Olá,</span>
-          <span class="nome">${
-            usuario.user_metadata?.usuario ||
-            usuario.user_metadata?.nome ||
-            "Usuário"
-          }!</span>
+        <span class="nome">${
+          usuario.usuario || usuario.nome || "Usuário"
+        }!</span>
 
           <a href="/src/pages/painel.html">
             <img src="${iconePerfil}" alt="Perfil" class="icone-perfil" />

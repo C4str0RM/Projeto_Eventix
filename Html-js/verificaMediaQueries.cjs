@@ -23,5 +23,5 @@ function verificarMediaQueriesNaPasta(pasta) {
 }
 
 /* 👇 Altere aqui se sua pasta de estilos for diferente */
-const pastaCSS = path.join(__dirname, "Html-version", "Styles");
+const pastaCSS = path.join(__dirname, "src", "Styles");
 verificarMediaQueriesNaPasta(pastaCSS);

@@ -8,7 +8,6 @@ function scrollCarrossel(selector, amount) {
   }
 }
 
-
 document.addEventListener("DOMContentLoaded", () => {
   const destaquesRef = document.querySelector(
     ".carrossel-horizontal.destaques"
@@ -123,4 +122,3 @@ document.addEventListener("DOMContentLoaded", () => {
   iniciarScroll(destaquesRef, "horizontal", 835, 4000);
   iniciarScroll(novosRef, "horizontal", 400, 4000);
 });
-
