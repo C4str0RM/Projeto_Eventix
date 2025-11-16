@@ -2,10 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Style/adminstyle.css";
 
+
 const Dashboard = ({ usuario }) => {
+  
   const nome =
     usuario?.usuario || usuario?.nome || usuario?.email || "Administrador";
 
+    
   return (
     <div className="dashboard-global">
       <section className="dashboard-container">

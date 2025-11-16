@@ -4,104 +4,30 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Meus Ingressos | Eventix</title>
-    <link rel="stylesheet" href="Styles/carrinho.css" />
-    <link rel="shortcut icon" href="faviconEL.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../Styles/carrinho.css" />
+    <link rel="stylesheet" href="../Styles/menu.css" />
+    <link
+      rel="shortcut icon"
+      href="../assets/faviconEL.ico"
+      type="image/x-icon"
+    />
   </head>
 
   <body>
-    <header class="menu">
-      <a href="home.html" class="logo">
-        <img src="logo.png" alt="Logo Eventix" class="logo-img" />
-      </a>
+    <header id="menu" class="menu"></header>
 
-      <div class="search-bar">
-        <input
-          type="text"
-          placeholder="Pesquise por artista, evento ou local..."
-        />
-        <button class="search-btn">🔍</button>
-      </div>
-
-      <nav>
-        <a href="#"><i>🎫</i> Eventos</a>
-        <a href="#"><i>📂</i> Categorias</a>
-        <div class="cart-icon">🛒 <span class="cart-count">0</span></div>
-        <a href="login.html">Entrar</a>
-        <a href="cadastro.html" class="btn-cadastro">Criar Conta</a>
-      </nav>
-    </header>
-
-    <section class="container-pagina">
-      <div class="ingressos-page">
+    <section class="carrinho-body">
+      <div class="carrinho-painel">
         <h1>🎟️ Meus Ingressos</h1>
-        <p>Olá, Maria! Aqui estão os ingressos dos eventos que você comprou.</p>
+        <p id="saudacao"></p>
       </div>
+      
+      <div class="carrinho-grade"></div>
+      <div class="lista-ingressos"></div>
 
-      <div class="lista-ingressos">
-
-        <div class="ingresso-card">
-          <h3>Festival Aurora-Boreal</h3>
-          <p><strong>Data:</strong> 11/05/2026</p>
-          <p><strong>Local:</strong> Praça das Águas, Cacoal – RO</p>
-          <p class="contador">Faltam 61 dias</p>
-
-          <div class="tipos-ingresso">
-            <h4>🎫 Ingressos :</h4>
-            <ul>
-              <li>
-                <strong>Eclipse Gold</strong> – R$ 340,00
-                <span class="badge">Premium</span>
-              </li>
-              <li>
-                <strong>Pulse Zone</strong> – R$ 90,00
-                <span class="badge">Pista</span>
-              </li>
-            </ul>
-          </div>
-
-          <a href="#" class="botao-detalhes cancelar">Cancelar ingresso</a>
-        </div>
-
-        <div class="ingresso-card">
-          <h3>Conferência Global de Inovação</h3>
-          <p><strong>Data:</strong> 25/10/2025</p>
-          <p><strong>Local:</strong> Centro de Convenções, Porto Velho – RO</p>
-          <p class="contador">Faltam 35 dias</p>
-
-          <div class="tipos-ingresso">
-            <h4>🎫 Ingresso adquirido:</h4>
-            <ul>
-              <li>
-                <strong>Plano Padrão</strong> – R$ 29,90
-                <span class="badge">Acesso completo</span>
-              </li>
-            </ul>
-          </div>
-
-          <a href="#" class="botao-detalhes cancelar">Cancelar ingresso</a>
-        </div>
-
-        <div class="ingresso-card">
-          <h3>Ballet das Estações</h3>
-          <p><strong>Data:</strong> 03/12/2025</p>
-          <p><strong>Local:</strong> Teatro Municipal, Ji-Paraná – RO</p>
-          <p class="contador">Faltam 74 dias</p>
-
-          <div class="tipos-ingresso">
-            <h4>🎫 Ingresso adquirido:</h4>
-            <ul>
-              <li>
-                <strong>Assento Orquestra</strong> – R$ 120,00
-                <span class="badge">Frente palco</span>
-              </li>
-            </ul>
-          </div>
-
-          <a href="#" class="botao-detalhes cancelar">Cancelar ingresso</a>
-        </div>
-      </div>
-
-      <a href="painel.html" class="botao-voltar">⬅ Voltar ao painel</a>
+      <a href="../pages/painel.html" class="carrinho-voltar"
+        >⬅ Voltar ao painel</a
+      >
     </section>
 
     <footer class="footer">
@@ -114,7 +40,7 @@
         <div class="footer-col">
           <h3>Institucional</h3>
           <ul>
-            <li><a href="">Sobre nós</a></li>
+            <li><a href="../pages/sobre.html">Sobre nós</a></li>
             <li><a href="#">Política de privacidade</a></li>
             <li><a href="#">Termos de uso</a></li>
           </ul>
@@ -123,16 +49,18 @@
         <div class="footer-col">
           <h3>Meu Perfil</h3>
           <ul>
-            <li><a href="login.html">Login</a></li>
-            <li><a href="carrinho.html">Meus ingressos</a></li>
-            <li><a href="painel.html">Minha conta</a></li>
+            <li><a href="../auth/login.html">Login</a></li>
+            <li><a href="../auth/carrinho.html">Meus ingressos</a></li>
+            <li><a href="../pages/painel.html">Minha conta</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
           <h3>Fale Conosco</h3>
           <p>Tem alguma dúvida ou sugestão?</p>
-          <a href="contato.html" class="btn-formulario">Ir para o formulário</a>
+          <a href="../pages/contato.html" class="btn-formulario"
+            >Ir para o formulário</a
+          >
         </div>
 
         <div class="footer-col">
@@ -154,5 +82,8 @@
         <p>&copy; 2025 Eventix. Todos os direitos reservados.</p>
       </div>
     </footer>
+
+    <script type="module" src="../Js/menu.js"></script>
+    <script type="module" src="./Js/carrinho.js"></script>
   </body>
 </html>

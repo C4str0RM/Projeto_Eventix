@@ -110,7 +110,7 @@ function App() {
   }, []);
 
   if (carregandoUsuario) {
-    return <CarregandoSpinner texto="Carregando sessão..." />;
+    return <CarregandoSpinner texto="sessão..." fullscreen />;
   }
 
   return (

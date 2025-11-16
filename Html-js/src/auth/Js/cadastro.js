@@ -1,20 +1,32 @@
-import { supabase } from "../config/supabaseClient.js";
+import { supabase } from "../../config/supabaseClient.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-  const form = document.querySelector(".login-form");
+  const form = document.querySelector(".register-form");
+  const nomeInput = document.getElementById("nome");
   const emailInput = document.getElementById("email");
+  const usuarioInput = document.getElementById("usuario");
   const senhaInput = document.getElementById("senha");
+  const confirmarInput = document.getElementById("confirmar");
+
   const googleBtn = document.querySelector(".google-btn");
   const facebookBtn = document.querySelector(".facebook-btn");
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
+    const nome = nomeInput.value.trim();
     const email = emailInput.value.trim();
+    const usuario = usuarioInput.value.trim();
     const senha = senhaInput.value.trim();
+    const confirmarSenha = confirmarInput.value.trim();
 
-    if (!email || !senha) {
-      alert("Preencha todos os campos.");
+    if (!nome || !email || !usuario || !senha || !confirmarSenha) {
+      alert("Preencha todos os campos!");
+      return;
+    }
+
+    if (!email.includes("@")) {
+      alert("E-mail inválido!");
       return;
     }
 
@@ -23,18 +35,27 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    const { data, error } = await supabase.auth.signInWithPassword({
+    if (senha !== confirmarSenha) {
+      alert("As senhas não coincidem!");
+      return;
+    }
+
+    const { data, error } = await supabase.auth.signUp({
       email,
       password: senha,
+      options: {
+        data: { nome, usuario }, 
+      },
     });
 
     if (error) {
-      alert("E-mail ou senha inválidos.");
+      alert("Erro ao cadastrar: " + error.message);
       console.error(error);
       return;
     }
 
-    window.location.href = "../pages/home.html";
+    alert(`Cadastro realizado com sucesso, ${nome}!`);
+    window.location.href = "login.html";
   });
 
   googleBtn.addEventListener("click", async () => {

@@ -15,32 +15,40 @@
   <body>
     <header id="menu" class="menu"></header>
 
-    <main class="conteudo-central">
-      <section class="container-pagina">
+    <main class="resumo-body">
+      <section class="resumo-container">
         <h1>Resumo da sua conta</h1>
-        <p>Olá, Maria! Aqui está um resumo rápido da sua atividade.</p>
+        <p id="saudacao-resumo">
+          Olá, usuário! Aqui está um resumo rápido da sua atividade.
+        </p>
 
-        <div class="cards-resumo">
-          <div class="card-resumo">
+        <div class="resumo-cards">
+          <div class="resumo-card">
             <h3>Eventos inscritos</h3>
-            <p>3</p>
+            <p id="eventos-inscritos">0</p>
           </div>
-          <div class="card-resumo">
+          <div class="resumo-card">
+            <h3>Ingressos no carrinho</h3>
+            <p id="ingressos-carrinho">0</p>
+          </div>
+          <div class="resumo-card">
             <h3>Último acesso</h3>
-            <p>20/09/2025</p>
+            <p id="ultimo-acesso">--/--/----</p>
           </div>
-          <div class="card-resumo">
+          <div class="resumo-card">
             <h3>Status da conta</h3>
-            <p class="ativo">Ativa</p>
+            <p id="status-conta" class="resumo-ativo">Ativa</p>
           </div>
         </div>
 
-        <div class="card-evento">
-          <h3>🎉 Próximo evento</h3>
-          <p>Conferência Global de Inovação</p>
-          <p>Data: 25/10/2025</p>
+        <div id="ingresso-proximo" class="resumo-evento" style="display: none">
+          <h3>🎟️ Ingresso mais próximo</h3>
+          <p><strong>Evento:</strong> <span id="evento-nome"></span></p>
+          <p><strong>Data:</strong> <span id="evento-data"></span></p>
+          <p><strong>Local:</strong> <span id="evento-local"></span></p>
         </div>
-        <a href="painel.html" class="botao-voltar">⬅ Voltar ao painel</a>
+
+        <a href="../pages/painel.html" class="resumo-voltar">⬅ Voltar ao painel</a>
       </section>
     </main>
 
@@ -97,6 +105,7 @@
       </div>
     </footer>
 
+    <script type="module" src="../Js/resumo.js"></script>
     <script type="module" src="../Js/menu.js"></script>
   </body>
 </html>

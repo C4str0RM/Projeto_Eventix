@@ -1,0 +1,35 @@
+.carregando {
+  display: flex;
+  flex-direction: column;  
+  align-items: center;     
+  justify-content: center;  
+  min-height: 200px;       
+  margin: 20px 0;
+}
+
+.carregando-fullscreen {
+  position: fixed;
+  inset: 0; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 999999;
+}
+
+.carregando p,
+.carregando-fullscreen p {
+  margin-top: 10px;
+  font-family: "Oswald", sans-serif;
+  font-size: 1rem;
+  color: #e1002a;
+}
+
+.carregando {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px; 
+  margin: 20px 0;
+}

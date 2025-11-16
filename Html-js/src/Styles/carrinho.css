@@ -16,13 +16,13 @@ body {
   font-family: var(--fonte-principal);
 }
 
-.container-pagina {
+.carrinho-body {
   background-color: #f5f5f5;
   font-family: "Segoe UI", sans-serif;
   padding: 0px 90px;
 }
 
-.ingressos-page {
+.carrinho-painel {
   padding: 30px 20px;
   max-width: 1000px;
   margin: 40px auto;
@@ -31,13 +31,13 @@ body {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-.ingressos-page h1 {
+.carrinho-painel h1 {
   color: #ff7a00;
   font-family: "Oswald", sans-serif;
   margin-bottom: 20px;
 }
 
-.ingressos-page p {
+.carrinho-painel p {
   font-family: "Epunda Slab", serif;
 }
 
@@ -48,7 +48,11 @@ body {
   margin-top: 20px;
 }
 
-.ingresso-card {
+.carrinho-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.carrinho-card {
   background: linear-gradient(135deg, #ffe0e0, #fff5d9);
   border: 1px solid #f8caca;
   border-radius: 10px;
@@ -57,85 +61,53 @@ body {
   transition: transform 0.3s ease;
 }
 
-.ingresso-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.carrinho-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
 
-.ingresso-card h3 {
+.carrinho-card h3 {
   margin-bottom: 10px;
-  font-family: var(--fonte-secundariaundaria);
-  color: var(--cor-laranja);
+  font-family: "Oswald", sans-serif;
+  color: #ff7a00;
 }
 
-.ingresso-card p {
+.carrinho-card p {
   margin: 5px 0;
   font-size: 15px;
 }
 
-.contador {
-  color: var(--cor-vermelha);
+.carrinho-tempo {
+  color: #e1002a;
   font-weight: bold;
 }
 
-.botao-voltar {
-  display: inline-block;
-  margin-top: 30px;
-  background-color: var(--cor-laranja);
-  color: var(--cor-botao-texto);
-  padding: 10px 20px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-family: var(--fonte-secundariaundaria);
-}
-
-.ingresso-card .botao-detalhes {
-  background-color: rgba(255, 255, 255, 0.2);
-  color: #000000;
-  border: 1px solid var(--cor-texto);
-  text-decoration: none;
-  padding: 8px 12px;
-  border-radius: 6px;
-  display: inline-block;
-  margin-top: 10px;
-  font-family: var(--fonte-secundaria);
-}
-
-.ingresso-card .botao-detalhes:hover {
-  background-color: var(--cor-fundo);
-}
-.ingresso-card {
-  transition: transform 0.3s ease;
-}
-
-.ingresso-card:hover {
-  transform: scale(1.03);
-}
-
-.tipos-ingresso {
+.carrinho-ingressos {
   margin-top: 15px;
   background-color: rgba(0, 0, 0, 0.1);
   padding: 10px;
   border-radius: 8px;
 }
 
-.tipos-ingresso h4 {
+.carrinho-ingressos h4 {
   margin-bottom: 8px;
-  font-family: var(--fonte-secundaria);
+  font-family: "Oswald", sans-serif;
   color: #000000;
 }
 
-.tipos-ingresso ul {
+.carrinho-ingressos ul {
   list-style: none;
   padding: 0;
 }
 
-.tipos-ingresso li {
+.carrinho-ingressos li {
   margin-bottom: 6px;
   font-size: 15px;
   color: #fff;
+  font-family: "Epunda Slab", serif;
 }
 
-.badge {
+.carrinho-etiqueta {
   background-color: rgba(255, 255, 255, 0.2);
   padding: 2px 8px;
   border-radius: 12px;
@@ -143,6 +115,41 @@ body {
   margin-left: 8px;
   color: #fff;
 }
+
+.carrinho-acoes {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.carrinho-cancelar {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #000000;
+  border: 1px solid #000000;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  display: inline-block;
+  margin-top: 10px;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.carrinho-cancelar:hover {
+  background-color: #f5f5f5;
+}
+
+.carrinho-voltar {
+  display: inline-block;
+  margin: 30px 0px 20px 0px;
+  background-color: #ff7a00;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-family: "Oswald", sans-serif;
+}
+
 
 .footer {
   background-color: var(--cor-fundo);

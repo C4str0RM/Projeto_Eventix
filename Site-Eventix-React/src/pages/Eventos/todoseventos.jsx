@@ -5,10 +5,12 @@ import Footer from "../../components/footer";
 import EventoCard from "../../components/EventoCard";
 import "../../Styles/eventos.css";
 
+import CarregandoSpinner from "../../components/CarregandoSpinner";
+
 function TodosEventos({ usuario }) {
   const [eventos, setEventos] = useState([]);
   const [filtro, setFiltro] = useState("todos");
-  const [carregando, setCarregando] = useState(true);
+  const [carregandoEventos, setCarregandoEventos] = useState(true);
   const [erro, setErro] = useState(null);
 
   useEffect(() => {
@@ -22,7 +24,7 @@ function TodosEventos({ usuario }) {
       } else {
         setEventos(data || []);
       }
-      setCarregando(false);
+      setCarregandoEventos(false);
     };
 
     buscarEventos();
@@ -99,8 +101,8 @@ function TodosEventos({ usuario }) {
       </aside>
 
       {erro && <p className="erro-eventos">{erro}</p>}
-      {carregando ? (
-        <p className="carregando-eventos">Carregando eventos...</p>
+      {carregandoEventos ? (
+        <CarregandoSpinner texto="Carregando eventos..." />
       ) : (
         <section className="grade-eventos-todos">
           {eventosFiltrados.length > 0 ? (

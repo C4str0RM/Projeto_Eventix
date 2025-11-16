@@ -11,50 +11,50 @@ body {
   font-family: var(--fonte-principal);
 }
 
-.conteudo-central {
+.contato-page {
   max-width: 1200px;
   margin: 0 auto;
   padding: 40px 20px;
 }
-
-.contato {
-  background-color: #edeaea;
+.contato-wrapper {
+  background-color: #ffffff;
   padding: 40px 20px;
-  font-family: var(--fonte-principal);
-  color: var(--cor-texto);
+  font-family: "Segoe UI", sans-serif;
+  color: #333333;
   max-width: 800px;
   margin: auto;
-  border-radius: 20px;
 }
 
-.contato h2 {
-  color: var(--cor-vermelha);
+.contato-wrapper h2 {
+  color: #e1002a;
   margin-bottom: 10px;
-  font-family: var(--fonte-secundaria);
+  font-family: "Oswald", sans-serif;
 }
 
-.contato p {
-  margin-top: 10px;
-  margin-bottom: 10px;
+.contato-wrapper p {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-family: "Epunda Slab", serif;
 }
 
-.form-contato {
+.contato-form {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  font-family: "Epunda Slab", serif;
 }
 
-.form-contato input,
-.form-contato textarea {
+.contato-form input,
+.contato-form textarea {
   padding: 12px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  font-family: var(--fonte-auxiliar);
+  font-family: "Epunda Sans", sans-serif;
 }
 
-.btn-enviar {
-  background-color: var(--cor-botao);
-  color: var(--cor-botao-texto);
+.contato-botao {
+  background-color: #ff7a00;
+  color: #ffffff;
   padding: 12px;
   border: none;
   border-radius: 5px;
@@ -63,9 +63,10 @@ body {
   transition: background-color 0.3s ease;
 }
 
-.btn-enviar:hover {
-  background-color: var(--cor-botao-hover);
+.contato-botao:hover {
+  background-color: #ff5722;
 }
+
 
 .footer {
   background-color: var(--cor-fundo);

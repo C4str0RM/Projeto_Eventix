@@ -12,39 +12,35 @@ body {
   font-family: var(--fonte-principal);
 }
 
-.conteudo-central {
+.resumo-container {
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 40px 20px;
-}
-
-.container-pagina {
-  max-width: 1000px;
-  margin: auto;
+  margin: 40px auto;
   padding: 30px;
-  background-color: var(--cor-fundo);
+  background-color: #ffffff;
   border-radius: 12px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  font-family: var(--fonte-principal);
+  font-family: "Segoe UI", sans-serif;
 }
 
-.container-pagina h1 {
+.resumo-container h1 {
   margin-bottom: 20px;
+  font-family: "Oswald", sans-serif;
 }
 
-.container-pagina p {
+.resumo-container p {
   margin-bottom: 25px;
+  font-family: "Epunda Slab", serif;
 }
 
-.cards-resumo {
+.resumo-cards {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
   margin-top: 20px;
 }
 
-.card-resumo {
-  background-color: var(--cor-clara);
+.resumo-card {
+  background-color: #ffffff;
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 20px;
@@ -54,65 +50,166 @@ body {
   text-align: center;
 }
 
-.card-resumo h3 {
+.resumo-card h3 {
   font-size: 16px;
   margin-bottom: 10px;
-  font-family: var(--fonte-secundaria);
+  font-family: "Epunda Slab", serif;
 }
 
-.card-resumo p {
+.resumo-card p {
   font-size: 18px;
   font-weight: bold;
-  color: var(--cor-laranja);
+  color: #ff7a00;
 }
 
-.card-resumo .ativo {
-  color: var(--cor-vermelha);
+.resumo-card .resumo-ativo {
+  color: #e1002a;
 }
 
-.mensagem-usuario {
+.resumo-mensagem {
   margin-top: 30px;
-  background-color: var(--cor-clara);
+  background-color: #ffffff;
   padding: 15px;
   border-radius: 8px;
-  font-family: var(--fonte-auxiliar);
+  font-family: "Arial", sans-serif;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
-.botao-voltar {
+.resumo-voltar {
   display: inline-block;
   margin-top: 30px;
-  background-color: var(--cor-laranja);
-  color: var(--cor-botao-texto);
+  background-color: #ff7a00;
+  color: #ffffff;
   padding: 10px 20px;
   border-radius: 6px;
   text-decoration: none;
-  font-family: var(--fonte-secundaria);
+  font-family: "Oswald", sans-serif;
 }
 
-.botao-voltar:hover {
-  background-color: var(--cor-botao-hover);
+.resumo-voltar:hover {
+  background-color: #ff5722;
 }
 
-.card-evento {
-  background-color: var(--cor-clara);
+.resumo-evento {
+  background-color: #ffffff;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
   margin-top: 30px;
-  font-family: var(--fonte-auxiliar);
+  font-family: "Arial", sans-serif;
   text-align: center;
 }
 
-.card-evento h3 {
-  color: var(--cor-vermelha);
-  font-family: var(--fonte-secundaria);
+.resumo-evento h3 {
+  color: #e1002a;
+  font-family: "Epunda Slab", serif;
   margin-bottom: 10px;
 }
 
-.card-evento p {
+.resumo-evento p {
   font-size: 16px;
   margin: 5px 0;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 768px) {
+  .resumo-container {
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  .resumo-container h1 {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .resumo-container p {
+    font-size: 15px;
+    text-align: center;
+  }
+
+  .resumo-cards {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .resumo-card {
+    padding: 16px;
+    min-width: unset;
+  }
+
+  .resumo-card h3 {
+    font-size: 15px;
+  }
+
+  .resumo-card p {
+    font-size: 16px;
+  }
+
+  .resumo-mensagem {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .resumo-voltar {
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .resumo-evento {
+    padding: 16px;
+  }
+
+  .resumo-evento h3 {
+    font-size: 18px;
+  }
+
+  .resumo-evento p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .resumo-container {
+    padding: 16px;
+  }
+
+  .resumo-card {
+    padding: 14px;
+  }
+
+  .resumo-card h3 {
+    font-size: 14px;
+  }
+
+  .resumo-card p {
+    font-size: 15px;
+  }
+
+  .resumo-mensagem {
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  .resumo-voltar {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  .resumo-evento {
+    padding: 14px;
+  }
+
+  .resumo-evento h3 {
+    font-size: 16px;
+  }
+
+  .resumo-evento p {
+    font-size: 13px;
+  }
 }
 
 .footer {
