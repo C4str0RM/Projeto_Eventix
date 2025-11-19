@@ -131,62 +131,72 @@ section ul li {
   transform: scale(1.05);
 }
 
-/* RESPONSIVO */
+/* RESPONSIVIDADE */
 
 @media (max-width: 768px) {
-  header.menu {
-    flex-direction: column;
-  }
-
-  .search-bar input {
-    width: 100%;
-  }
-
-  nav {
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-
   main {
     padding: 0 10px;
+    gap: 20px;
   }
 
   section {
-    padding: 20px;
+    padding: 18px;
+    border-radius: 10px;
   }
 
-  header h1 {
-    font-size: 1.8rem;
-  }
-
-  .search-bar {
-    flex-direction: column;
-    width: 100%;
-    margin: 10px 0;
-  }
-
-  .search-bar input,
-  .search-btn {
-    width: 100%;
-  }
-
-  .menu {
-    flex-direction: column;
-    align-items: center;
-    padding: 10px 20px;
-  }
-
-  .menu nav {
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 10px;
-    align-items: center;
-  }
-
-  .footer-container {
-    flex-direction: column;
-    align-items: center;
+  section h2 {
+    font-size: 1.4rem;
     text-align: center;
-    gap: 30px;
+  }
+
+  section p {
+    font-size: 0.95rem;
+    text-align: center;
+  }
+
+  section ul {
+    margin-left: 15px;
+  }
+
+  section ul li {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  main {
+    padding: 0 8px;
+    gap: 15px;
+  }
+
+  section {
+    padding: 15px;
+  }
+
+  section h2 {
+    font-size: 1.2rem;
+  }
+
+  section p {
+    font-size: 0.9rem;
+  }
+
+  section ul li {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  main {
+    max-width: 95%;
+    padding: 0 15px;
+  }
+
+  section {
+    padding: 22px;
+  }
+
+  section h2 {
+    font-size: 1.5rem;
   }
 }

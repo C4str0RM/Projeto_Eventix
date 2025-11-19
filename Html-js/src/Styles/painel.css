@@ -168,9 +168,22 @@ body {
 /* RESPONSIVIDADE */
 
 @media (max-width: 768px) {
+  .conteudo-central {
+    padding: 20px 10px;
+  }
+
   .painel-conta {
     padding: 20px;
     border-radius: 8px;
+  }
+
+  .painel-conta h1 {
+    font-size: 1.4em;
+  }
+
+  .painel-conta p {
+    font-size: 0.95em;
+    margin-bottom: 20px;
   }
 
   .opcoes-conta {
@@ -194,35 +207,23 @@ body {
   .card-opcao p {
     font-size: 13px;
   }
+}
 
-  .search-bar {
-    flex-direction: column;
-    width: 100%;
-    margin: 10px 0;
+@media (max-width: 1024px) {
+  .conteudo-central {
+    padding: 30px 15px;
   }
 
-  .search-bar input,
-  .search-btn {
-    width: 100%;
+  .painel-conta {
+    padding: 25px;
   }
 
-  .menu {
-    flex-direction: column;
-    align-items: center;
-    padding: 10px 20px;
+  .opcoes-conta {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 18px;
   }
 
-  .menu nav {
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 10px;
-    align-items: center;
-  }
-
-  .footer-container {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 30px;
+  .card-opcao {
+    padding: 18px;
   }
 }

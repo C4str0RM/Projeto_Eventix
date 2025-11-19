@@ -572,49 +572,193 @@ html, body {
 /* RESPOSIVIDADE */
 
 @media (max-width: 768px) {
+  .banner-conferencia {
+    height: 280px;
+  }
+
   .cabecalho-conferencia h1 {
     font-size: 1.6em;
   }
 
-  .cabecalho-conferencia p,
-  .info-conferencia p,
-  .cta-inscricao p,
-  .secao-conteudo p,
-  .formas-pagamento li,
-  .resumo-topo p,
-  .finalizacao-container p,
-  .vitalicio-container p {
+  .cabecalho-conferencia p {
     font-size: 1em;
   }
 
-  .bloco-destaque,
-  .cta-inscricao,
-  .secao-conteudo,
-  .resumo-topo,
-  .finalizacao-container,
-  .vitalicio-container,
-  .secao-conteudo-pag {
+  .bloco-destaque {
+    flex-direction: column;
     padding: 20px;
-    margin: 20px auto;
+    gap: 16px;
   }
 
-  .btn-inscrever,
-  .btn-pagar,
-  .btn-final {
+  .info-conferencia h2 {
+    font-size: 1.4em;
+    text-align: center;
+  }
+
+  .info-conferencia p {
     font-size: 1em;
-    padding: 12px 24px;
+    text-align: center;
+  }
+
+  .cta-inscricao {
+    padding: 20px;
+    margin: 30px auto;
+  }
+
+  .btn-inscrever {
+    font-size: 1em;
+    padding: 12px 28px;
+  }
+
+  .secao-conteudo {
+    padding: 16px;
+  }
+
+  .secao-conteudo h2 {
+    font-size: 1.2em;
+    text-align: center;
+  }
+
+  .secao-conteudo p,
+  .secao-conteudo ul li {
+    font-size: 0.95em;
+    text-align: center;
   }
 
   .contador-conferencia {
-    font-size: 1.1em;
-    padding: 12px 20px;
     bottom: 20px;
     right: 20px;
+    padding: 12px 24px;
+    font-size: 1.1em;
     min-width: 180px;
   }
 
   .form-inscricao {
-    max-width: 100%;
     padding: 0 10px;
+    max-width: 100%;
+  }
+
+  .form-inscricao input,
+  .form-inscricao select {
+    font-size: 0.95rem;
+  }
+
+  .form-inscricao .btn-pagar {
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
+
+  .resumo-topo {
+    padding: 16px;
+    margin: 20px auto;
+  }
+
+  .finalizacao-container,
+  .vitalicio-container,
+  .secao-conteudo-pag {
+    padding: 20px;
+    margin: 30px auto;
+  }
+
+  .finalizacao-container h1,
+  .vitalicio-container h1 {
+    font-size: 1.6rem;
+  }
+
+  .finalizacao-container p,
+  .vitalicio-container p {
+    font-size: 1rem;
+  }
+
+  .vitalicio-beneficios {
+    text-align: center;
+  }
+
+  .vitalicio-beneficios li {
+    padding-left: 0;
+  }
+
+  .vitalicio-beneficios li::before {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner-conferencia {
+    height: 200px;
+  }
+
+  .cabecalho-conferencia h1 {
+    font-size: 1.4em;
+  }
+
+  .cabecalho-conferencia p {
+    font-size: 0.95em;
+  }
+
+  .info-conferencia h2 {
+    font-size: 1.2em;
+  }
+
+  .info-conferencia p {
+    font-size: 0.9em;
+  }
+
+  .btn-inscrever {
+    font-size: 0.9em;
+    padding: 10px 24px;
+  }
+
+  .contador-conferencia {
+    font-size: 1em;
+    padding: 10px 20px;
+    min-width: 160px;
+  }
+
+  .resumo-topo h2 {
+    font-size: 1.2rem;
+  }
+
+  .resumo-topo p {
+    font-size: 0.9rem;
+  }
+
+  .finalizacao-container h1,
+  .vitalicio-container h1 {
+    font-size: 1.4rem;
+  }
+
+  .finalizacao-container p,
+  .vitalicio-container p {
+    font-size: 0.9rem;
+  }
+
+  .vitalicio-destaque {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .bloco-destaque {
+    gap: 18px;
+    padding: 25px;
+  }
+
+  .cta-inscricao {
+    max-width: 90%;
+    padding: 25px;
+  }
+
+  .secao-conteudo {
+    max-width: 90%;
+    padding: 18px;
+  }
+
+  .finalizacao-container,
+  .vitalicio-container,
+  .secao-conteudo-pag {
+    max-width: 90%;
+    padding: 25px;
   }
 }

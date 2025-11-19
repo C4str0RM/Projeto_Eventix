@@ -296,91 +296,119 @@ body {
 /* RESPONSIVIDADE */
 
 @media (max-width: 768px) {
-  .container-pagina {
+  .resumo-container {
     padding: 20px;
     border-radius: 10px;
   }
 
-  .container-pagina h1 {
+  .resumo-container h1 {
     font-size: 22px;
     text-align: center;
   }
 
-  .container-pagina p {
+  .resumo-container p {
     font-size: 15px;
     text-align: center;
   }
 
-  .cards-resumo {
+  .resumo-cards {
     flex-direction: column;
     gap: 16px;
   }
 
-  .card-resumo {
+  .resumo-card {
     padding: 16px;
     min-width: unset;
   }
 
-  .card-resumo h3 {
+  .resumo-card h3 {
     font-size: 15px;
   }
 
-  .card-resumo p {
+  .resumo-card p {
     font-size: 16px;
   }
 
-  .mensagem-usuario {
+  .resumo-mensagem {
     font-size: 14px;
     padding: 12px;
   }
 
-  .botao-voltar {
+  .resumo-voltar {
     width: 100%;
     text-align: center;
     font-size: 14px;
     padding: 10px;
   }
 
-  .card-evento {
+  .resumo-evento {
     padding: 16px;
   }
 
-  .card-evento h3 {
+  .resumo-evento h3 {
     font-size: 18px;
   }
 
-  .card-evento p {
+  .resumo-evento p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .resumo-container {
+    padding: 16px;
+  }
+
+  .resumo-card {
+    padding: 14px;
+  }
+
+  .resumo-card h3 {
     font-size: 14px;
   }
 
-  .search-bar {
-    flex-direction: column;
-    width: 100%;
-    margin: 10px 0;
+  .resumo-card p {
+    font-size: 15px;
   }
 
-  .search-bar input,
-  .search-btn {
-    width: 100%;
+  .resumo-mensagem {
+    font-size: 13px;
+    padding: 10px;
   }
 
-  .menu {
-    flex-direction: column;
-    align-items: center;
-    padding: 10px 20px;
+  .resumo-voltar {
+    font-size: 13px;
+    padding: 8px;
   }
 
-  .menu nav {
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 10px;
-    align-items: center;
+  .resumo-evento {
+    padding: 14px;
   }
 
-  .footer-container {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 30px;
+  .resumo-evento h3 {
+    font-size: 16px;
+  }
+
+  .resumo-evento p {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .resumo-container {
+    max-width: 95%;
+    padding: 25px;
+  }
+
+  .resumo-cards {
+    gap: 18px;
+  }
+
+  .resumo-card {
+    padding: 18px;
+  }
+
+  .resumo-evento {
+    padding: 18px;
   }
 }

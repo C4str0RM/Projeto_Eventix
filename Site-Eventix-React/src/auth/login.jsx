@@ -5,7 +5,7 @@ import { supabase } from "../config/supabaseClient";
 import google from "../assets/google.png";
 import facebook from "../assets/facebook.png";
 
-import "../Styles/login.css";
+import "./Styles/login.css";
 
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";

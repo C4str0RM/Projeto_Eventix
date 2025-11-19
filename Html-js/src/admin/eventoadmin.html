@@ -3,9 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home | Eventix</title>
+    <title>Gerenciar Eventos | Eventix</title>
     <link rel="stylesheet" href="../admin/styles/adminpages.css" />
     <link rel="stylesheet" href="../Styles/menu.css" />
+    <link rel="stylesheet" href="../Styles/responsive.css" />
     <link
       rel="shortcut icon"
       href="../assets/faviconEL.ico"
@@ -16,7 +17,28 @@
   <body>
     <header id="menu" class="menu"></header>
 
+    <div class="admin-page">
+      <h2>📋 Gerenciar Eventos</h2>
+      <p>Aqui você pode visualizar os eventos cadastrados.</p>
 
+      <button class="btn-novo-evento">➕ <strong>Novo Evento</strong></button>
+
+      <table id="table-eventos" class="table-eventos">
+        <thead>
+          <tr>
+            <th>Título</th>
+            <th>Data</th>
+            <th>Local</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+
+      <a href="../admin/dashboard.html" class="resumo-voltar">
+        ⬅ Voltar ao painel
+      </a>
+    </div>
     <footer class="footer">
       <div class="footer-container">
         <div class="footer-col">
@@ -70,6 +92,7 @@
       </div>
     </footer>
 
+    <script type="module" src="./Js/eventos.js"></script>
     <script type="module" src="../Js/menu.js"></script>
   </body>
 </html>

@@ -81,54 +81,73 @@ footer {
   margin-top: 40px;
 }
 
+/* RESPONSIVIDADE */
+
 @media (max-width: 768px) {
   .contato {
     padding: 30px 15px;
+    max-width: 95%;
+  }
+
+  .contato h2 {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  .contato p {
+    font-size: 1rem;
+    text-align: center;
   }
 
   .form-contato input,
   .form-contato textarea {
     font-size: 1rem;
+    padding: 10px;
   }
 
   .btn-enviar {
     font-size: 1rem;
     padding: 10px;
-  }
-
-  footer {
-    font-size: 0.8rem;
-    padding: 15px;
-  }
-
-  .search-bar {
-    flex-direction: column;
-    width: 100%;
-    margin: 10px 0;
-  }
-
-  .search-bar input,
-  .search-btn {
     width: 100%;
   }
+}
 
-  .menu {
-    flex-direction: column;
-    align-items: center;
-    padding: 10px 20px;
+@media (max-width: 480px) {
+  .contato {
+    padding: 20px 12px;
   }
 
-  .menu nav {
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 10px;
-    align-items: center;
+  .contato h2 {
+    font-size: 1.2rem;
   }
 
-  .footer-container {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 30px;
+  .contato p {
+    font-size: 0.9rem;
+  }
+
+  .form-contato input,
+  .form-contato textarea {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  .btn-enviar {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .contato {
+    max-width: 90%;
+    padding: 35px 18px;
+  }
+
+  .form-contato {
+    gap: 12px;
+  }
+
+  .btn-enviar {
+    padding: 11px;
   }
 }

@@ -10,7 +10,7 @@ import { useCadastroForm } from "../components/useCadastroForm.Js";
 import { useVerificarUsuario } from "../components/useVerificarUsuario";
 import CadastroForm from "../components/CadastroForm";
 
-import "../Styles/login.css";
+import "./Styles/login.css";
 
 function Cadastro() {
   const navigate = useNavigate();

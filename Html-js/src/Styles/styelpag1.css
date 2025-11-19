@@ -463,9 +463,14 @@ body {
   background-color: #a82323;
   transform: scale(1.05);
 }
-/* RESPOSIVIDADE */
+
+/* RESPONSIVIDADE */
 
 @media (max-width: 768px) {
+  .inscricaopag-header {
+    padding: 20px 10px;
+  }
+
   .inscricaopag-header h1 {
     font-size: 1.6em;
   }
@@ -479,15 +484,6 @@ body {
     margin: 20px auto;
   }
 
-  .beneficios-pagamento,
-  .formas-pagamento ul {
-    text-align: center;
-  }
-
-  .formas-pagamento {
-    text-align: center;
-  }
-
   .btn-paga,
   .btn-finalizacao {
     width: 100%;
@@ -497,6 +493,7 @@ body {
 
   .form-inscricao {
     padding: 0 10px;
+    max-width: 100%;
   }
 
   .form-inscricao input,
@@ -542,35 +539,79 @@ body {
   .vitalicio-beneficios li::before {
     display: none;
   }
+}
 
-  .search-bar {
-    flex-direction: column;
-    width: 100%;
-    margin: 10px 0;
+@media (max-width: 480px) {
+  .inscricaopag-header h1 {
+    font-size: 1.4em;
   }
 
-  .search-bar input,
-  .search-btn {
-    width: 100%;
+  .inscricaopag-header p {
+    font-size: 0.9em;
   }
 
-  .menu {
-    flex-direction: column;
-    align-items: center;
-    padding: 10px 20px;
+  .inscricaopag-destaque {
+    padding: 16px;
   }
 
-  .menu nav {
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 10px;
-    align-items: center;
+  .btn-paga,
+  .btn-finalizacao {
+    font-size: 0.9em;
+    padding: 10px;
   }
 
-  .footer-container {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 30px;
+  .form-inscricao input,
+  .form-inscricao select {
+    font-size: 0.9rem;
+    padding: 0.6rem;
+  }
+
+  .form-inscricao .btn-pagar {
+    font-size: 0.95rem;
+    padding: 0.7rem;
+  }
+
+  .resumo-topo h2 {
+    font-size: 1.2rem;
+  }
+
+  .resumo-topo p {
+    font-size: 0.9rem;
+  }
+
+  .finalizacao-container h1,
+  .vitalicio-container h1 {
+    font-size: 1.4rem;
+  }
+
+  .finalizacao-container p,
+  .vitalicio-container p {
+    font-size: 0.9rem;
+  }
+
+  .vitalicio-destaque {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .inscricaopag-aprendizado {
+    padding: 15px;
+    margin: 40px auto;
+  }
+
+  .cardc-aprendizado {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+  }
+
+  .cardc {
+    padding: 18px;
+  }
+
+  .finalizacao-container,
+  .vitalicio-container {
+    max-width: 90%;
+    padding: 25px;
   }
 }

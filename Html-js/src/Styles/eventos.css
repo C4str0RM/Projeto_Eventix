@@ -260,30 +260,44 @@ body {
   .titulo-eventos-todos {
     font-size: 1.6em;
     margin: 30px 0 15px;
+    text-align: center;
   }
 
   .grade-eventos-todos {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: 1fr;
     gap: 20px;
-    padding: 0 20px;
+    padding: 0 15px;
+  }
+
+  .card-evento-todos {
+    padding: 10px;
+  }
+
+  .imagem-evento-todos {
+    height: 220px;
+  }
+
+  .titulo-evento-todos {
+    font-size: 1em;
+  }
+
+  .info-evento-todos {
+    font-size: 0.85em;
   }
 
   .filtro-horizontal {
     width: 100%;
-    height: auto;
     flex-direction: column;
     align-items: flex-start;
-    padding: 20px;
+    padding: 15px;
   }
 
   .filtro-horizontal h3 {
-    margin-top: 0;
-    margin-bottom: 10px;
-    font-size: 1.1em;
+    margin: 0 0 10px;
+    font-size: 1em;
   }
 
   .filtro-horizontal ul {
-    flex-direction: row;
     flex-wrap: wrap;
     gap: 8px;
     border-top: none;
@@ -293,5 +307,26 @@ body {
   .filtro-horizontal button {
     font-size: 0.85em;
     padding: 6px 10px;
+  }
+
+  .sem-eventos-todos {
+    font-size: 1em;
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .grade-eventos-todos {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    padding: 0 20px;
+  }
+
+  .imagem-evento-todos {
+    height: 280px;
+  }
+
+  .filtro-horizontal {
+    width: 95%;
+    margin: 0 auto 30px auto;
   }
 }

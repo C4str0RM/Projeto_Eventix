@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import "../Styles/recsenha.css";
+import "./Styles/recsenha.css";
 
 function RecuperarSenha() {
   const [email, setEmail] = useState("");

@@ -330,51 +330,109 @@ body {
 /* RESPONSIVIDADE */
 
 @media (max-width: 768px) {
-  .pagamento-container {
+  .banner-fest {
+    height: 300px;
+  }
+
+  .fest-header h1 {
+    font-size: 1.6em;
+  }
+
+  .fest-header p {
+    font-size: 1.1em;
+  }
+
+  .container-pagamento {
     width: 90%;
     padding: 1.5rem;
-    margin: 1rem auto;
-    box-sizing: border-box;
+    margin: 1.5rem auto;
   }
 
-  .qr-code {
-    width: 180px;
-    height: 180px;
+  .titulo-pagamento {
+    font-size: 1.4rem;
   }
 
-  .btn-voltar {
-    font-size: 0.95rem;
-    padding: 0.6rem 1.2rem;
+  .box-valor h2 {
+    font-size: 1rem;
   }
 
-  .search-bar {
-    flex-direction: column;
+  .valor-final {
+    font-size: 1.6rem;
+  }
+
+  .opcoes-pagamento {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 0.5rem;
+  }
+
+  .metodo-box {
+    padding: 1rem;
+  }
+
+  .btn-finaliza {
     width: 100%;
-    margin: 10px 0;
+    font-size: 1rem;
+    padding: 0.8rem;
   }
 
-  .search-bar input,
-  .search-btn {
-    width: 100%;
+  .mensagem-sucesso {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner-fest {
+    height: 220px;
   }
 
-  .menu {
-    flex-direction: column;
-    align-items: center;
-    padding: 10px 20px;
+  .fest-header h1 {
+    font-size: 1.4em;
   }
 
-  .menu nav {
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 10px;
-    align-items: center;
+  .fest-header p {
+    font-size: 1em;
   }
 
-  .footer-container {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 30px;
+  .container-pagamento {
+    padding: 1rem;
+  }
+
+  .titulo-pagamento {
+    font-size: 1.2rem;
+  }
+
+  .valor-final {
+    font-size: 1.4rem;
+  }
+
+  .metodo-box {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .btn-finaliza {
+    font-size: 0.9rem;
+    padding: 0.6rem;
+  }
+
+  .mensagem-sucesso {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .container-pagamento {
+    max-width: 90%;
+    padding: 1.8rem;
+  }
+
+  .opcoes-pagamento {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.2rem;
+  }
+
+  .metodo-box {
+    padding: 1rem;
   }
 }

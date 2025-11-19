@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { supabase } from "../config/supabaseClient";
-import "./Style/Adminpages.css";
+import "./Styles/Adminpages.css";
 
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -17,6 +17,10 @@ const UsuariosAdmin = () => {
   const [carregando, setCarregando] = useState(true);
   const [usuarioLogado, setUsuarioLogado] = useState(null);
   const [promovendoId, setPromovendoId] = useState(null);
+
+  useEffect(() => {
+    document.title = "Usuários | Eventix";
+  }, []);
 
   useEffect(() => {
     const carregarUsuario = async () => {

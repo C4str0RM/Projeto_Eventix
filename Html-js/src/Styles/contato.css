@@ -156,49 +156,62 @@ body {
   transition: opacity 0.3s ease;
 }
 
+/* RESPONSIVIDADE */
+
 @media (max-width: 768px) {
-  .contato {
+  .contato-page {
+    padding: 20px 10px;
+  }
+
+  .contato-wrapper {
+    padding: 20px 15px;
+    max-width: 100%;
+  }
+
+  .contato-wrapper h2 {
+    font-size: 1.3em;
+    text-align: center;
+  }
+
+  .contato-wrapper p {
+    font-size: 0.95em;
+    text-align: center;
+  }
+
+  .contato-form {
+    gap: 12px;
+  }
+
+  .contato-form input,
+  .contato-form textarea {
+    font-size: 1rem;
+    width: 100%;
+  }
+
+  .contato-botao {
+    font-size: 1rem;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .mensagem-sucesso {
+    text-align: center;
+    font-size: 0.95em;
+  }
+}
+
+@media (max-width: 1024px) {
+  .contato-page {
     padding: 30px 15px;
   }
 
-  .form-contato input,
-  .form-contato textarea {
-    font-size: 1rem;
+  .contato-wrapper {
+    max-width: 90%;
   }
 
-  .btn-enviar {
-    font-size: 1rem;
-    padding: 10px;
-  }
-
-  .search-bar {
-    flex-direction: column;
-    width: 100%;
-    margin: 10px 0;
-  }
-
-  .search-bar input,
-  .search-btn {
-    width: 100%;
-  }
-
-  .menu {
-    flex-direction: column;
-    align-items: center;
-    padding: 10px 20px;
-  }
-
-  .menu nav {
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 10px;
-    align-items: center;
-  }
-
-  .footer-container {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 30px;
+  .contato-form input,
+  .contato-form textarea {
+    font-size: 0.95em;
   }
 }

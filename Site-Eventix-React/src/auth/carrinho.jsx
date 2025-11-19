@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { supabase } from "../config/supabaseClient";
-import "../Styles/stylecarrinho.css";
+import "./Styles/stylecarrinho.css";
 import { calcularTempoRestante } from "../utils/temporestante";
 import { useCarrinho } from "../context/CarrinhoContext";
 

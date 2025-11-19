@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { supabase } from "../config/supabaseClient";
-import "./Style/Adminpages.css";
+import { Link } from "react-router-dom";
+import "./Styles/Adminpages.css";
 
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -22,6 +23,10 @@ const RelatoriosAdmin = () => {
     valores: [],
     porcentagens: [],
   });
+
+  useEffect(() => {
+    document.title = "Relatórios | Eventix";
+  }, []);
 
   useEffect(() => {
     const carregarRelatorios = async () => {
@@ -98,6 +103,9 @@ const RelatoriosAdmin = () => {
         </>
       )}
 
+      <Link to="/admin" className="resumo-voltar">
+        ⬅ Voltar ao painel
+      </Link>
       <ToastContainer position="top-right" autoClose={3000} />
     </div>
   );

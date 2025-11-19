@@ -150,7 +150,6 @@ body {
   font-family: "Oswald", sans-serif;
 }
 
-
 .footer {
   background-color: var(--cor-fundo);
   padding: 40px 20px;
@@ -235,49 +234,62 @@ body {
 /* RESPONSIVIDADE */
 
 @media (max-width: 768px) {
-  .grade-eventos {
-    flex-direction: column;
-    display: flex;
+  .carrinho-body {
+    padding: 0 20px;
   }
 
-  .cartao-evento {
-    width: 100%;
+  .carrinho-painel {
+    margin: 20px auto;
+    padding: 20px 15px;
+  }
+
+  .lista-ingressos {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .carrinho-card {
     padding: 20px;
   }
 
-  .botao-voltar {
+  .carrinho-card h3 {
+    font-size: 1.1em;
+  }
+
+  .carrinho-card p {
+    font-size: 0.9em;
+  }
+
+  .carrinho-ingressos {
+    padding: 8px;
+  }
+
+  .carrinho-ingressos li {
+    font-size: 0.9em;
+  }
+
+  .carrinho-acoes {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .carrinho-cancelar,
+  .carrinho-voltar {
     width: 100%;
     text-align: center;
   }
+}
 
-  .search-bar {
-    flex-direction: column;
-    width: 100%;
-    margin: 10px 0;
+@media (max-width: 1024px) {
+  .carrinho-body {
+    padding: 0 40px;
   }
 
-  .search-bar input,
-  .search-btn {
-    width: 100%;
+  .lista-ingressos {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   }
 
-  .menu {
-    flex-direction: column;
-    align-items: center;
-    padding: 10px 20px;
-  }
-
-  .menu nav {
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 10px;
-    align-items: center;
-  }
-
-  .footer-container {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 30px;
+  .carrinho-card {
+    padding: 22px;
   }
 }

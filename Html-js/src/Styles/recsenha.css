@@ -203,12 +203,22 @@ body {
 /* RESPONSIVIDADE */
 
 @media (max-width: 768px) {
+  body {
+    height: auto;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
   .container {
     padding: 20px;
+    width: 90%;
+    max-width: 350px;
   }
 
   .recuperar-form {
-    max-width: 90%;
+    max-width: 100%;
     gap: 12px;
   }
 
@@ -225,39 +235,41 @@ body {
     padding: 0.6rem 1.5rem 0.6rem 2rem;
   }
 
+  .icon {
+    font-size: 1rem;
+  }
+
+  .confirmacao {
+    font-size: 0.9rem;
+    padding: 12px;
+  }
+
+  .contador {
+    font-size: 0.85rem;
+  }
+
   .voltar-login button {
     font-size: 0.9rem;
     padding: 6px 12px;
-  }
-
-  .search-bar {
-    flex-direction: column;
-    width: 100%;
-    margin: 10px 0;
-  }
-
-  .search-bar input,
-  .search-btn {
     width: 100%;
   }
+}
 
-  .menu {
-    flex-direction: column;
-    align-items: center;
-    padding: 10px 20px;
+@media (max-width: 1024px) {
+  .container {
+    padding: 30px;
+    max-width: 400px;
   }
 
-  .menu nav {
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 10px;
-    align-items: center;
+  .recuperar-form h2 {
+    font-size: 1.5rem;
   }
 
-  .footer-container {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 30px;
+  .recuperar-form .descricao {
+    font-size: 1rem;
+  }
+
+  .input-group input {
+    font-size: 1rem;
   }
 }

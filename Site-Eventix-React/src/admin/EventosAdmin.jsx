@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { supabase } from "../config/supabaseClient";
-import "./Style/Adminpages.css";
+import "./Styles/Adminpages.css";
 
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -18,6 +18,10 @@ const EventosAdmin = () => {
   const [eventoSelecionado, setEventoSelecionado] = useState(null);
   const [mostrarModal, setMostrarModal] = useState(false);
   const [mostrarNovoModal, setMostrarNovoModal] = useState(false);
+
+   useEffect(() => {
+    document.title = "Gerenciar Eventos | Eventix";
+  }, []);
 
   useEffect(() => {
     buscarEventos();
