@@ -79,8 +79,8 @@ document.addEventListener("DOMContentLoaded", async () => {
       `
           : `
         <div class="menu-acoes">
-          <a href="/src/pages/login.html">Entrar</a>
-          <a href="/src/pages/cadastro.html" class="btn-cadastro">Criar Conta</a>
+          <a href="/src/auth/login.html">Entrar</a>
+          <a href="/src/auth/cadastro.html" class="btn-cadastro">Criar Conta</a>
         </div>
       `
       }
